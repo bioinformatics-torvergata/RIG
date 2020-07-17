@@ -26,6 +26,6 @@ Now you can run the script with the command.
 * Choose the $alphabet as in folder alphabets/ (ex. alphabets/Zbear.tsv)
 * Indicate the $info_file as output file that will collect all the informations of the built blocks (ex info_Zbear_62.txt)
 
-`python make_MBR.py $sequence_folder $structure_folder Rfam_no_double.seed $identity_score $seq_threshold $alphabet $info_file`
+`python3 make_MBR.py $sequence_folder $structure_folder Rfam_no_double.seed $identity_score $seq_threshold $alphabet $info_file`
 
 
