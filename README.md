@@ -18,14 +18,14 @@ Now you can run the script with the command.
 2. How to Build Blocks and MBR from RFAM families (sequence and structure)
 
 * Download the script from the folder script/
-* Download the sequences files as in folder: seq_str_families/sequence/
-* Download the structures files in bear format as in folder seq_str_families/bear/
+* Download the $sequence_folder with sequences as in folder: seq_str_families/sequence/ 
+* Download the $structure_folder with sequences in bear format as in folder seq_str_families/bear/
 * Download the RFAM seed sequences ( Rfam_no_double.seed ) from the main folder
-* Choose the identity score threshold (ex. 62)
-* Choose the minimum number of RNAs in a RFAM family (ex. 5)
-* Choose the alphabet as in folder alphabets/ (ex. alphabets/Zbear.tsv)
-* Indicate the file name as output file that will collect all the informations of the built blocks (ex info_Zbear_62.txt)
+* Choose the $identity_score threshold (ex. 62)
+* Choose the $seq_threshold as the minimum number of RNAs in a RFAM family (ex. 5)
+* Choose the $alphabet as in folder alphabets/ (ex. alphabets/Zbear.tsv)
+* Indicate the $info_file as output file that will collect all the informations of the built blocks (ex info_Zbear_62.txt)
 
-`python make_MBR.py seq_str_families/sequence/ seq_str_families/bear/ Rfam_no_double.seed 62 5 alphabets/Zbear.tsv info_Zbear_62.txt`
+`python make_MBR.py $sequence_folder $structure_folder Rfam_no_double.seed $identity_score $seq_threshold $alphabet $info_file`
 
 
