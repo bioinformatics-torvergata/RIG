@@ -96,14 +96,3 @@
 	|--rfam_PSSM_qbear_62.pickle
 	|--rfam_PSSM_qbear_90.pickle
 
-
-
-################# SCRIPT ##########################
-
-#Make PSSM from a new MBR (MARCO)
-python3 make_PSSM.py $mbrVersion $MBR_matrix.tsv $ALPHAMAP.tsv (need gapped_fam_dict.pickle in same folder)
-
-#Build Blocks and MBR from RFAM families (sequence and structure)
-#Make_MBR.py
-#How to run (Example): python make_MBR.py seq_str_families/sequence/ seq_str_families/bear/ Rfam_no_double.seed 90 5 alphabets/bear.tsv info_bear_90.txt
-
