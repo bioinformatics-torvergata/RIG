@@ -1,4 +1,4 @@
-# RIG
+# How to Build PSSM and Blocks
 
 1. How to make a PSSM from a new MBR
 
