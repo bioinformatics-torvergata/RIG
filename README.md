@@ -50,5 +50,5 @@ python3 make_MBR.py $sequence_folder $structure_folder Rfam_no_double.seed $iden
 #### Example:
 ```
 cd script
-python3 make_MBR.py $sequence_folder seq_str_families/sequence/ Rfam_no_double.seed $identity_score $seq_threshold $alphabet $info_file
+python3 make_MBR.py ../seq_str_families/sequence/ ../seq_str_families/bear/ ../Rfam_no_double.seed 62 5 ../alphabets/Zbear.tsv info_Zbear_62.txt
 ```
