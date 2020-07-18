@@ -3,22 +3,33 @@
 ## Introduction
 Structural characterization of RNAs is a dynamic field, exposing many modelling possibilities. Every model is usually characterized by an encoding in which to include structural information of a molecule ranging from string representations to graphs. Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose a new scoring metric, the **Relative Information Gain**, available for any position in an alignment, showing how different levels of detail encoded in the RNA representation contribute differently to expose structural information.
 
-## How to Build PSSM and Blocks
+## How to use
 
-1. How to make a PSSM from a new MBR
+### Preparation
+```
+git clone https://github.com/citterich-lab/RIG.git
+cd RIG
+```
 
-* Download the script from the folder script/
-* Choose the MBR version (ex. "Zbear_62")
-* Select the MBR file from the folder MBR (ex. MBR/MBR_Zbear_62.tsv)
-* Select the file with the alphabet mapping from the folder alphabets (ex. alphabets/Zbear.tsv)
-* Be sure that the file gapped_fam_dict.pickle is in the same folders of make_PSSM.py script. You can find it in the script/ folder
+### Build a PSSM from a new Matrix of Bear encoded RNA (MBR)
 
-Now you can run the script with the command.
+* Choose the MBR version (for example, `Zbear_62`)
+* Select the MBR file from the folder MBR (for example, `MBR/MBR_Zbear_62.tsv`)
+* Select the file with the alphabet mapping from the folder alphabets (for example, `alphabets/Zbear.tsv`)
+* Be sure that the file `gapped_fam_dict.pickle` is in the same folders of `make_PSSM.py` script. You can find it in the `script/` folder
+* Go in the script folder
+* Run the script with a command like
 
 `python3 make_PSSM.py $mbrVersion $MBR_matrix.tsv $ALPHAMAP.tsv`
 
+which will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVersion.pickle` files.
 
-
+#### Example:
+```
+cd script
+python3 make_PSSM.py ../Zbear_62 ../MBR/MBR_Zbear_62.tsv ../alphabets/Zbear.tsv
+ls *Zbear_62.pickle
+```
 
 2. How to Build Blocks and MBR from RFAM families (sequence and structure)
 
