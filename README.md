@@ -31,17 +31,24 @@ python3 make_PSSM.py ../Zbear_62 ../MBR/MBR_Zbear_62.tsv ../alphabets/Zbear.tsv
 ls *Zbear_62.pickle
 ```
 
-2. How to Build Blocks and MBR from RFAM families (sequence and structure)
+### Build RNA Blocks and Matrix of Bear encoded RNA (MBR) from Rfam families (sequence and structure)
 
-* Download the script from the folder script/
-* Download the $sequence_folder with sequences as in folder: seq_str_families/sequence/ 
-* Download the $structure_folder with sequences in bear format as in folder seq_str_families/bear/
-* Download the RFAM seed sequences ( Rfam_no_double.seed ) from the main folder
-* Choose the $identity_score threshold (ex. 62)
-* Choose the $seq_threshold as the minimum number of RNAs in a RFAM family (ex. 5)
-* Choose the $alphabet as in folder alphabets/ (ex. alphabets/Zbear.tsv)
-* Indicate the $info_file as output file that will collect all the informations of the built blocks (ex info_Zbear_62.txt)
+* Specify the `$sequence_folder` with sequences as in folder `seq_str_families/sequence/` 
+* Specify the `$structure_folder` with sequences in BEAR format as in folder `seq_str_families/bear/`
+* Specify the Rfam seed sequences (`Rfam_no_double.seed` in the main folder)
+* Choose the `$identity_score threshold` (for example, `62`)
+* Choose the `$seq_threshold` as the minimum number of RNAs in a Rfam family (for example, `5`)
+* Specify the `$alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
+* Specify the `$info_file` as output file that will collect all the information of the built blocks (for example, `info_Zbear_62.txt`)
+* Go in the script folder
+* Run the script with a command like
 
-`python3 make_MBR.py $sequence_folder $structure_folder Rfam_no_double.seed $identity_score $seq_threshold $alphabet $info_file`
+```
+python3 make_MBR.py $sequence_folder $structure_folder Rfam_no_double.seed $identity_score $seq_threshold $alphabet $info_file
+```
 
-
+#### Example:
+```
+cd script
+python3 make_MBR.py $sequence_folder seq_str_families/sequence/ Rfam_no_double.seed $identity_score $seq_threshold $alphabet $info_file
+```
