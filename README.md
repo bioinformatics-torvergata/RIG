@@ -1,4 +1,9 @@
-# How to Build PSSM and Blocks
+# Exploring RNA secondary structure representations
+
+## Introduction
+Structural characterization of RNAs is a dynamic field, exposing many modelling possibilities. Every model is usually characterized by an encoding in which to include structural information of a molecule ranging from string representations to graphs. Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose a new scoring metric, the **Relative Information Gain**, available for any position in an alignment, showing how different levels of detail encoded in the RNA representation contribute differently to expose structural information.
+
+## How to Build PSSM and Blocks
 
 1. How to make a PSSM from a new MBR
 
