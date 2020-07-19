@@ -6,6 +6,9 @@ Structural characterization of RNAs is a dynamic field, exposing many modelling 
 ## Preparation
 
 ### Dependencies: blastclust
+
+**Note**: the following instructions are for the **Linux** operating system. Please change the ftp link according to your operating system to download the correct version of blastclust (see ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/).
+
 ```
 cd ~
 wget -c ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-ia32-linux.tar.gz
