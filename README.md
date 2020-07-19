@@ -3,14 +3,25 @@
 ## Introduction
 Structural characterization of RNAs is a dynamic field, exposing many modelling possibilities. Every model is usually characterized by an encoding in which to include structural information of a molecule ranging from string representations to graphs. Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose a new scoring metric, the **Relative Information Gain**, available for any position in an alignment, showing how different levels of detail encoded in the RNA representation contribute differently to expose structural information.
 
-## How to use
+## Preparation
 
-### Preparation
+### Dependencies: blastclust
+```
+cd ~
+wget -c ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-ia32-linux.tar.gz
+tar -xvf blast-2.2.26-ia32-linux.tar.gz
+export PATH="$PATH:~/blast-2.2.26/bin"
+```
+Add the `~/blast-2.2.26/bin` directory to your environment, or execute `export PATH="$PATH:~/blast-2.2.26/bin"` each time you open a new shell.
+
+
+### Clone the repository
 ```
 git clone https://github.com/citterich-lab/RIG.git
 cd RIG
 ```
 
+## How to use
 ### Build a PSSM from a new Matrix of Bear encoded RNA (MBR)
 
 * Choose the MBR version (for example, `Zbear_62`)
