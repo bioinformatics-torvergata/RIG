@@ -3,6 +3,8 @@
 ## Introduction
 Structural characterization of RNAs is a dynamic field, exposing many modelling possibilities. Every model is usually characterized by an encoding in which to include structural information of a molecule ranging from string representations to graphs. Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose a new scoring metric, the **Relative Information Gain**, available for any position in an alignment, showing how different levels of detail encoded in the RNA representation contribute differently to expose structural information.
 
+Computed RIG values presented in this work can be found in the folder RIG/RIG_nogaps/$MbrVersion_RIGs.tsv
+
 ## Preparation
 
 ### Dependencies: blastclust
@@ -65,4 +67,10 @@ python3 make_MBR.py $sequence_folder $structure_folder Rfam_no_double.seed $iden
 ```
 cd script
 python3 make_MBR.py ../seq_str_families/sequence/ ../seq_str_families/bear/ ../Rfam_no_double.seed 62 5 ../alphabets/Zbear.tsv info_Zbear_62.txt
+```
+
+### PLOT RIG values along with WUSS notation
+```
+execute the notebook in script/compare_RIG_WUSS.ipynb 
+the plots will be found in the RIG_WUSS folder
 ```
