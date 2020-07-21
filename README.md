@@ -27,7 +27,7 @@ cd RIG
 ```
 
 ## How to use
-### Build a PSSM from a new Matrix of Bear encoded RNA (MBR)
+### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
 
 * Choose the MBR version (for example, `Zbear_62`)
 * Select the MBR file from the folder MBR (for example, `MBR/MBR_Zbear_62.tsv`)
