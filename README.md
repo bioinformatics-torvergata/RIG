@@ -74,3 +74,8 @@ python3 make_MBR.py ../seq_str_families/sequence/ ../seq_str_families/bear/ ../R
 execute the notebook in script/compare_RIG_WUSS.ipynb 
 the plots will be found in the RIG_WUSS folder
 ```
+
+## Computing entropy values (modified to be in the same range as RIG):
+```
+execute the notebook in script/compare_RIG_entropy.ipynb
+```
