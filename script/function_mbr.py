@@ -193,9 +193,9 @@ def make_blocks(folder, name, identity):
     os.mkdir('blocks_new_bear_'+name+'_'+identity+'/')
     families=os.listdir(folder)
     for fam in families:
-        o=open('blocchi_new_bear_'+name+'_'+identity+'/'+fam, "w")
+        o=open('blocks_new_bear_'+name+'_'+identity+'/'+fam, "w")
         f=open(folder+fam).readlines()
-        zipped=zip(*f)[:-1]
+        zipped=zip(*f)
         v=[]
         for col in zipped:
             if '-' not in col:
@@ -205,7 +205,7 @@ def make_blocks(folder, name, identity):
                         v.append(col)
         new=zip(*v)
         for seq in new:
-            o.write(''.join(seq)+"\n")
+            o.write(''.join(seq))
             
 
 #Compute expected frequencies
@@ -362,19 +362,23 @@ def make_heatmap(S_ij, name, identity):
 #file_alph = alphabet file with bear mapping
 #file_info = output file with information about the MBR
 
-def Make_MBR_from_alignment(folder, folder_bear, RFAM_seed_file, id_blustClust, filter_nSeq, file_alph, file_info):
+def BlustClust_filter_alignment(folder, folder_bear, RFAM_seed_file, id_blustClust, filter_nSeq, file_alph):
     name=file_alph.split('.')[0]
-    f=open(file_alph).readlines()
-    o=open(file_info, "w")
     run_blustClust(folder, id_blustClust, name, id_blustClust)
     filter_n_seq('not_similar_'+name+'_'+id_blustClust+'/', filter_nSeq, name, id_blustClust)
     get_bear('filtro_n_seq_'+name+'_'+id_blustClust+'/', folder_bear, name, id_blustClust)
     add_gap('bear_filtered_'+name+'_'+id_blustClust+'/', RFAM_seed_file, name, id_blustClust)
     convert_new_bear_file('bear_alignment___'+id_blustClust+'/', file_alph, name, id_blustClust)
 
-    make_blocks('bear_new_alignment_'+name+'_'+id_blustClust+'/', name, id_blustClust)
+
+def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
+    name=file_alph.split('.')[0]
+    f=open(file_alph).readlines()
+    o=open(file_info, "w")
+    #blocks_folder='blocks_new_bear_'+name+'_'+id_blustClust+'/'
+    
     v_char=[x.split()[1] for x in f]
-    sost=observed_substitution('blocchi_new_bear_'+name+'_'+id_blustClust+'/', v_char, name, id_blustClust)
+    sost=observed_substitution(blocks_folder, v_char, name, id_blustClust)
     q_ij=make_q(sost, v_char, name, id_blustClust) 
     p_i=make_p(q_ij, v_char)
     e_ij=make_e(p_i, v_char, name, id_blustClust)
