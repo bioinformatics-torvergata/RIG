@@ -1,0 +1,59 @@
+# R-scape :: RNA Structural Covariation Above Phylogenetic Expectation
+# R-scape 1.5.4 elenarivas@fas.harvard.edu (May 2020)
+# Copyright (C) 2016-2019 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+gnuplot not found. Some plots will not display
+#-------------------------------------------------------------------------------------------------------
+# MSA RF00307_snoR98 nseq 4 (4) alen 119 (119) avgid 86.48 (86.48) nbpairs 24 (24)
+# Two-set statistical test (one test for annotated basepairs, another for all other pairs)
+#
+#
+# Method Target_E-val [cov_min,cov_max] [FP | TP True Found | Sen PPV F] 
+# GTp    0.05         [-2.38,2.38]     [0 | 0 24 0 | 0.00 0.00 0.00] 
+#
+#       left_pos       right_pos        score          E-value       substitutions      power
+#-------------------------------------------------------------------------------------------------------
+no significant pairs
+
+# The given structure
+# SS_cons <<<<--<<<<<-------<<<<<<_________________>>>>>>->>>>>>>>>:::
+#
+# SS_cons :::::::<<<<<-<-<<<_________>>>->-->>>>>::::::::::::::::::::
+#
+
+# The given structure
+
+# Power analysis of given structure 
+#
+# covary  left_pos      right_pos    substitutions      power
+#----------------------------------------------------------------
+          1		57		0		0.00
+          2		56		3		0.00
+          3		55		3		0.00
+          4		54		0		0.00
+          7		53		3		0.00
+          8		52		2		0.00
+          9		51		2		0.00
+          10		50		3		0.00
+          11		49		2		0.00
+          19		47		0		0.00
+          20		46		0		0.00
+          21		45		0		0.00
+          22		44		0		0.00
+          23		43		6		0.03
+          24		42		2		0.00
+          68		99		0		0.00
+          69		98		0		0.00
+          70		97		0		0.00
+          71		96		3		0.00
+          72		95		0		0.00
+          74		92		3		0.00
+          76		90		0		0.00
+          77		89		0		0.00
+          78		88		0		0.00
+#
+# BPAIRS 24
+# avg substitutions per BP  1.3
+# BPAIRS expected to covary 0.0
+# BPAIRS observed to covary 0
+#
