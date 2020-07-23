@@ -1,0 +1,56 @@
+# R-scape :: RNA Structural Covariation Above Phylogenetic Expectation
+# R-scape 1.5.4 elenarivas@fas.harvard.edu (May 2020)
+# Copyright (C) 2016-2019 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+gnuplot not found. Some plots will not display
+#-------------------------------------------------------------------------------------------------------
+# MSA RF01733_atoC nseq 8 (8) alen 94 (99) avgid 65.22 (65.04) nbpairs 19 (19)
+# Two-set statistical test (one test for annotated basepairs, another for all other pairs)
+#
+#
+# Method Target_E-val [cov_min,cov_max] [FP | TP True Found | Sen PPV F] 
+# GTp    0.05         [-2.86,9.66]     [0 | 3 19 3 | 15.79 100.00 27.27] 
+#
+#       left_pos       right_pos        score          E-value       substitutions      power
+#-------------------------------------------------------------------------------------------------------
+*	      40	      50	9.65666	0.000637171	9		0.07
+*	      65	      88	9.36144	0.00111426	7		0.04
+*	      72	      82	5.79012	0.0339705	8		0.05
+
+# The given structure
+# SS_cons :::::::::::::::::::::::::::::::::::<<<<<<<_____>>>>>>>:::::<
+#
+# SS_cons <<<<<<-<<<<<_________>>>>>>>>>>>>::::::
+#
+
+# The given structure
+
+# Power analysis of given structure 
+#
+# covary  left_pos      right_pos    substitutions      power
+#----------------------------------------------------------------
+          36		54		0		0.00
+          37		53		0		0.00
+          38		52		6		0.03
+          39		51		2		0.00
+     *    40		50		9		0.07
+          41		49		4		0.00
+          42		48		6		0.03
+          60		93		2		0.00
+          61		92		3		0.00
+          62		91		3		0.00
+          63		90		3		0.00
+          64		89		7		0.04
+     *    65		88		7		0.04
+          66		87		3		0.00
+          68		86		12		0.11
+          69		85		4		0.00
+          70		84		4		0.00
+          71		83		1		0.00
+     *    72		82		8		0.05
+#
+# BPAIRS 19
+# avg substitutions per BP  4.4
+# BPAIRS expected to covary 0.4
+# BPAIRS observed to covary 3
+#

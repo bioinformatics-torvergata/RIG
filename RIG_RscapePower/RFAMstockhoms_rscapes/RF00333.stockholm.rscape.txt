@@ -1,0 +1,53 @@
+# R-scape :: RNA Structural Covariation Above Phylogenetic Expectation
+# R-scape 1.5.4 elenarivas@fas.harvard.edu (May 2020)
+# Copyright (C) 2016-2019 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+gnuplot not found. Some plots will not display
+#-------------------------------------------------------------------------------------------------------
+# MSA RF00333_snoZ157 nseq 10 (10) alen 104 (106) avgid 75.37 (75.17) nbpairs 18 (18)
+# Two-set statistical test (one test for annotated basepairs, another for all other pairs)
+#
+#
+# Method Target_E-val [cov_min,cov_max] [FP | TP True Found | Sen PPV F] 
+# GTp    0.05         [-4.86,7.75]     [0 | 0 18 0 | 0.00 0.00 0.00] 
+#
+#       left_pos       right_pos        score          E-value       substitutions      power
+#-------------------------------------------------------------------------------------------------------
+no significant pairs
+
+# The given structure
+# SS_cons <<<<<<<<---------------------------------<<<<---<<<<<<______
+#
+# SS_cons __>>>>>->--->>>>---------------------->>>>>>>>
+#
+
+# The given structure
+
+# Power analysis of given structure 
+#
+# covary  left_pos      right_pos    substitutions      power
+#----------------------------------------------------------------
+          1		106		5		0.01
+          2		105		2		0.00
+          3		104		2		0.00
+          4		103		8		0.05
+          5		102		11		0.09
+          6		101		6		0.03
+          7		100		6		0.03
+          8		99		5		0.01
+          42		76		0		0.00
+          43		75		1		0.00
+          44		74		0		0.00
+          45		73		0		0.00
+          49		69		0		0.00
+          50		67		4		0.00
+          51		66		7		0.04
+          52		65		8		0.05
+          53		64		6		0.03
+          54		63		5		0.01
+#
+# BPAIRS 18
+# avg substitutions per BP  4.2
+# BPAIRS expected to covary 0.4
+# BPAIRS observed to covary 0
+#
