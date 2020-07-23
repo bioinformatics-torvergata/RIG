@@ -33,6 +33,15 @@ execute the notebook in script/compare_RIG_entropy.ipynb
 execute the notebook in script/RIGandRscapePower.ipynb
 ```
 
+### Convert bear files to other alphabets
+To convert a file from fastB format (Mattei et al.2015) to other structural alphabets use `mapping.py` script
+
+### Example
+```
+python script/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
+```
+
+
 ### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
 
 * Choose the MBR version (for example, `Zbear_62`)
