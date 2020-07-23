@@ -17,7 +17,7 @@ cd RIG
 ## How to use
 
 
-### PLOT RIG values along with WUSS notation
+### Plot RIG scores along with WUSS notation
 ```
 execute the notebook in script/compare_RIG_WUSS.ipynb 
 the plots will be found in the RIG_WUSS folder
@@ -26,6 +26,11 @@ the plots will be found in the RIG_WUSS folder
 ### Computing entropy values (modified to be in the same range as RIG):
 ```
 execute the notebook in script/compare_RIG_entropy.ipynb
+```
+
+### Plot the RIG scores together with the R-scape power values:
+```
+execute the notebook in script/RIGandRscapePower.ipynb
 ```
 
 ### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
