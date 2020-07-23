@@ -12,7 +12,8 @@ import subprocess
 #identity = threshold expressed by % (ex. 50)
 #return a folder with selected sequences
 def run_blustClust(folder, identity, name):
-    os.mkdir('not_similar_'+name+'_'+identity+'/')
+    if 'not_similar_'+name+'_'+identity not in os.listdir('./'):
+        os.mkdir('not_similar_'+name+'_'+identity+'/')
     os.chdir(folder)
     os.system('for file in *; do blastclust -i $file -o ../not_similar_'+name+'_'+identity+'/$file -p F -S '+identity+' ; done')
     os.chdir('../')
@@ -23,8 +24,9 @@ def run_blustClust(folder, identity, name):
 #folder = folder generated from run_blustClust
 #n_seq_family = minimum number of sequences per family
 #identity = threshold expressed by % (ex. 50)
-def filter_n_seq(folder, n_seq_family, name, identity):  
-    os.mkdir('filter_n_seq_'+name+'_'+identity+'/')
+def filter_n_seq(folder, n_seq_family, name, identity):
+    if 'filter_n_seq_'+name+'_'+identity not in os.listdir('./'):
+        os.mkdir('filter_n_seq_'+name+'_'+identity+'/')
     list_fam=os.listdir(folder)
     #New folder with only families with more than n_seq_family members
     for fam in list_fam:
@@ -39,8 +41,8 @@ def filter_n_seq(folder, n_seq_family, name, identity):
 def get_bear(folder, folder_bear, name, identity):    
     #folder = folder returned by filter_n_seq
     #folder_bear = folder seq_str_families/bear
-    
-    os.mkdir('bear_filtered_'+name+'_'+identity+'/')
+    if 'bear_filtered_'+name+'_'+identity not in os.listdir('./'):
+        os.mkdir('bear_filtered_'+name+'_'+identity+'/')
     list_fam_filter=os.listdir(folder)
     for fam_clean in list_fam_filter:
         seq=[]
@@ -87,7 +89,8 @@ assert(distributeGaps('--abcdef-g-', 'bombasi') == '--bombas-i-')
 #seed_rfam
 def add_gap(folder, seed_rfam, name, identity):
     list_fam_filter2=os.listdir(folder)
-    os.mkdir('bear_alignment_'+name+'_'+identity+'/')
+    if 'bear_alignment_'+name+'_'+identity not in os.listdir('./'):
+        os.mkdir('bear_alignment_'+name+'_'+identity+'/')
     c=0
     for fam in list_fam_filter2:
         c+=1
@@ -159,7 +162,8 @@ def decode_from_file(bear, file_name):
 #folder = bear_alignment(bear_alignment/bear_alignment___62)
 def convert_new_bear(folder, name, identity):
     fam_bear=os.listdir(folder)
-    os.mkdir('bear_new_alignment_'+name+'_'+identity+'/')
+    if 'bear_new_alignment_'+name+'_'+identity not in os.listdir('./'):
+        os.mkdir('bear_new_alignment_'+name+'_'+identity+'/')
     for fam in fam_bear:
         o=open('bear_new_alignment_'+name+'_'+identity+'/'+fam, "w")
         f=open(folder+fam)
@@ -175,7 +179,8 @@ def convert_new_bear(folder, name, identity):
 #file_name = alph_mapping.tsv
 def convert_new_bear_file(folder, file_name, name, identity):
     fam_bear=os.listdir(folder)
-    os.mkdir('bear_new_alignment_'+name+'_'+identity+'/')
+    if 'bear_new_alignment_'+name+'_'+identity not in os.listdir('./'):
+        os.mkdir('bear_new_alignment_'+name+'_'+identity+'/')
     for fam in fam_bear:
         o=open('bear_new_alignment_'+name+'_'+identity+'/'+fam, "w")
         f=open(folder+fam)
@@ -190,7 +195,8 @@ def convert_new_bear_file(folder, file_name, name, identity):
 #Create Blocks from bear alignment
 #folder = bear_alignment/bear_new_alignment_$alph_$id/
 def make_blocks(folder, name, identity):
-    os.mkdir('blocks_new_bear_'+name+'_'+identity+'/')
+    if 'blocks_new_bear_'+name+'_'+identity not in os.listdir('./'):
+        os.mkdir('blocks_new_bear_'+name+'_'+identity+'/')
     families=os.listdir(folder)
     for fam in families:
         o=open('blocks_new_bear_'+name+'_'+identity+'/'+fam, "w")
