@@ -33,7 +33,7 @@ execute the notebook in script/compare_RIG_entropy.ipynb
 * Choose the MBR version (for example, `Zbear_62`)
 * Select the MBR file from the folder MBR (for example, `MBR/MBR_Zbear_62.tsv`)
 * Select the file with the alphabet mapping from the folder alphabets (for example, `alphabets/Zbear.tsv`)
-* Be sure that the file `gapped_fam_dict.pickle` is in the same folders of `make_PSSM.py` script. You can find it in the `script/` folder
+* Be sure the file `gapped_fam_dict.pickle` is in the same folders of `make_PSSM.py` script. You can find it in the `script/` folder
 * Go in the script folder
 * Run the script with a command like
 
@@ -87,9 +87,9 @@ python make_MBRs.py ../blocks_new_bear_Zbear_62/ 62 ../alphabets/Zbear.tsv
 ```
 
 
-### BlustClust and structural alignment from Rfam families alignment
+### BlastClust and structural alignment from Rfam families alignment
 
-If you prefer not to use our precompute structural alignment you can perform it as follow.
+If you prefer not to use our precomputed structural alignment you can perform it as follows.
 
 #### Dependencies: blastclust
 
