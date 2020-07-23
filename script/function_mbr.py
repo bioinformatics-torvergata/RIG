@@ -11,10 +11,10 @@ import subprocess
 #folder = seq_str_families/sequence/
 #identity = threshold expressed by % (ex. 50)
 #return a folder with selected sequences
-def run_blustClust(folder, identity, name, id_):
-    os.mkdir('not_similar_'+name+'_'+id_+'/')
+def run_blustClust(folder, identity, name):
+    os.mkdir('not_similar_'+name+'_'+identity+'/')
     os.chdir(folder)
-    os.system('for file in *; do blastclust -i $file -o ../not_similar_'+name+'_'+id_+'/$file -p F -S '+identity+' ; done')
+    os.system('for file in *; do blastclust -i $file -o ../not_similar_'+name+'_'+identity+'/$file -p F -S '+identity+' ; done')
     os.chdir('../')
     print('BlustClust DONE!')
     
@@ -364,9 +364,9 @@ def make_heatmap(S_ij, name, identity):
 
 def BlustClust_filter_alignment(folder, folder_bear, RFAM_seed_file, id_blustClust, filter_nSeq, file_alph):
     name=file_alph.split('.')[0]
-    run_blustClust(folder, id_blustClust, name, id_blustClust)
+    run_blustClust(folder, id_blustClust, name)
     filter_n_seq('not_similar_'+name+'_'+id_blustClust+'/', filter_nSeq, name, id_blustClust)
-    get_bear('filtro_n_seq_'+name+'_'+id_blustClust+'/', folder_bear, name, id_blustClust)
+    get_bear('filter_n_seq_'+name+'_'+id_blustClust+'/', folder_bear, name, id_blustClust)
     add_gap('bear_filtered_'+name+'_'+id_blustClust+'/', RFAM_seed_file, name, id_blustClust)
     convert_new_bear_file('bear_alignment___'+id_blustClust+'/', file_alph, name, id_blustClust)
 
