@@ -32,11 +32,19 @@ python3 scripts/plot_RIG_with_WUSS_notation.py
 ```
 The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 
+
 ### Computing entropy values (modified to be in the same range as RIG):
 Execute the [compare_RIG_entropy](scripts/compare_RIG_entropy.ipynb) notebook.
 
+
 ### Plot the RIG scores together with the R-scape power values:
-Execute the [RIGandRscapePower](scripts/RIGandRscapePower.ipynb) notebook.
+Execute
+
+```
+python3 scripts/plot_RIG_and_RscapePower.py 
+```
+The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
+
 
 ### Convert bear files to other alphabets
 To convert a file from `fastB` format (Mattei et al., 2015) to other structural alphabets use the [mapping.py](scripts/mapping.py) script
