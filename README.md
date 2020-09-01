@@ -70,21 +70,17 @@ The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) fold
 
 To build RNA Blocks from structural alignments you need to specify:
 
-* the `structural_alignment_folder` (for example, `bear_new_alignment_Zbear_62/`)
-* the `identity_score threshold` (for example, `62`)
-* the `alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
+* the `structural_alignment_folder` as in folder [bear_alignment](data/bear_alignment) 
+* the `identity_score threshold`
+* the `alphabet` as in folder [alphabets](data/alphabets) 
 
-Execute
-
+#### Example:
 ```
 python3 scripts/make_blocks.py bear_alignment/bear_new_alignment_Zbear_62/ 62 alphabets/Zbear.tsv
 ```
 
-#### Example:
-```
-cd scripts
-python3 make_blocks.py ../bear_alignment/bear_new_alignment_Zbear_62/ 62 ../alphabets/Zbear.tsv
-```
+The RNA Blocks will be built in the [RNA_Blocks](outputs/RNA_Blocks) folder.
+
 
 ### Build Matrix of Bear encoded RNA (MBR) from Rfam Blocks (previous step)
 

@@ -7,6 +7,9 @@ import matplotlib.pyplot as plt
 import re
 import subprocess
 
+dir_output_RNA_blocks = 'outputs/RNA_Blocks'
+
+
 #funtion to run BlustClust (filter on identity score)
 #folder = seq_str_families/sequence/
 #identity = threshold expressed by % (ex. 50)
@@ -193,12 +196,11 @@ def convert_new_bear_file(folder, file_name, name, identity):
 
 
 # Create Blocks from bear alignments
-# folder = bear_alignment/bear_new_alignment_$alph_$id/
 def make_blocks(folder, name, identity):
-    dir_output = 'blocks_new_bear_' + name + '_' + identity
+    dir_output = os.path.join(dir_output_RNA_blocks, 'blocks_new_bear_' + name + '_' + identity)
 
-    if dir_output not in os.listdir('./'):
-        os.mkdir(dir_output)
+    if not os.path.exists(dir_output):
+        os.makedirs(dir_output)
 
     families = os.listdir(folder)
 
@@ -216,6 +218,8 @@ def make_blocks(folder, name, identity):
         new = zip(*v)
         for seq in new:
             o.write(''.join(seq))
+
+    print('Created the {} folder.'.format(dir_output))
 
 
 #Compute expected frequencies
