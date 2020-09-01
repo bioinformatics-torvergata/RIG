@@ -8,7 +8,7 @@ import re
 import subprocess
 
 dir_output_RNA_blocks = 'outputs/RNA_Blocks'
-
+dir_output_MBR = 'outputs/MBR'
 
 #funtion to run BlustClust (filter on identity score)
 #folder = seq_str_families/sequence/
@@ -255,115 +255,124 @@ def expected_frequencies(folder,alph_bear):
             else:
                 fr_expected.ix[index, col] = 2*alph_bear[index]*alph_bear[col]
 
-    fr_expected.to_csv('expected_frequencies.tsv',sep="\t")
+    fr_expected.to_csv('expected_frequencies.tsv', sep="\t")
+    # print('Expected_frequencies DONE!')
     return fr_expected
-    print ('Expected_frequencies DONE!')
 
-#observed_substitution(f_ij)
-#folder=Blocks/blocks_new_bear_$alph_$id
-#v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 
+# observed_substitution(f_ij)
+# folder=Blocks/blocks_new_bear_$alph_$id
+# v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def observed_substitution(folder, v_bear, name, identity):
-    substitution=pd.DataFrame(1.0, columns=v_bear, index=v_bear)
-    list_=os.listdir(folder)
+    substitution = pd.DataFrame(1.0, columns=v_bear, index=v_bear)
+
+    list_ = sorted(os.listdir(folder))
     for fam in list_:
-        #print fam
-        f=open(folder+fam).readlines()
-        v1, v2 = np.triu_indices(len(f))
-        for k in range(0, len(v1)):
-            if v1[k]!=v2[k]:
-                for i, el in enumerate(f[v1[k]].strip()):
-                    substitution.ix[el, f[v2[k]].strip()[i]]+=1.0
-                    substitution.ix[f[v2[k]].strip()[i], el]+=1.0
-    substitution.to_csv('substitution_'+name+'_'+identity+'.tsv', sep="\t")
+        print(os.path.join(folder, fam))
+        with open(os.path.join(folder, fam)) as f:
+            f = [x.strip() for x in f.readlines()]
+            v1, v2 = np.triu_indices(len(f))
+
+            for k in range(0, len(v1)):
+                # print(fam, k)
+                if v1[k] != v2[k]:
+                    for i, el in enumerate(f[v1[k]]):
+                        tmp = f[v2[k]][i]
+                        substitution.loc[el, tmp] += 1.0
+                        substitution.loc[tmp, el] += 1.0
+
+    substitution.to_csv(os.path.join(dir_output_MBR, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
+
+    print('Substitution matrix DONE!')
     return substitution
-    print ('Substitution matrix DONE!')
 
 
-
- #substitution=dataframe returned by observed_substitution
- #v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
+# substitution=dataframe returned by observed_substitution
+# v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def make_q(substitution, v_bear, name, identity):
-    number_couple=0
+    number_couple = 0
     for j in range(0, len(v_bear)):
-        number_couple+=substitution.iloc[j,j:].sum()
-    #print number_couple
-    q_ij=substitution.divide(number_couple)
-    q_ij.to_csv('q_ij_'+name+'_'+identity+'.tsv', sep="\t")
+        number_couple += substitution.loc[j, j:].sum()
+
+    # print(number_couple)
+    q_ij = substitution.divide(number_couple)
+    q_ij.to_csv(os.path.join(dir_output_MBR, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
+
+    print('q_ij DONE!')
     return q_ij
-    print ('q_ij DONE!')
 
 
-#q_ij returned by make_q
-#v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
+# q_ij returned by make_q
+# v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def make_p(q_ij, v_bear):
-    p_i=dict.fromkeys(v_bear, 0)
+    p_i = dict.fromkeys(v_bear, 0)
     for char in v_bear:
-        same=q_ij[char][char]
-        others=(sum(q_ij[char])-same)/2
-        p_i[char]+=same+others
-    return p_i
-    print ('p_i dict DONE!')
+        same = q_ij[char][char]
+        others = (sum(q_ij[char]) - same) / 2
+        p_i[char] += same + others
 
-#p_i returned by make_p
-#v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
+    print('p_i dict DONE!')
+    return p_i
+
+
+# p_i returned by make_p
+# v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def make_e(p_i, v_bear, name, identity):
-    e_ij=pd.DataFrame(1.0, columns=v_bear, index=v_bear)
+    e_ij = pd.DataFrame(1.0, columns=v_bear, index=v_bear)
     for char in v_bear:
         for char2 in v_bear:
-            if char==char2:
-                e_ij.ix[char, char2]=p_i[char]*p_i[char2]
+            if char == char2:
+                e_ij.loc[char, char2] = p_i[char] * p_i[char2]
             else:
-                e_ij.ix[char, char2]=2*p_i[char]*p_i[char2]
+                e_ij.loc[char, char2] = 2 * p_i[char] * p_i[char2]
 
-    e_ij.to_csv('E_ij_'+name+'_'+identity+'.tsv', sep='\t')
+    e_ij.to_csv(os.path.join(dir_output_MBR, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
+
+    print('e_ij DONE!')
     return e_ij
 
-    print ('e_ij DONE!')
 
-
-#Make Matrix
-#freq_observed=dataframe of observed frequencies (q_ij)
-#fr_expected=dataframe of expected frequencies (e_ij)
+# freq_observed=dataframe of observed frequencies (q_ij)
+# fr_expected=dataframe of expected frequencies (e_ij)
 def make_matrix(freq_observed, fr_expect, name, identity):
-    #Probability maytrix
-    probability_matrix=freq_observed.divide(fr_expect)
-    probability_matrix.to_csv('probability_matrix_'+name+'_'+identity+'.tsv', sep="\t")
-    print ('Probability matrix DONE!')
+    # Probability matrix
+    probability_matrix = freq_observed.divide(fr_expect)
+    probability_matrix.to_csv(os.path.join(dir_output_MBR, 'probability_matrix_' + name + '_' + identity + '.tsv'), sep="\t")
+    print('Probability matrix DONE!')
 
-    #Score Matrix
-    mbr_new=probability_matrix.applymap(np.log2)
-    mbr_new.to_csv('MBR_'+name+'_'+identity+'.tsv', sep="\t")
-    print ('MBR DONE!')
+    # Score Matrix
+    mbr_new = probability_matrix.applymap(np.log2)
+    mbr_new.to_csv(os.path.join(dir_output_MBR, 'MBR_' + name + '_' + identity + '.tsv'), sep="\t")
+    print('MBR DONE!')
     return mbr_new
 
 
 def Expected_score(s_ij, p_i):
-    E=0
+    E = 0
     for i, char in enumerate(s_ij.columns.values):
         for i2, char2 in enumerate(s_ij.columns.values):
-            if i2>=i:
-                #print char, char2
-                E+=s_ij.ix[char, char2]*p_i[char]*p_i[char2]
-    #print E
+            if i2 >= i:
+                # print(char, char2)
+                E += s_ij.loc[char, char2] * p_i[char] * p_i[char2]
+    # print(E)
     return E
 
 
 def entropy(q_ij, s_ij):
-    H=0
-    length=len(q_ij.columns.value_counts())
+    H = 0
+    length = len(q_ij.columns.value_counts())
     for j in range(0, length):
-        H+=(q_ij.iloc[j,j:]*s_ij.iloc[j,j:]).sum()
-    #print H
+        H += (q_ij.loc[j, j:] * s_ij.loc[j, j:]).sum()
+
+    # print(H)
     return H
 
 
 def make_heatmap(S_ij, name, identity):
     sns.set(font_scale=2.0)
     plt.figure(figsize=(10,10))
-    ax=sns.heatmap(S_ij, xticklabels=1, yticklabels=1,cmap="YlGnBu")
-    plt.savefig('matrix_'+name+'_'+identity+'.pdf')
-    #plt.show()
+    sns.heatmap(S_ij, xticklabels=1, yticklabels=1, cmap="YlGnBu")
+    plt.savefig(os.path.join(dir_output_MBR, 'matrix_' + name + '_' + identity + '.pdf'))
     plt.close()
 
 
@@ -386,20 +395,25 @@ def BlustClust_filter_alignment(folder, folder_bear, RFAM_seed_file, id_blustClu
 
 
 def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
-    name=file_alph.split('.')[0]
-    f=open(file_alph).readlines()
-    o=open(file_info, "w")
-    #blocks_folder='blocks_new_bear_'+name+'_'+id_blustClust+'/'
+    if not os.path.exists(dir_output_MBR):
+        os.makedirs(dir_output_MBR)
 
-    v_char=[x.split()[1] for x in f]
-    sost=observed_substitution(blocks_folder, v_char, name, id_blustClust)
-    q_ij=make_q(sost, v_char, name, id_blustClust)
-    p_i=make_p(q_ij, v_char)
-    e_ij=make_e(p_i, v_char, name, id_blustClust)
-    S_ij=make_matrix(q_ij, e_ij, name, id_blustClust)
-    E=Expected_score(S_ij, p_i)
-    H=entropy(q_ij, S_ij)
-    o.write('Expected_score:\t'+str(E)+'\nEntropy:\t'+str(H))
-    o.close()
+    name = os.path.basename(file_alph).split('.')[0]
+    with open(file_alph) as f:
+        v_char = [x.split()[1] for x in f.readlines()]
+
+    sost = observed_substitution(blocks_folder, v_char, name, id_blustClust)
+    q_ij = make_q(sost, v_char, name, id_blustClust)  # freq_observed
+
+    p_i = make_p(q_ij, v_char)
+    e_ij = make_e(p_i, v_char, name, id_blustClust)   # fr_expect
+
+    S_ij = make_matrix(q_ij, e_ij, name, id_blustClust)
+
+    E = Expected_score(S_ij, p_i)
+    H = entropy(q_ij, S_ij)
+
+    with open(os.path.join(dir_output_MBR, file_info), "w") as fw:
+        fw.write('Expected_score:\t' + str(E) + '\nEntropy:\t' + str(H))
+
     make_heatmap(S_ij, name, id_blustClust)
-

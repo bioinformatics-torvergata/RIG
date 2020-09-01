@@ -76,53 +76,47 @@ To build RNA Blocks from structural alignments you need to specify:
 
 #### Example:
 ```
-python3 scripts/make_blocks.py bear_alignment/bear_new_alignment_Zbear_62/ 62 alphabets/Zbear.tsv
+python3 scripts/make_blocks.py bear_alignment/bear_new_alignment_Zbear_90/ 90 alphabets/Zbear.tsv
 ```
 
 The RNA Blocks will be built in the [RNA_Blocks](outputs/RNA_Blocks) folder.
 
 
-### Build Matrix of Bear encoded RNA (MBR) from Rfam Blocks (previous step)
+### Build Matrix of Bear encoded RNA (MBR) from Rfam Blocks
 
-* Specify the `$blocks_folder` as the output of the previous step `blocks_new_bear_*bear_*/`
-* Choose the `$identity_score threshold` (for example, `62`)
-* Specify the `$alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
-* Specify the `$info_file` as output file that will collect all the information of the built blocks (for example, `info_Zbear_62.txt`)
+To build a MBR you need to specify:
 
-* Go in the scripts folder
-* Run the script with a command like
-
-```
-python3 make_MBR.py $blocks_folder $identity_score $alphabet $info_file
-```
+* the `RNA_blocks_folder` (built in the previous **RNA Blocks from Rfam families alignment** step)
+* the `identity_score threshold`
+* the `alphabet` as in folder [alphabets](data/alphabets) 
+* the `info_file` as output file that will collect all the information of the built blocks
 
 #### Example:
 ```
-cd scripts
-python make_MBRs.py ../blocks_new_bear_Zbear_62/ 62 ../alphabets/Zbear.tsv
+python3 scripts/make_MBR.py outputs/RNA_Blokcs/blocks_new_bear_Zbear_90/ 90 data/alphabets/Zbear.tsv Zbear_90
 ```
 
+The MBR will be built in the [MBR](outputs/MBR) folder.
 
 
 ### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
 
-* Choose the MBR version (for example, `Zbear_62`)
-* Select the MBR file from the folder MBR (for example, `MBR/MBR_Zbear_62.tsv`)
-* Select the file with the alphabet mapping from the folder alphabets (for example, `alphabets/Zbear.tsv`)
-* Be sure the file `gapped_fam_dict.pickle` is in the same folders of `make_PSSM.py` script. You can find it in the `script/` folder
-* Go in the scripts folder
-* Run the script with a command like
+To build a sPSSM you need to specify:
 
-`python3 make_PSSM.py $mbrVersion $MBR_matrix.tsv $ALPHAMAP.tsv`
+* the MBR version (for example, `Zbear_62`)
+* the MBR file from the [MBR](outputs/MBR) folder
+* the `alphabet` as in folder [alphabets](data/alphabets) 
 
-which will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVersion.pickle` files.
+Moreover, be sure the file [script](scripts/gapped_fam_dict.pickle) is in the same folders of `make_PSSM.py` script.
 
 #### Example:
 ```
-cd scripts
-python3 make_PSSM.py ../Zbear_62 ../MBR/MBR_Zbear_62.tsv ../alphabets/Zbear.tsv
+python3 make_PSSM.py Zbear_62 MBR/MBR_Zbear_62.tsv data/alphabets/Zbear.tsv
 ls *Zbear_62.pickle
 ```
+
+The command will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVersion.pickle` files.
+
 
 ### Convert bear files to other alphabets
 To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 
@@ -138,7 +132,9 @@ If you prefer not to use our precomputed structural alignment you can perform it
 
 #### Dependencies: blastclust
 
-**Note**: the following instructions are for the **Linux** operating system. Please change the ftp link according to your operating system to download the correct version of blastclust (see ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/).
+**Note**: the following instructions are for the **Linux** operating system. Please change the ftp link according to 
+your operating system to download the correct version of blastclust 
+(see ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/).
 
 ```
 cd ~
@@ -146,17 +142,18 @@ wget -c ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/
 tar -xvf blast-2.2.26-ia32-linux.tar.gz
 export PATH="$PATH:~/blast-2.2.26/bin"
 ```
-Add the `~/blast-2.2.26/bin` folder to your environment, or execute `export PATH="$PATH:~/blast-2.2.26/bin"` each time you open a new shell.
+Add the `~/blast-2.2.26/bin` folder to your environment, or execute `export PATH="$PATH:~/blast-2.2.26/bin"` each time 
+you open a new shell.
 
+Then you need to specify:
 
-Then you have to:
+* the `$sequence_folder` with sequences as in folder `seq_str_families/sequence/` 
+* the `$structure_folder` with sequences in BEAR format as in folder `seq_str_families/bear/`
+* the Rfam seed sequences (`Rfam_no_double.seed` in the main folder)
+* the `identity_score threshold`
+* the `$seq_threshold` as the minimum number of RNAs in a Rfam family (for example, `5`)
+* the `alphabet` as in folder [alphabets](data/alphabets) 
 
-* Specify the `$sequence_folder` with sequences as in folder `seq_str_families/sequence/` 
-* Specify the `$structure_folder` with sequences in BEAR format as in folder `seq_str_families/bear/`
-* Specify the Rfam seed sequences (`Rfam_no_double.seed` in the main folder)
-* Choose the `$identity_score threshold` (for example, `62`)
-* Choose the `$seq_threshold` as the minimum number of RNAs in a Rfam family (for example, `5`)
-* Specify the `$alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
 * Go in the scripts folder
 * Run the script with a command like
 
