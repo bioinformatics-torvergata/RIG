@@ -28,22 +28,22 @@ cd RIG
 Execute
 
 ```
-python3 script/plots_RIG_with_WUSS_notation.py 
+python3 scripts/plot_RIG_with_WUSS_notation.py 
 ```
-The plots will be generated in the [RIG_WUSS](RIG_WUSS) folder.
+The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 
 ### Computing entropy values (modified to be in the same range as RIG):
-Execute the [compare_RIG_entropy](script/compare_RIG_entropy.ipynb) notebook.
+Execute the [compare_RIG_entropy](scripts/compare_RIG_entropy.ipynb) notebook.
 
 ### Plot the RIG scores together with the R-scape power values:
-Execute the [RIGandRscapePower](script/RIGandRscapePower.ipynb) notebook.
+Execute the [RIGandRscapePower](scripts/RIGandRscapePower.ipynb) notebook.
 
 ### Convert bear files to other alphabets
-To convert a file from `fastB` format (Mattei et al., 2015) to other structural alphabets use the [mapping.py](script/mapping.py) script
+To convert a file from `fastB` format (Mattei et al., 2015) to other structural alphabets use the [mapping.py](scripts/mapping.py) script
 
 ### Example
 ```
-python script/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
+python scripts/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
 ```
 
 
@@ -53,7 +53,7 @@ python script/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
 * Select the MBR file from the folder MBR (for example, `MBR/MBR_Zbear_62.tsv`)
 * Select the file with the alphabet mapping from the folder alphabets (for example, `alphabets/Zbear.tsv`)
 * Be sure the file `gapped_fam_dict.pickle` is in the same folders of `make_PSSM.py` script. You can find it in the `script/` folder
-* Go in the script folder
+* Go in the scripts folder
 * Run the script with a command like
 
 `python3 make_PSSM.py $mbrVersion $MBR_matrix.tsv $ALPHAMAP.tsv`
@@ -62,7 +62,7 @@ which will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVers
 
 #### Example:
 ```
-cd script
+cd scripts
 python3 make_PSSM.py ../Zbear_62 ../MBR/MBR_Zbear_62.tsv ../alphabets/Zbear.tsv
 ls *Zbear_62.pickle
 ```
@@ -73,7 +73,7 @@ To build RNA Blocks from structural alignment you need to:
 * Specify the `$structural_alignemnt_folder` with as bear_new_alignment_Zbear_62/
 * Specify the `$identity_score threshold` (for example, `62`)
 * Specify the `$alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
-* Go in the script folder
+* Go in the scripts folder
 * Run the script with a command like
 
 ```
@@ -81,7 +81,7 @@ python make_blocks.py $structural_alignemnt_folder $identity_score $alphabet
 ```
 #### Example:
 ```
-cd script
+cd scripts
 python make_blocks.py ../bear_new_alignment_Zbear_62/ 62 ../alphabets/Zbear.tsv
 ```
 
@@ -92,7 +92,7 @@ python make_blocks.py ../bear_new_alignment_Zbear_62/ 62 ../alphabets/Zbear.tsv
 * Specify the `$alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
 * Specify the `$info_file` as output file that will collect all the information of the built blocks (for example, `info_Zbear_62.txt`)
 
-* Go in the script folder
+* Go in the scripts folder
 * Run the script with a command like
 
 ```
@@ -101,7 +101,7 @@ python3 make_MBR.py $blocks_folder $identity_score $alphabet $info_file
 
 #### Example:
 ```
-cd script
+cd scripts
 python make_MBRs.py ../blocks_new_bear_Zbear_62/ 62 ../alphabets/Zbear.tsv
 ```
 
@@ -131,7 +131,7 @@ Then you have to:
 * Choose the `$identity_score threshold` (for example, `62`)
 * Choose the `$seq_threshold` as the minimum number of RNAs in a Rfam family (for example, `5`)
 * Specify the `$alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
-* Go in the script folder
+* Go in the scripts folder
 * Run the script with a command like
 
 ```
@@ -140,7 +140,7 @@ python3 BlustClust_filter_alignment.py $sequence_folder $structure_folder Rfam_n
 
 #### Example:
 ```
-cd script
+cd scripts
 python BlustClust_filter_alignment.py ../seq_str_families/sequence/ ../seq_str_families/bear/ ../Rfam_no_double.seed 62 5 ../alphabets/Zbear.tsv
 ```
 
