@@ -27,7 +27,7 @@ cd RIG
 
 ### Plots generation
  
-#### RIG scores with WUSS notation from secondary structure consensus
+#### - RIG scores with WUSS notation from secondary structure consensus
 Execute
 
 ```
@@ -37,7 +37,7 @@ python3 scripts/plot_RIG_with_WUSS_notation.py
 The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 
 
-### RIG scores together with (rescaled) sequence Entropy
+#### - RIG scores together with (rescaled) sequence Entropy
 
 Execute
 
@@ -45,7 +45,7 @@ Execute
 python3 scripts/XXXXX.py 
 ```
 
-to compute the entropy values.
+to compute the (rescaled) entropy values.
 
 Execute
 
@@ -55,7 +55,8 @@ python3 scripts/XXXXX.py
 
 The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
 
-### RIG scores together with R-scape power values
+
+#### - RIG scores together with R-scape power values
 Execute
 
 ```
@@ -65,51 +66,24 @@ python3 scripts/plot_RIG_and_RscapePower.py
 The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
 
 
-### Convert bear files to other alphabets
-To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) to 
-other structural alphabets, execute
-
-```
-python3 scripts/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
-```
-
-
-### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
-
-* Choose the MBR version (for example, `Zbear_62`)
-* Select the MBR file from the folder MBR (for example, `MBR/MBR_Zbear_62.tsv`)
-* Select the file with the alphabet mapping from the folder alphabets (for example, `alphabets/Zbear.tsv`)
-* Be sure the file `gapped_fam_dict.pickle` is in the same folders of `make_PSSM.py` script. You can find it in the `script/` folder
-* Go in the scripts folder
-* Run the script with a command like
-
-`python3 make_PSSM.py $mbrVersion $MBR_matrix.tsv $ALPHAMAP.tsv`
-
-which will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVersion.pickle` files.
-
-#### Example:
-```
-cd scripts
-python3 make_PSSM.py ../Zbear_62 ../MBR/MBR_Zbear_62.tsv ../alphabets/Zbear.tsv
-ls *Zbear_62.pickle
-```
-
 ### Build RNA Blocks from Rfam families alignment
 
-To build RNA Blocks from structural alignment you need to:
-* Specify the `$structural_alignemnt_folder` with as bear_new_alignment_Zbear_62/
-* Specify the `$identity_score threshold` (for example, `62`)
-* Specify the `$alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
-* Go in the scripts folder
-* Run the script with a command like
+To build RNA Blocks from structural alignments you need to specify:
+
+* the `structural_alignemnt_folder` (for example, `bear_new_alignment_Zbear_62/`)
+* the `identity_score threshold` (for example, `62`)
+* the `alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
+
+Execute
 
 ```
-python make_blocks.py $structural_alignemnt_folder $identity_score $alphabet
+python3 scripts/make_blocks.py bear_alignment/bear_new_alignment_Zbear_62/ 62 alphabets/Zbear.tsv
 ```
+
 #### Example:
 ```
 cd scripts
-python make_blocks.py ../bear_new_alignment_Zbear_62/ 62 ../alphabets/Zbear.tsv
+python3 make_blocks.py ../bear_alignment/bear_new_alignment_Zbear_62/ 62 ../alphabets/Zbear.tsv
 ```
 
 ### Build Matrix of Bear encoded RNA (MBR) from Rfam Blocks (previous step)
@@ -132,6 +106,35 @@ cd scripts
 python make_MBRs.py ../blocks_new_bear_Zbear_62/ 62 ../alphabets/Zbear.tsv
 ```
 
+
+
+### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
+
+* Choose the MBR version (for example, `Zbear_62`)
+* Select the MBR file from the folder MBR (for example, `MBR/MBR_Zbear_62.tsv`)
+* Select the file with the alphabet mapping from the folder alphabets (for example, `alphabets/Zbear.tsv`)
+* Be sure the file `gapped_fam_dict.pickle` is in the same folders of `make_PSSM.py` script. You can find it in the `script/` folder
+* Go in the scripts folder
+* Run the script with a command like
+
+`python3 make_PSSM.py $mbrVersion $MBR_matrix.tsv $ALPHAMAP.tsv`
+
+which will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVersion.pickle` files.
+
+#### Example:
+```
+cd scripts
+python3 make_PSSM.py ../Zbear_62 ../MBR/MBR_Zbear_62.tsv ../alphabets/Zbear.tsv
+ls *Zbear_62.pickle
+```
+
+### Convert bear files to other alphabets
+To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 
+to other structural alphabets, execute
+
+```
+python3 scripts/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
+```
 
 ### BlastClust and structural alignment from Rfam families alignment
 
