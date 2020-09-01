@@ -10,7 +10,7 @@ sns.set_context(rc={"font.size": 0, "axes.titlesize": 34, "axes.labelsize": 25, 
 
 dir_output_rscape = 'data/Rfam_stockholm_rscapes'
 
-RIG_sheet_path = 'data/RIGS_sheet.xlsx'
+RIG_sheet_path = 'data/RIG/withgaps/All_RIGs.filled_columns.xlsx'
 RIG_and_RscapePower_tsv_path = 'scripts/RIG_RscapePower/RIG_and_Rscape.tsv'
 
 dir_output_RIG_RscapePower_plots = 'plots/RIG_RscapePower/'
