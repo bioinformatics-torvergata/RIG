@@ -24,34 +24,53 @@ cd RIG
 
 ## Usage
 
-### Plot RIG scores along with WUSS notation
+
+### Plots generation
+ 
+#### RIG scores with WUSS notation from secondary structure consensus
 Execute
 
 ```
 python3 scripts/plot_RIG_with_WUSS_notation.py 
 ```
+
 The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 
 
-### Computing entropy values (modified to be in the same range as RIG):
-Execute the [compare_RIG_entropy](scripts/compare_RIG_entropy.ipynb) notebook.
+### RIG scores together with (rescaled) sequence Entropy
 
+Execute
 
-### Plot the RIG scores together with the R-scape power values:
+```
+python3 scripts/XXXXX.py 
+```
+
+to compute the entropy values.
+
+Execute
+
+```
+python3 scripts/XXXXX.py 
+```
+
+The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
+
+### RIG scores together with R-scape power values
 Execute
 
 ```
 python3 scripts/plot_RIG_and_RscapePower.py 
 ```
+
 The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
 
 
 ### Convert bear files to other alphabets
-To convert a file from `fastB` format (Mattei et al., 2015) to other structural alphabets use the [mapping.py](scripts/mapping.py) script
+To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) to 
+other structural alphabets, execute
 
-### Example
 ```
-python scripts/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
+python3 scripts/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
 ```
 
 
