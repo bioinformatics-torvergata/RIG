@@ -1,21 +1,28 @@
 # Exploring RNA secondary structure representations
 
 ## Introduction
-Structural characterization of RNAs is a dynamic field, exposing many modelling possibilities. Every model is usually characterized by an encoding in which to include structural information of a molecule ranging from string representations to graphs. Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose a new scoring metric, the **Relative Information Gain**, available for any position in an alignment, showing how different levels of detail encoded in the RNA representation contribute differently to expose structural information.
+Structural characterization of RNAs is a dynamic field, offering many modelling possibilities. Every model is usually 
+characterized by an encoding that depicts structural information of the molecule through string representations or graphs. 
+Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose a new scoring metric, 
+the **Relative Information Gain** (RIG). The RIG score is available for any position in an alignment, showing how different 
+levels of detail encoded in the RNA representation can contribute differently to convey structural information.
 
-Computed RIG values presented in this work can be found in the folder RIG/RIG_nogaps/$MbrVersion_RIGs.tsv
+Computed RIG values presented in this work can be found in the [RIG_nogaps](RIG_nogaps) folder.
 
-## Preparation
+## Installation
 
+### 1. Prepare your system
 
-### Clone the repository
+TODO: add instructions to satisfy all scripts' dependencies
+
+### 2. Clone and enter the repository
+
 ```
 git clone https://github.com/citterich-lab/RIG.git
 cd RIG
 ```
 
-## How to use
-
+## Usage
 
 ### Plot RIG scores along with WUSS notation
 ```
