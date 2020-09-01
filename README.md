@@ -7,7 +7,7 @@ Introducing a re-interpretation of the Shannon Information applied on RNA alignm
 the **Relative Information Gain** (RIG). The RIG score is available for any position in an alignment, showing how different 
 levels of detail encoded in the RNA representation can contribute differently to convey structural information.
 
-Computed RIG values presented in this work can be found in the [RIG_nogaps](RIG_nogaps) folder.
+Computed RIG values presented in this work can be found in the [RIG_nogaps](data/RIG_nogaps) folder.
 
 ## Installation
 

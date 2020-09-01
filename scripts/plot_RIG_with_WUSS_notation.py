@@ -16,8 +16,8 @@ sns.set(context='paper', style='white', palette='deep', font='serif', font_scale
 
 
 # Paths and directories
-WUSS_path = "SS_cons/SS_cons_WUSS.tsv"
-RIG_dir = "RIG_nogaps/"  # gaps removed from the consensus
+WUSS_path = "data/SS_cons/SS_cons_WUSS.tsv"
+RIG_dir = "data/RIG_nogaps/"  # gaps removed from the consensus
 
 bear90_path = os.path.join(RIG_dir, "bear_90_RIGs.tsv")
 bear50_path = os.path.join(RIG_dir, "bear_50_RIGs.tsv")

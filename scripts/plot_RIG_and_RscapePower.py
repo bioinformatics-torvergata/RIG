@@ -8,9 +8,9 @@ import seaborn as sns
 sns.set()
 sns.set_context(rc={"font.size": 0, "axes.titlesize": 34, "axes.labelsize": 25, "legend.fontsize": 20})
 
-dir_output_rscape = 'scripts/RIG_RscapePower/RFAMstockhoms_rscapes'
+dir_output_rscape = 'data/Rfam_stockholm_rscapes'
 
-RIG_sheet_path = 'scripts/RIG_RscapePower/RIGS_sheet.xlsx'
+RIG_sheet_path = 'data/RIGS_sheet.xlsx'
 RIG_and_RscapePower_tsv_path = 'scripts/RIG_RscapePower/RIG_and_Rscape.tsv'
 
 dir_output_RIG_RscapePower_plots = 'plots/RIG_RscapePower/'
