@@ -25,23 +25,21 @@ cd RIG
 ## Usage
 
 ### Plot RIG scores along with WUSS notation
+Execute
+
 ```
-execute the notebook in script/compare_RIG_WUSS.ipynb 
-the plots will be found in the RIG_WUSS folder
+python3 script/plots_RIG_with_WUSS_notation.py 
 ```
+The plots will be generated in the [RIG_WUSS](RIG_WUSS) folder.
 
 ### Computing entropy values (modified to be in the same range as RIG):
-```
-execute the notebook in script/compare_RIG_entropy.ipynb
-```
+Execute the [compare_RIG_entropy](script/compare_RIG_entropy.ipynb) notebook.
 
 ### Plot the RIG scores together with the R-scape power values:
-```
-execute the notebook in script/RIGandRscapePower.ipynb
-```
+Execute the [RIGandRscapePower](script/RIGandRscapePower.ipynb) notebook.
 
 ### Convert bear files to other alphabets
-To convert a file from fastB format (Mattei et al.2015) to other structural alphabets use `mapping.py` script
+To convert a file from `fastB` format (Mattei et al., 2015) to other structural alphabets use the [mapping.py](script/mapping.py) script
 
 ### Example
 ```
