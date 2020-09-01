@@ -18,7 +18,7 @@ def run_blustClust(folder, identity, name):
     os.system('for file in *; do blastclust -i $file -o ../not_similar_'+name+'_'+identity+'/$file -p F -S '+identity+' ; done')
     os.chdir('../')
     print('BlustClust DONE!')
-    
+
 
 #function to filter for number of sequences in an RNA family after BlustClust
 #folder = folder generated from run_blustClust
@@ -34,11 +34,11 @@ def filter_n_seq(folder, n_seq_family, name, identity):
         if int(output.strip().split()[0])>=int(n_seq_family):
             os.system('cp '+folder+'/'+fam+' filter_n_seq_'+name+'_'+identity+'/'+fam)
     print ('Filter Nseq DONE!')
-    
-    
-  
+
+
+
 #function to select the bear sequences after BlustCLust filtering
-def get_bear(folder, folder_bear, name, identity):    
+def get_bear(folder, folder_bear, name, identity):
     #folder = folder returned by filter_n_seq
     #folder_bear = folder seq_str_families/bear
     if 'bear_filtered_'+name+'_'+identity not in os.listdir('./'):
@@ -66,19 +66,19 @@ def get_bear(folder, folder_bear, name, identity):
             else:
                 line=f2.readline()
         o.close()
-        
+
     print ('Bear sequence research DONE!')
-    
+
 
 ###MARCO####
 def distributeGaps(gappedReference, ungappedString):
-    assert len(gappedReference.replace('-','')) == len(ungappedString), 'ungapped strings should be equal' 
+    assert len(gappedReference.replace('-','')) == len(ungappedString), 'ungapped strings should be equal'
     result = list(ungappedString)
     gaplist = [ m.start() for m in re.finditer('-', gappedReference)]
 
-    for gap in gaplist:    
+    for gap in gaplist:
         result.insert(gap, '-')
-    result = "".join(result)    
+    result = "".join(result)
     return result
 
 assert(distributeGaps('--abcdef-g-', 'bombasi') == '--bombas-i-')
@@ -119,10 +119,10 @@ def add_gap(folder, seed_rfam, name, identity):
         o.close()
 
         #print fam+"\t"+str(c)+" famiglie su "+str(len(lista_fam_filter2))
-    
+
     print ('Alignment with gap DONE!')
     print ('Bear sequences with gap in folder bear_alignment/')
-    
+
 
 
 
@@ -136,7 +136,7 @@ def decode(bear):
           'KLMN':'b', 'OPQR':'B', 'STUVW':'|',
           'YZ~':'y', '?_|':'Y', '/\\@':'@',
           '{}[]':'[', ':':':' , '-':'-'}
-    
+
     result=""
     for ch in bear:
         for key in alph_bear:
@@ -190,29 +190,33 @@ def convert_new_bear_file(folder, file_name, name, identity):
             line=f.readline()
         o.close()
     print ('Decoding BEAR from File DONE!')
-    
 
-#Create Blocks from bear alignment
-#folder = bear_alignment/bear_new_alignment_$alph_$id/
+
+# Create Blocks from bear alignments
+# folder = bear_alignment/bear_new_alignment_$alph_$id/
 def make_blocks(folder, name, identity):
-    if 'blocks_new_bear_'+name+'_'+identity not in os.listdir('./'):
-        os.mkdir('blocks_new_bear_'+name+'_'+identity+'/')
-    families=os.listdir(folder)
+    dir_output = 'blocks_new_bear_' + name + '_' + identity
+
+    if dir_output not in os.listdir('./'):
+        os.mkdir(dir_output)
+
+    families = os.listdir(folder)
+
     for fam in families:
-        o=open('blocks_new_bear_'+name+'_'+identity+'/'+fam, "w")
-        f=open(folder+fam).readlines()
-        zipped=zip(*f)
-        v=[]
+        o = open(dir_output + '/' + fam, "w")
+        f = open(folder + fam).readlines()
+        zipped = zip(*f)
+        v = []
         for col in zipped:
             if '-' not in col:
-                c=Counter(col)
+                c = Counter(col)
                 for key in c:
-                    if float(c[key])/float(len(col))>0.5:
+                    if float(c[key])/float(len(col)) > 0.5:
                         v.append(col)
-        new=zip(*v)
+        new = zip(*v)
         for seq in new:
             o.write(''.join(seq))
-            
+
 
 #Compute expected frequencies
 #folder=Blocks/blocks_new_bear_$alph_$id
@@ -227,10 +231,10 @@ def expected_frequencies(folder,alph_bear):
             for key in c:
                 alph_bear[key].append(c[key])
             line=f.readline()
-    
+
     for key in alph_bear:
         alph_bear[key]=sum(alph_bear[key])
-    
+
     #nnew dict with single character frequency
     c=0
     for key in alph_bear:
@@ -239,18 +243,18 @@ def expected_frequencies(folder,alph_bear):
         alph_bear[key]=float(alph_bear[key])/float(c)
     v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
     fr_expected=pd.DataFrame(columns=v_bear, index=v_bear)
-    
+
     for index, row in fr_expected.iterrows():
         for col in v_bear:
             if index==colonna:
                 fr_expected.ix[index, col] = alph_bear[index]*2
             else:
                 fr_expected.ix[index, col] = 2*alph_bear[index]*alph_bear[col]
-                
+
     fr_expected.to_csv('expected_frequencies.tsv',sep="\t")
     return fr_expected
     print ('Expected_frequencies DONE!')
-    
+
 #observed_substitution(f_ij)
 #folder=Blocks/blocks_new_bear_$alph_$id
 #v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
@@ -267,12 +271,12 @@ def observed_substitution(folder, v_bear, name, identity):
                 for i, el in enumerate(f[v1[k]].strip()):
                     substitution.ix[el, f[v2[k]].strip()[i]]+=1.0
                     substitution.ix[f[v2[k]].strip()[i], el]+=1.0
-    substitution.to_csv('substitution_'+name+'_'+identity+'.tsv', sep="\t") 
+    substitution.to_csv('substitution_'+name+'_'+identity+'.tsv', sep="\t")
     return substitution
     print ('Substitution matrix DONE!')
 
- 
- 
+
+
  #substitution=dataframe returned by observed_substitution
  #v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def make_q(substitution, v_bear, name, identity):
@@ -284,7 +288,7 @@ def make_q(substitution, v_bear, name, identity):
     q_ij.to_csv('q_ij_'+name+'_'+identity+'.tsv', sep="\t")
     return q_ij
     print ('q_ij DONE!')
-    
+
 
 #q_ij returned by make_q
 #v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
@@ -307,13 +311,13 @@ def make_e(p_i, v_bear, name, identity):
                 e_ij.ix[char, char2]=p_i[char]*p_i[char2]
             else:
                 e_ij.ix[char, char2]=2*p_i[char]*p_i[char2]
-    
+
     e_ij.to_csv('E_ij_'+name+'_'+identity+'.tsv', sep='\t')
     return e_ij
-    
+
     print ('e_ij DONE!')
-    
-    
+
+
 #Make Matrix
 #freq_observed=dataframe of observed frequencies (q_ij)
 #fr_expected=dataframe of expected frequencies (e_ij)
@@ -322,14 +326,14 @@ def make_matrix(freq_observed, fr_expect, name, identity):
     probability_matrix=freq_observed.divide(fr_expect)
     probability_matrix.to_csv('probability_matrix_'+name+'_'+identity+'.tsv', sep="\t")
     print ('Probability matrix DONE!')
-    
+
     #Score Matrix
     mbr_new=probability_matrix.applymap(np.log2)
     mbr_new.to_csv('MBR_'+name+'_'+identity+'.tsv', sep="\t")
     print ('MBR DONE!')
     return mbr_new
-    
-    
+
+
 def Expected_score(s_ij, p_i):
     E=0
     for i, char in enumerate(s_ij.columns.values):
@@ -348,8 +352,8 @@ def entropy(q_ij, s_ij):
         H+=(q_ij.iloc[j,j:]*s_ij.iloc[j,j:]).sum()
     #print H
     return H
-    
-    
+
+
 def make_heatmap(S_ij, name, identity):
     sns.set(font_scale=2.0)
     plt.figure(figsize=(10,10))
@@ -357,7 +361,7 @@ def make_heatmap(S_ij, name, identity):
     plt.savefig('matrix_'+name+'_'+identity+'.pdf')
     #plt.show()
     plt.close()
-    
+
 
 #Function that start from sequence/structure of all RFAM families and create a new MBR from alphabet file
 #folder = folder with RFAM RNA sequences
@@ -382,10 +386,10 @@ def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
     f=open(file_alph).readlines()
     o=open(file_info, "w")
     #blocks_folder='blocks_new_bear_'+name+'_'+id_blustClust+'/'
-    
+
     v_char=[x.split()[1] for x in f]
     sost=observed_substitution(blocks_folder, v_char, name, id_blustClust)
-    q_ij=make_q(sost, v_char, name, id_blustClust) 
+    q_ij=make_q(sost, v_char, name, id_blustClust)
     p_i=make_p(q_ij, v_char)
     e_ij=make_e(p_i, v_char, name, id_blustClust)
     S_ij=make_matrix(q_ij, e_ij, name, id_blustClust)
@@ -394,5 +398,4 @@ def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
     o.write('Expected_score:\t'+str(E)+'\nEntropy:\t'+str(H))
     o.close()
     make_heatmap(S_ij, name, id_blustClust)
-    
-    
+

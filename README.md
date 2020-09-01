@@ -7,7 +7,7 @@ Introducing a re-interpretation of the Shannon Information applied on RNA alignm
 the **Relative Information Gain** (RIG). The RIG score is available for any position in an alignment, showing how different 
 levels of detail encoded in the RNA representation can contribute differently to convey structural information.
 
-Computed RIG values presented in this work can be found in the [RIG](data/RIG) folder.
+Computed RIG scores presented in this work can be found in the [RIG](data/RIG) folder.
 
 ## Installation
 
@@ -70,7 +70,7 @@ The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) fold
 
 To build RNA Blocks from structural alignments you need to specify:
 
-* the `structural_alignemnt_folder` (for example, `bear_new_alignment_Zbear_62/`)
+* the `structural_alignment_folder` (for example, `bear_new_alignment_Zbear_62/`)
 * the `identity_score threshold` (for example, `62`)
 * the `alphabet` as in folder `alphabets/` (for example, `alphabets/Zbear.tsv`)
 
