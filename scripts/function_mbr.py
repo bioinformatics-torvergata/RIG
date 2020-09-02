@@ -8,7 +8,7 @@ import re
 import subprocess
 
 dir_output_RNA_blocks = 'outputs/RNA_Blocks'
-dir_output_MBR = 'outputs/MBR'
+dir_output_MBRs = 'outputs/MBRs'
 
 #funtion to run BlustClust (filter on identity score)
 #folder = seq_str_families/sequence/
@@ -280,7 +280,7 @@ def observed_substitution(folder, v_bear, name, identity):
                         substitution.at[el, tmp] += 1.0
 
     substitution = substitution + substitution.T - 1.0
-    substitution.to_csv(os.path.join(dir_output_MBR, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
+    substitution.to_csv(os.path.join(dir_output_MBRs, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
 
     print('Substitution matrix DONE!')
     return substitution
@@ -295,7 +295,7 @@ def make_q(substitution, v_bear, name, identity):
     # print(number_couple)
 
     q_ij = substitution.divide(number_couple)
-    q_ij.to_csv(os.path.join(dir_output_MBR, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
+    q_ij.to_csv(os.path.join(dir_output_MBRs, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
 
     print('q_ij DONE!')
     return q_ij
@@ -318,6 +318,7 @@ def make_p(q_ij, v_bear):
 # v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def make_e(p_i, v_bear, name, identity):
     e_ij = pd.DataFrame(1.0, columns=v_bear, index=v_bear)
+
     for char in v_bear:
         for char2 in v_bear:
             if char == char2:
@@ -325,7 +326,7 @@ def make_e(p_i, v_bear, name, identity):
             else:
                 e_ij.loc[char, char2] = 2 * p_i[char] * p_i[char2]
 
-    e_ij.to_csv(os.path.join(dir_output_MBR, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
+    e_ij.to_csv(os.path.join(dir_output_MBRs, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
 
     print('e_ij DONE!')
     return e_ij
@@ -334,15 +335,16 @@ def make_e(p_i, v_bear, name, identity):
 # freq_observed=dataframe of observed frequencies (q_ij)
 # fr_expected=dataframe of expected frequencies (e_ij)
 def make_matrix(freq_observed, fr_expect, name, identity):
-    # Probability matrix
-    probability_matrix = freq_observed.divide(fr_expect)
-    probability_matrix.to_csv(os.path.join(dir_output_MBR, 'probability_matrix_' + name + '_' + identity + '.tsv'), sep="\t")
-    print('Probability matrix DONE!')
+    # Odds ratio matrix
+    odds_ratio_matrix = freq_observed.divide(fr_expect)
+
+    odds_ratio_matrix.to_csv(os.path.join(dir_output_MBRs, 'odds_ratio_matrix_' + name + '_' + identity + '.tsv'), sep="\t")
+    print('Odds ratio matrix DONE!')
 
     # Score Matrix
-    mbr_new = probability_matrix.applymap(np.log2)
-    mbr_new.to_csv(os.path.join(dir_output_MBR, 'MBR_' + name + '_' + identity + '.tsv'), sep="\t")
-    print('MBR DONE!')
+    mbr_new = odds_ratio_matrix.applymap(np.log2)
+    mbr_new.to_csv(os.path.join(dir_output_MBRs, 'MBR_' + name + '_' + identity + '.tsv'), sep="\t")
+    print('MBRs DONE!')
     return mbr_new
 
 
@@ -367,22 +369,22 @@ def entropy(q_ij, s_ij):
     return H
 
 
-def make_heatmap(S_ij, name, identity):
+def make_heatmap(S_ij, name, identity, encoding_size):
     sns.set(font_scale=2.0)
-    plt.figure(figsize=(10,10))
+    plt.figure(figsize=(encoding_size, encoding_size))
     sns.heatmap(S_ij, xticklabels=1, yticklabels=1, cmap="YlGnBu")
-    plt.savefig(os.path.join(dir_output_MBR, 'matrix_' + name + '_' + identity + '.pdf'))
+    plt.savefig(os.path.join(dir_output_MBRs, 'matrix_' + name + '_' + identity + '.pdf'))
     plt.close()
 
 
-#Function that start from sequence/structure of all RFAM families and create a new MBR from alphabet file
+#Function that start from sequence/structure of all RFAM families and create a new MBRs from alphabet file
 #folder = folder with RFAM RNA sequences
 #folder_bear = folder with RFAM RNA structure in bear
 #RFAM_seed_file = Rfam seed downloaded from RFAM database
 #id_blustClust = Sequence identity for filter
 #filter_nSeq = threshold on number of sequences in a family after filtering
 #file_alph = alphabet file with bear mapping
-#file_info = output file with information about the MBR
+#file_info = output file with information about the MBRs
 
 def BlustClust_filter_alignment(folder, folder_bear, RFAM_seed_file, id_blustClust, filter_nSeq, file_alph):
     name=file_alph.split('.')[0]
@@ -394,8 +396,8 @@ def BlustClust_filter_alignment(folder, folder_bear, RFAM_seed_file, id_blustClu
 
 
 def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
-    if not os.path.exists(dir_output_MBR):
-        os.makedirs(dir_output_MBR)
+    if not os.path.exists(dir_output_MBRs):
+        os.makedirs(dir_output_MBRs)
 
     name = os.path.basename(file_alph).split('.')[0]
     with open(file_alph) as f:
@@ -412,7 +414,7 @@ def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
     E = Expected_score(S_ij, p_i)
     H = entropy(q_ij, S_ij)
 
-    with open(os.path.join(dir_output_MBR, file_info), "w") as fw:
+    with open(os.path.join(dir_output_MBRs, file_info), "w") as fw:
         fw.write('Expected_score:\t' + str(E) + '\nEntropy:\t' + str(H))
 
-    make_heatmap(S_ij, name, id_blustClust)
+    make_heatmap(S_ij, name, id_blustClust, len(v_char))
