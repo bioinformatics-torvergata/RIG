@@ -7,8 +7,9 @@ output file, the script outputs are:
 
 - the `substitution_qbear_50.tsv` matrix with the observed substitutions;
 - the `q_ij_qbear_50.tsv` matrix with the observed relative frequencies;
-- the `E_ij_qbear_50.tsv` matrix with the expected relative frequencies;
-- the `probability_qbear_50.tsv` file, which contains the generated MBR in natural scale (not logarithmic);
+- the `E_ij_qbear_50.tsv` matrix with the expected relative frequencies by chance;
+- the `odds_ratio_matrix_qbear_50.tsv` matrix representing the odds ratio between the observed frequencies and the 
+expected frequency by chance;
 - the `MBR_qbear_50.tsv` file, which contains the generated MBR;
 - the `matrix_qbear_50.pdf` heatmap showing the generated MBR.
 - the `qbear50_info` file containing the `Expected Score` and the `Entropy`. TODO EXPLAIN

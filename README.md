@@ -96,7 +96,7 @@ To build a MBR you need to specify:
 python3 scripts/make_MBR.py outputs/RNA_Blokcs/blocks_new_bear_Zbear_90/ 90 data/alphabets/Zbear.tsv Zbear_90
 ```
 
-The MBR will be built in the [MBR](outputs/MBR) folder.
+The MBR will be built in the [MBRs](outputs/MBRs) folder.
 
 
 ### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
@@ -104,16 +104,18 @@ The MBR will be built in the [MBR](outputs/MBR) folder.
 To build a sPSSM you need to specify:
 
 * the MBR version (for example, `Zbear_62`)
-* the MBR file from the [MBR](outputs/MBR) folder
+* the MBR file (it can be one of the generated MBRs in the [MBRs](outputs/MBRs) folder)
 * the `alphabet` as in folder [alphabets](data/alphabets) 
-
-Moreover, be sure the file [script](scripts/gapped_fam_dict.pickle) is in the same folders of `make_PSSM.py` script.
+* the [gapped_fam_dict.pickle](scripts/gapped_fam_dict.pickle)
 
 #### Example:
 ```
-python3 make_PSSM.py Zbear_62 MBR/MBR_Zbear_62.tsv data/alphabets/Zbear.tsv
-ls *Zbear_62.pickle
+python3 scripts/make_PSSM.py Zbear_62 MBR/MBR_Zbear_62.tsv data/alphabets/Zbear.tsv scripts/gapped_fam_dict.pickle
 ```
+
+
+The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
+
 
 The command will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVersion.pickle` files.
 
