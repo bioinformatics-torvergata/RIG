@@ -268,19 +268,18 @@ def observed_substitution(folder, v_bear, name, identity):
 
     list_ = sorted(os.listdir(folder))
     for fam in list_:
-        print(os.path.join(folder, fam))
+        print(fam)
         with open(os.path.join(folder, fam)) as f:
             f = [x.strip() for x in f.readlines()]
             v1, v2 = np.triu_indices(len(f))
 
             for k in range(0, len(v1)):
-                # print(fam, k)
                 if v1[k] != v2[k]:
                     for i, el in enumerate(f[v1[k]]):
                         tmp = f[v2[k]][i]
-                        substitution.loc[el, tmp] += 1.0
-                        substitution.loc[tmp, el] += 1.0
+                        substitution.at[el, tmp] += 1.0
 
+    substitution = substitution + substitution.T - 1.0
     substitution.to_csv(os.path.join(dir_output_MBR, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
 
     print('Substitution matrix DONE!')
@@ -292,9 +291,9 @@ def observed_substitution(folder, v_bear, name, identity):
 def make_q(substitution, v_bear, name, identity):
     number_couple = 0
     for j in range(0, len(v_bear)):
-        number_couple += substitution.loc[j, j:].sum()
-
+        number_couple += substitution.iloc[j, j:].sum()
     # print(number_couple)
+
     q_ij = substitution.divide(number_couple)
     q_ij.to_csv(os.path.join(dir_output_MBR, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
 
@@ -362,7 +361,7 @@ def entropy(q_ij, s_ij):
     H = 0
     length = len(q_ij.columns.value_counts())
     for j in range(0, length):
-        H += (q_ij.loc[j, j:] * s_ij.loc[j, j:]).sum()
+        H += (q_ij.iloc[j, j:] * s_ij.iloc[j, j:]).sum()
 
     # print(H)
     return H
