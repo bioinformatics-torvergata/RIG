@@ -72,11 +72,11 @@ To build RNA Blocks from structural alignments you need to specify:
 
 * the `structural_alignment_folder` as in folder [bear_alignment](data/bear_alignment) 
 * the `identity_score threshold`
-* the `alphabet` as in folder [alphabets](data/alphabets) 
+* the `alphabet` as in the [alphabets](data/alphabets) folder
 
 #### Example:
 ```
-python3 scripts/make_blocks.py bear_alignment/bear_new_alignment_Zbear_90/ 90 alphabets/Zbear.tsv
+python3 scripts/make_RNA_Blocks.py data/bear_alignment/bear_new_alignment_Zbear_90/ 90 alphabets/Zbear.tsv
 ```
 
 The RNA Blocks will be built in the [RNA_Blocks](outputs/RNA_Blocks) folder.
@@ -88,12 +88,12 @@ To build a MBR you need to specify:
 
 * the `RNA_blocks_folder` (built in the previous **RNA Blocks from Rfam families alignment** step)
 * the `identity_score threshold`
-* the `alphabet` as in folder [alphabets](data/alphabets) 
+* the `alphabet` as in the [alphabets](data/alphabets) folder
 * the `info_file` as output file that will collect all the information of the built blocks
 
 #### Example:
 ```
-python3 scripts/make_MBR.py outputs/RNA_Blokcs/blocks_new_bear_Zbear_90/ 90 data/alphabets/Zbear.tsv Zbear_90
+python3 scripts/make_MBR.py outputs/RNA_Blocks/blocks_new_bear_Zbear_90/ 90 data/alphabets/Zbear.tsv Zbear_90
 ```
 
 The MBR will be built in the [MBRs](outputs/MBRs) folder.
@@ -103,34 +103,24 @@ The MBR will be built in the [MBRs](outputs/MBRs) folder.
 
 To build a sPSSM you need to specify:
 
-* the MBR version (for example, `Zbear_62`)
+* the MBR version (for example, `Zbear_90`)
 * the MBR file (it can be one of the generated MBRs in the [MBRs](outputs/MBRs) folder)
-* the `alphabet` as in folder [alphabets](data/alphabets) 
+* the `alphabet` as in the [alphabets](data/alphabets) folder 
 * the [gapped_fam_dict.pickle](scripts/gapped_fam_dict.pickle)
 
 #### Example:
 ```
-python3 scripts/make_PSSM.py Zbear_62 MBR/MBR_Zbear_62.tsv data/alphabets/Zbear.tsv scripts/gapped_fam_dict.pickle
+python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/MBR_Zbear_90.tsv data/alphabets/Zbear.tsv scripts/gapped_fam_dict.pickle
 ```
-
 
 The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
 
 
-The command will create the `rfam_PSSM_dic_$mbrVersion.pickle` and `rfam_PSSM_$mbrVersion.pickle` files.
 
-
-### Convert bear files to other alphabets
-To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 
-to other structural alphabets, execute
-
-```
-python3 scripts/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
-```
 
 ### BlastClust and structural alignment from Rfam families alignment
 
-If you prefer not to use our precomputed structural alignment you can perform it as follows.
+If you prefer not to use our precomputed structural alignments, you can perform it as follows.
 
 #### Dependencies: blastclust
 
@@ -142,30 +132,29 @@ your operating system to download the correct version of blastclust
 cd ~
 wget -c ftp://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/blast-2.2.26-ia32-linux.tar.gz
 tar -xvf blast-2.2.26-ia32-linux.tar.gz
-export PATH="$PATH:~/blast-2.2.26/bin"
 ```
-Add the `~/blast-2.2.26/bin` folder to your environment, or execute `export PATH="$PATH:~/blast-2.2.26/bin"` each time 
-you open a new shell.
 
-Then you need to specify:
+To calculate the alignments, you need to specify:
 
-* the `$sequence_folder` with sequences as in folder `seq_str_families/sequence/` 
-* the `$structure_folder` with sequences in BEAR format as in folder `seq_str_families/bear/`
+* the `sequence_folder` as in the [sequence](seq_str_families/sequence) folder
+* the `structure_folder` with sequences in BEAR format as in the [bear](seq_str_families/bear) folder
 * the Rfam seed sequences (`Rfam_no_double.seed` in the main folder)
 * the `identity_score threshold`
-* the `$seq_threshold` as the minimum number of RNAs in a Rfam family (for example, `5`)
-* the `alphabet` as in folder [alphabets](data/alphabets) 
-
-* Go in the scripts folder
-* Run the script with a command like
-
-```
-python3 BlustClust_filter_alignment.py $sequence_folder $structure_folder Rfam_no_double.seed $identity_score $seq_threshold $alphabet
-```
+* the `seq_threshold` as the minimum number of RNAs in a Rfam family
+* the `alphabet` as in the [alphabets](data/alphabets) folder
+* the `bin`directory where it is installed `blastclust`
 
 #### Example:
 ```
 cd scripts
-python BlustClust_filter_alignment.py ../seq_str_families/sequence/ ../seq_str_families/bear/ ../Rfam_no_double.seed 62 5 ../alphabets/Zbear.tsv
+python3 scripts/BlustClust_filter_alignment.py seq_str_families/sequence/ seq_str_families/bear/ Rfam_no_double.seed 90 5 data/alphabets/Zbear.tsv ~/blast-2.2.26/bin/
 ```
 
+
+### Convert bear files to other alphabets
+To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 
+to other structural alphabets, execute
+
+```
+python3 scripts/mapping.py Zbear.tsv file_bear.fastB > out_file.fastB
+```

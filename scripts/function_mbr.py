@@ -9,138 +9,155 @@ import subprocess
 
 dir_output_RNA_blocks = 'outputs/RNA_Blocks'
 dir_output_MBRs = 'outputs/MBRs'
+dir_output_blustclust = 'outputs/blustclust'
 
-#funtion to run BlustClust (filter on identity score)
-#folder = seq_str_families/sequence/
-#identity = threshold expressed by % (ex. 50)
-#return a folder with selected sequences
-def run_blustClust(folder, identity, name):
-    if 'not_similar_'+name+'_'+identity not in os.listdir('./'):
-        os.mkdir('not_similar_'+name+'_'+identity+'/')
-    os.chdir(folder)
-    os.system('for file in *; do blastclust -i $file -o ../not_similar_'+name+'_'+identity+'/$file -p F -S '+identity+' ; done')
-    os.chdir('../')
+# funtion to run BlustClust (filter on identity score)
+# folder = seq_str_families/sequence/
+# identity = threshold expressed by % (ex. 50)
+# return a folder with selected sequences
+def run_blustClust(basedir_blustclust, folder_seq, identity, name):
+    dir_not_similar = os.path.join(dir_output_blustclust, 'not_similar_' + name + '_' + identity)
+    if not os.path.exists(dir_not_similar):
+        os.makedirs(dir_not_similar)
+
+    blustclust_run = os.path.join(basedir_blustclust, 'blastclust')
+    patter_input = os.path.join(folder_seq, '*')
+    patter_output = os.path.join(dir_not_similar, '$filename')
+
+    os.system(f'for file in {patter_input}; do filename=$(basename -- $file); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done')
+
     print('BlustClust DONE!')
+    return dir_not_similar
 
 
-#function to filter for number of sequences in an RNA family after BlustClust
-#folder = folder generated from run_blustClust
-#n_seq_family = minimum number of sequences per family
-#identity = threshold expressed by % (ex. 50)
+# function to filter for number of sequences in an RNA family after BlustClust
+# folder = folder generated from run_blustClust
+# n_seq_family = minimum number of sequences per family
+# identity = threshold expressed by % (ex. 50)
 def filter_n_seq(folder, n_seq_family, name, identity):
-    if 'filter_n_seq_'+name+'_'+identity not in os.listdir('./'):
-        os.mkdir('filter_n_seq_'+name+'_'+identity+'/')
-    list_fam=os.listdir(folder)
-    #New folder with only families with more than n_seq_family members
-    for fam in list_fam:
-        output=subprocess.check_output("wc -l "+folder+fam, shell=True)
-        if int(output.strip().split()[0])>=int(n_seq_family):
-            os.system('cp '+folder+'/'+fam+' filter_n_seq_'+name+'_'+identity+'/'+fam)
-    print ('Filter Nseq DONE!')
+    dir_filter_n_seq = os.path.join(dir_output_blustclust, 'filter_n_seq_' + name + '_' + identity)
+    if not os.path.exists(dir_filter_n_seq):
+        os.makedirs(dir_filter_n_seq)
+
+    # New folder with only families with more than n_seq_family members
+    num_moved = 0
+    for fam in sorted(os.listdir(folder)):
+        output = subprocess.check_output("wc -l " + os.path.join(folder, fam), shell=True, universal_newlines=True)
+        if int(output.strip().split()[0]) >= int(n_seq_family):
+            os.system('cp ' + os.path.join(folder, fam) + ' ' + os.path.join(dir_filter_n_seq,  fam))
+            num_moved += 1
+
+    # print(f'Moved {num_moved} families with more than {n_seq_family} family members.')
+
+    print('Filter Nseq DONE!')
+    return dir_filter_n_seq
 
 
-
-#function to select the bear sequences after BlustCLust filtering
+# Function to select the bear sequences after BlustClust filtering
 def get_bear(folder, folder_bear, name, identity):
-    #folder = folder returned by filter_n_seq
-    #folder_bear = folder seq_str_families/bear
-    if 'bear_filtered_'+name+'_'+identity not in os.listdir('./'):
-        os.mkdir('bear_filtered_'+name+'_'+identity+'/')
-    list_fam_filter=os.listdir(folder)
-    for fam_clean in list_fam_filter:
-        seq=[]
-        f=open(folder+fam_clean).readlines()
-        for line in f:
-            seq.append(line.split()[0])
+    # folder = folder returned by filter_n_seq
+    # folder_bear = folder seq_str_families/bear
 
-        o=open('bear_filtered_'+name+'_'+identity+'/'+fam_clean, "w")
-        f2=open(folder_bear+fam_clean)
-        line=f2.readline()
-        while(line):
-            if line[0]==">" and line[1:-1] in seq:
-                o.write(line)
-                line=f2.readline()
-                o.write(line)
-                line=f2.readline()
-                o.write(line)
-                line=f2.readline()
-                o.write(line)
-                line=f2.readline()
-            else:
-                line=f2.readline()
+    dir_bear_filtered = os.path.join(dir_output_blustclust, 'bear_filtered_' + name + '_' + identity)
+    if not os.path.exists(dir_bear_filtered):
+        os.makedirs(dir_bear_filtered)
+
+    for fam_clean in sorted(os.listdir(folder)):
+        seq = []
+        with open(os.path.join(folder, fam_clean)) as f:
+            for line in f.readlines():
+                seq.append(line.split()[0])
+
+        o = open(os.path.join(dir_bear_filtered, fam_clean), "w")
+        with open(os.path.join(folder_bear, fam_clean)) as f2:
+            line = f2.readline()
+            while line:
+                if line[0] == ">" and line[1:-1] in seq:
+                    o.write(line)
+                    line = f2.readline()
+                    o.write(line)
+                    line = f2.readline()
+                    o.write(line)
+                    line = f2.readline()
+                    o.write(line)
+                    line = f2.readline()
+                else:
+                    line = f2.readline()
         o.close()
 
-    print ('Bear sequence research DONE!')
+    print('Bear sequence research DONE!')
+    return dir_bear_filtered
 
 
-###MARCO####
 def distributeGaps(gappedReference, ungappedString):
-    assert len(gappedReference.replace('-','')) == len(ungappedString), 'ungapped strings should be equal'
+    assert len(gappedReference.replace('-', '')) == len(ungappedString), 'ungapped strings should be equal'
     result = list(ungappedString)
-    gaplist = [ m.start() for m in re.finditer('-', gappedReference)]
+    gaplist = [m.start() for m in re.finditer('-', gappedReference)]
 
     for gap in gaplist:
         result.insert(gap, '-')
     result = "".join(result)
     return result
 
-assert(distributeGaps('--abcdef-g-', 'bombasi') == '--bombas-i-')
+# assert(distributeGaps('--abcdef-g-', 'bombasi') == '--bombas-i-')
 
 
-#Function to Add gap based on RFAM alignment from seed
-#folder=bear_filtered
-#seed_rfam
+# Function to Add gap based on RFAM alignment from seed
 def add_gap(folder, seed_rfam, name, identity):
-    list_fam_filter2=os.listdir(folder)
-    if 'bear_alignment_'+name+'_'+identity not in os.listdir('./'):
-        os.mkdir('bear_alignment_'+name+'_'+identity+'/')
-    c=0
-    for fam in list_fam_filter2:
-        c+=1
-        o=open('bear_alignment_'+name+'_'+identity+'/'+fam, "w")
-        f=open(folder+fam)
-        line=f.readline()
-        while(line):
-            if line[0]==">":
-                seq_name=line[1:-1]
-                #output=subprocess.check_output("wc -l not_similar/"+fam, shell=True)
-                seq_alignment=subprocess.check_output('grep '+seq_name+' '+seed_rfam, shell=True)
-                line=f.readline()
-                test=distributeGaps(seq_alignment.split()[1], line[0:-1])
-                line=f.readline()
-                line=f.readline()
-                bear_seq=line
-                gap_pos=[]
-                for i, el in enumerate(test):
-                    if el=='-':
-                        gap_pos.append(i)
-                for i in gap_pos:
-                    bear_seq=bear_seq[:i] + "-" + bear_seq[i:]
-                o.write(bear_seq)
-            else:
-                line=f.readline()
+    # folder=bear_filtered
+    # seed_rfam
+
+    dir_bear_alignment = os.path.join(dir_output_blustclust, 'bear_alignment_' + name + '_' + identity)
+    if not os.path.exists(dir_bear_alignment):
+        os.makedirs(dir_bear_alignment)
+
+    c = 0
+    for fam in sorted(os.listdir(folder)):
+        c += 1
+
+        o = open(os.path.join(dir_bear_alignment, fam), "w")
+        with open(os.path.join(folder, fam)) as f:
+            line = f.readline()
+            while line:
+                if line[0] == ">":
+                    seq_name = line[1:-1]
+                    # output = subprocess.check_output("wc -l not_similar/"+fam, shell=True)
+
+                    seq_alignment = subprocess.check_output('grep ' + seq_name+' ' + seed_rfam, shell=True, universal_newlines=True)
+                    line = f.readline()
+                    test = distributeGaps(seq_alignment.split()[1], line[0:-1])
+                    line = f.readline()
+                    line = f.readline()
+                    bear_seq = line
+                    gap_pos = []
+                    for i, el in enumerate(test):
+                        if el == '-':
+                            gap_pos.append(i)
+                    for i in gap_pos:
+                        bear_seq = bear_seq[:i] + "-" + bear_seq[i:]
+                    o.write(bear_seq)
+                else:
+                    line = f.readline()
         o.close()
 
-        #print fam+"\t"+str(c)+" famiglie su "+str(len(lista_fam_filter2))
+        # print(fam+"\t"+str(c)+" famiglie su "+str(len(lista_fam_filter2)))
 
-    print ('Alignment with gap DONE!')
-    print ('Bear sequences with gap in folder bear_alignment/')
+    print('Alignment with gap DONE!')
+    print('Bear sequences with gap in {} folder.'.format(dir_bear_alignment))
+    return dir_bear_alignment
 
 
-
-
-###MARCO###
 def decode(bear):
-    alph_bear={'abc':'a', 'def':'A', 'ghi=':'=',
-          'lmnop':'l', 'qrstu':'L', 'vwxyz^':'^',
-          '!"#': 'i', '$%&':'I', '\'()+':'+',
-          '234':'n', '567':'N', '890>':'>',
-          'ABC':'s', 'DEF':'S', 'GHIJ':'~',
-          'KLMN':'b', 'OPQR':'B', 'STUVW':'|',
-          'YZ~':'y', '?_|':'Y', '/\\@':'@',
-          '{}[]':'[', ':':':' , '-':'-'}
+    alph_bear = {'abc': 'a', 'def': 'A', 'ghi=': '=',
+          'lmnop': 'l', 'qrstu': 'L', 'vwxyz^': '^',
+          '!"#': 'i', '$%&': 'I', '\'()+': '+',
+          '234': 'n', '567': 'N', '890>': '>',
+          'ABC': 's', 'DEF': 'S', 'GHIJ': '~',
+          'KLMN': 'b', 'OPQR': 'B', 'STUVW': '|',
+          'YZ~': 'y', '?_|': 'Y', '/\\@': '@',
+          '{}[]': '[', ':': ':' , '-': '-'}
 
-    result=""
+    result = ""
     for ch in bear:
         for key in alph_bear:
             if ch in key:
@@ -148,12 +165,12 @@ def decode(bear):
     return result
 
 
-#deconding2 from text (same as decode but from text file)
+# Deconding from text (same as decode but from text file)
 def decode_from_file(bear, file_name):
-    f=open(file_name).readlines()
-    alph_bear=[i.split() for i in f]
-    alph_bear.append(['-','-'])
-    result=""
+    f = open(file_name).readlines()
+    alph_bear = [i.split() for i in f]
+    alph_bear.append(['-', '-'])
+    result = ""
     for ch in bear:
         for group in alph_bear:
             if ch in group[0]:
@@ -161,44 +178,48 @@ def decode_from_file(bear, file_name):
     return result
 
 
-#convert from bear to New Alphabet
-#folder = bear_alignment(bear_alignment/bear_alignment___62)
+# Convert from bear to New Alphabet
+# folder = bear_alignment(bear_alignment/bear_alignment___62)
 def convert_new_bear(folder, name, identity):
-    fam_bear=os.listdir(folder)
-    if 'bear_new_alignment_'+name+'_'+identity not in os.listdir('./'):
-        os.mkdir('bear_new_alignment_'+name+'_'+identity+'/')
-    for fam in fam_bear:
-        o=open('bear_new_alignment_'+name+'_'+identity+'/'+fam, "w")
-        f=open(folder+fam)
-        line=f.readline()
-        while(line):
-            o.write(decode(line)+"\n")
-            line=f.readline()
-        o.close()
-    print ('Decoding BEAR DONE!')
+    dir_bear_new_alignment = os.path.join(dir_output_blustclust, 'bear_new_alignment_' + name + '_' + identity)
+    if not os.path.exists(dir_bear_new_alignment):
+        os.makedirs(dir_bear_new_alignment)
 
-#convert from bear to New Alphabet (FILE)
-#folder = bear_alignment(bear_alignment/bear_alignment___62)
-#file_name = alph_mapping.tsv
-def convert_new_bear_file(folder, file_name, name, identity):
-    fam_bear=os.listdir(folder)
-    if 'bear_new_alignment_'+name+'_'+identity not in os.listdir('./'):
-        os.mkdir('bear_new_alignment_'+name+'_'+identity+'/')
-    for fam in fam_bear:
-        o=open('bear_new_alignment_'+name+'_'+identity+'/'+fam, "w")
-        f=open(folder+fam)
-        line=f.readline()
-        while(line):
-            o.write(decode_from_file(line, file_name)+"\n")
-            line=f.readline()
+    for fam in sorted(os.listdir(folder)):
+        o = open(os.path.join(dir_bear_new_alignment, fam), "w")
+        with open(os.path.join(folder, fam)) as f:
+            line = f.readline()
+            while line:
+                o.write(decode(line) + "\n")
+                line = f.readline()
         o.close()
-    print ('Decoding BEAR from File DONE!')
+
+    print('Decoding BEAR DONE!')
+
+
+# Convert from bear to New Alphabet (FILE)
+# folder = bear_alignment(bear_alignment/bear_alignment___62)
+# file_name = alph_mapping.tsv
+def convert_new_bear_file(folder, file_name, name, identity):
+    dir_bear_new_alignment = os.path.join(dir_output_blustclust, 'bear_new_alignment_' + name + '_' + identity)
+    if not os.path.exists(dir_bear_new_alignment):
+        os.makedirs(dir_bear_new_alignment)
+
+    for fam in sorted(os.listdir(folder)):
+        o = open(os.path.join(dir_bear_new_alignment, fam), "w")
+        with open(os.path.join(folder, fam)) as f:
+            line = f.readline()
+            while line:
+                o.write(decode_from_file(line, file_name)+"\n")
+                line = f.readline()
+        o.close()
+
+    print('Decoding BEAR from File DONE! New alignments are in the {} folder.'.format(dir_bear_new_alignment))
 
 
 # Create Blocks from bear alignments
 def make_blocks(folder, name, identity):
     dir_output = os.path.join(dir_output_RNA_blocks, 'blocks_new_bear_' + name + '_' + identity)
-
     if not os.path.exists(dir_output):
         os.makedirs(dir_output)
 
@@ -377,22 +398,24 @@ def make_heatmap(S_ij, name, identity, encoding_size):
     plt.close()
 
 
-#Function that start from sequence/structure of all RFAM families and create a new MBRs from alphabet file
-#folder = folder with RFAM RNA sequences
-#folder_bear = folder with RFAM RNA structure in bear
-#RFAM_seed_file = Rfam seed downloaded from RFAM database
-#id_blustClust = Sequence identity for filter
-#filter_nSeq = threshold on number of sequences in a family after filtering
-#file_alph = alphabet file with bear mapping
-#file_info = output file with information about the MBRs
+# Function that start from sequence/structure of all RFAM families and create a new MBRs from alphabet file
+# folder = folder with RFAM RNA sequences
+# folder_bear = folder with RFAM RNA structure in bear
+# RFAM_seed_file = Rfam seed downloaded from RFAM database
+# id_blustClust = Sequence identity for filter
+# filter_nSeq = threshold on number of sequences in a family after filtering
+# file_alph = alphabet file with bear mapping
+# file_info = output file with information about the MBRs
 
-def BlustClust_filter_alignment(folder, folder_bear, RFAM_seed_file, id_blustClust, filter_nSeq, file_alph):
-    name=file_alph.split('.')[0]
-    run_blustClust(folder, id_blustClust, name)
-    filter_n_seq('not_similar_'+name+'_'+id_blustClust+'/', filter_nSeq, name, id_blustClust)
-    get_bear('filter_n_seq_'+name+'_'+id_blustClust+'/', folder_bear, name, id_blustClust)
-    add_gap('bear_filtered_'+name+'_'+id_blustClust+'/', RFAM_seed_file, name, id_blustClust)
-    convert_new_bear_file('bear_alignment___'+id_blustClust+'/', file_alph, name, id_blustClust)
+def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, RFAM_seed_file, id_blustClust, filter_nSeq, file_alph):
+    name = os.path.basename(file_alph).split('.')[0]
+    dir_not_similar = run_blustClust(basedir_blustclust, folder_seq, id_blustClust, name)
+    dir_filter_n_seq = filter_n_seq(dir_not_similar, filter_nSeq, name, id_blustClust)
+    dir_bear_filtered = get_bear(dir_filter_n_seq, folder_bear, name, id_blustClust)
+    dir_bear_alignment = add_gap(dir_bear_filtered, RFAM_seed_file, name, id_blustClust)
+
+    # convert_new_bear_file(os.path.join('bear_alignment___'+id_blustClust), file_alph, name, id_blustClust)
+    convert_new_bear_file(dir_bear_alignment, file_alph, name, id_blustClust)
 
 
 def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
