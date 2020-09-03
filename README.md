@@ -24,48 +24,6 @@ cd RIG
 
 ## Usage
 
-
-### Plots generation
- 
-#### - RIG scores with WUSS notation from secondary structure consensus
-Execute
-
-```
-python3 scripts/plot_RIG_with_WUSS_notation.py 
-```
-
-The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
-
-
-#### - RIG scores together with (rescaled) sequence Entropy
-
-Execute
-
-```
-python3 scripts/XXXXX.py 
-```
-
-to compute the (rescaled) entropy values.
-
-Execute
-
-```
-python3 scripts/XXXXX.py 
-```
-
-The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
-
-
-#### - RIG scores together with R-scape power values
-Execute
-
-```
-python3 scripts/plot_RIG_and_RscapePower.py 
-```
-
-The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
-
-
 ### Build RNA Blocks from Rfam families alignment
 
 To build RNA Blocks from structural alignments you need to specify:
@@ -115,6 +73,47 @@ python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/MBR_Zbear_90.tsv data/alphabe
 
 The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
 
+
+
+### Plots generation
+ 
+#### - RIG scores with WUSS notation from secondary structure consensus
+Execute
+
+```
+python3 scripts/plot_RIG_with_WUSS_notation.py 
+```
+
+The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
+
+
+#### - RIG scores together with (rescaled) sequence Entropy
+
+Execute
+
+```
+python3 scripts/XXXXX.py 
+```
+
+to compute the (rescaled) entropy values.
+
+Execute
+
+```
+python3 scripts/XXXXX.py 
+```
+
+The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
+
+
+#### - RIG scores together with R-scape power values
+Execute
+
+```
+python3 scripts/plot_RIG_and_RscapePower.py 
+```
+
+The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
 
 
 
