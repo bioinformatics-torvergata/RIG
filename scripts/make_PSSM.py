@@ -1,5 +1,6 @@
 import os
 import sys
+import gzip
 import argparse
 import pickle
 import pandas as pd
@@ -28,7 +29,7 @@ MBR = sys.argv[2]
 # ALPHAMAP = "Zbear.tsv"
 ALPHAMAP = sys.argv[3]
 
-# GAPFAMDICT = "scripts/gapped_fam_dict.pickle"
+# GAPFAMDICT = "scripts/gapped_fam_dict.pickle.gz"
 GAPFAMDICT = sys.argv[4]
 
 ignore_these_families = ['RF00210', 'RF01879', 'RF02767', 'RF02768', 'RF02770', 'RF02773', 'RF02775', 'RF02781',
@@ -38,13 +39,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--mbr", help="the substitution matrix to test")
 parser.add_argument("-a", "--alpha", help="pickle of alphabet dictionary (must correspond to the alphabet \
                                             used with the substitution matrix). With respect to standard BEAR")
-parser.add_argument("-gfd", "--gapfamdict", help="the rfam alignments with gaps and bear pickle")
+parser.add_argument("-gfd", "--gapfamdict", help="the rfam alignments with gaps and bear pickle (gzipped)")
 parser.add_argument("-v", "--verbose", help="increase output verbosity",
                     action="store_true")
 
 args = parser.parse_args(args=['--alpha', ALPHAMAP, '-v', '-m', MBR, '-gfd', GAPFAMDICT])
 
-with open(args.gapfamdict, 'rb') as afile:
+with gzip.open(args.gapfamdict, 'rb') as afile:
     gapped_fam_dict = pickle.load(afile)
 
 # Prepare the alphabets, adding the gap symbol
@@ -86,15 +87,18 @@ for rfam in rfams:
     PSSMs_alpha.append(PSSM_b)
     counter += 1
 
-if not os.path.exists(dir_output_sPSSMs):
-    os.makedirs(dir_output_sPSSMs)
 
-with open(os.path.join(dir_output_sPSSMs, 'rfam_PSSM_{}.pickle'.format(mbrVersion)), 'wb') as handle:
+dir_output_sPSSMs_name_id = os.path.join(dir_output_sPSSMs, mbrVersion)
+
+if not os.path.exists(dir_output_sPSSMs_name_id):
+    os.makedirs(dir_output_sPSSMs_name_id)
+
+with open(os.path.join(dir_output_sPSSMs_name_id, 'rfam_PSSM_{}.pickle'.format(mbrVersion)), 'wb') as handle:
     pickle.dump(PSSMs_alpha, handle)
 
 dic_PSSM = {}
 for i in range(0, len(rfam_list)):
     dic_PSSM[rfam_list[i]] = PSSMs_alpha[i]
 
-with open(os.path.join(dir_output_sPSSMs, 'rfam_PSSM_dic_{}.pickle'.format(mbrVersion)), 'wb') as handle:
+with open(os.path.join(dir_output_sPSSMs_name_id, 'rfam_PSSM_dic_{}.pickle'.format(mbrVersion)), 'wb') as handle:
     pickle.dump(dic_PSSM, handle)

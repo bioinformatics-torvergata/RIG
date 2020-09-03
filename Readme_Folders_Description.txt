@@ -41,7 +41,7 @@
 	|--bear (structure)
 
 
-######## Rfam_no_double.seed ##########
+######## Rfam_no_double.seed.gz ##########
 #seed file downloaded from Rfam
 
 

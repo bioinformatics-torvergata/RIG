@@ -11,7 +11,9 @@ sns.set_context(rc={"font.size": 0, "axes.titlesize": 34, "axes.labelsize": 25, 
 dir_output_rscape = 'data/Rfam_stockholm_rscapes'
 
 RIG_sheet_path = 'data/RIG/withgaps/All_RIGs.filled_columns.xlsx'
-RIG_and_RscapePower_tsv_path = 'scripts/RIG_RscapePower/RIG_and_Rscape.tsv'
+
+dir_RIG_and_RscapePower = 'scripts/RIG_RscapePower/'
+RIG_and_RscapePower_tsv_path = os.path.join(dir_RIG_and_RscapePower, 'RIG_and_Rscape.tsv')
 
 dir_output_RIG_RscapePower_plots = 'plots/RIG_RscapePower/'
 
@@ -63,6 +65,9 @@ print('Num. Rfam families with R-scape power analysis information:', len(RFXXX_t
 
 # Parsing to have all the information in one file.
 if not os.path.exists(RIG_and_RscapePower_tsv_path):
+    if not os.path.exists(dir_RIG_and_RscapePower):
+        os.makedirs(dir_RIG_and_RscapePower)
+
     with open(RIG_and_RscapePower_tsv_path, 'w') as fw:
         fw.write('\t'.join(['encoding', 'family_code', 'position', 'score']) + '\n')
 

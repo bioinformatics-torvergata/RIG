@@ -123,7 +123,7 @@ def add_gap(folder, seed_rfam, name, identity):
                     seq_name = line[1:-1]
                     # output = subprocess.check_output("wc -l not_similar/"+fam, shell=True)
 
-                    seq_alignment = subprocess.check_output('grep ' + seq_name+' ' + seed_rfam, shell=True, universal_newlines=True)
+                    seq_alignment = subprocess.check_output('zgrep ' + seq_name+' ' + seed_rfam, shell=True, universal_newlines=True)
                     line = f.readline()
                     test = distributeGaps(seq_alignment.split()[1], line[0:-1])
                     line = f.readline()
@@ -284,7 +284,7 @@ def expected_frequencies(folder,alph_bear):
 # observed_substitution(f_ij)
 # folder=Blocks/blocks_new_bear_$alph_$id
 # v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
-def observed_substitution(folder, v_bear, name, identity):
+def observed_substitution(dir_output_MBRs_name_id, folder, v_bear, name, identity):
     substitution = pd.DataFrame(1.0, columns=v_bear, index=v_bear)
 
     list_ = sorted(os.listdir(folder))
@@ -301,7 +301,7 @@ def observed_substitution(folder, v_bear, name, identity):
                         substitution.at[el, tmp] += 1.0
 
     substitution = substitution + substitution.T - 1.0
-    substitution.to_csv(os.path.join(dir_output_MBRs, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
+    substitution.to_csv(os.path.join(dir_output_MBRs_name_id, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
 
     print('Substitution matrix DONE!')
     return substitution
@@ -309,14 +309,14 @@ def observed_substitution(folder, v_bear, name, identity):
 
 # substitution=dataframe returned by observed_substitution
 # v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
-def make_q(substitution, v_bear, name, identity):
+def make_q(dir_output_MBRs_name_id, substitution, v_bear, name, identity):
     number_couple = 0
     for j in range(0, len(v_bear)):
         number_couple += substitution.iloc[j, j:].sum()
     # print(number_couple)
 
     q_ij = substitution.divide(number_couple)
-    q_ij.to_csv(os.path.join(dir_output_MBRs, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
+    q_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
 
     print('q_ij DONE!')
     return q_ij
@@ -337,7 +337,7 @@ def make_p(q_ij, v_bear):
 
 # p_i returned by make_p
 # v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
-def make_e(p_i, v_bear, name, identity):
+def make_e(dir_output_MBRs_name_id, p_i, v_bear, name, identity):
     e_ij = pd.DataFrame(1.0, columns=v_bear, index=v_bear)
 
     for char in v_bear:
@@ -347,7 +347,7 @@ def make_e(p_i, v_bear, name, identity):
             else:
                 e_ij.loc[char, char2] = 2 * p_i[char] * p_i[char2]
 
-    e_ij.to_csv(os.path.join(dir_output_MBRs, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
+    e_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
 
     print('e_ij DONE!')
     return e_ij
@@ -355,16 +355,16 @@ def make_e(p_i, v_bear, name, identity):
 
 # freq_observed=dataframe of observed frequencies (q_ij)
 # fr_expected=dataframe of expected frequencies (e_ij)
-def make_matrix(freq_observed, fr_expect, name, identity):
+def make_matrix(dir_output_MBRs_name_id, freq_observed, fr_expect, name, identity):
     # Odds ratio matrix
     odds_ratio_matrix = freq_observed.divide(fr_expect)
 
-    odds_ratio_matrix.to_csv(os.path.join(dir_output_MBRs, 'odds_ratio_matrix_' + name + '_' + identity + '.tsv'), sep="\t")
+    odds_ratio_matrix.to_csv(os.path.join(dir_output_MBRs_name_id, 'odds_ratio_matrix_' + name + '_' + identity + '.tsv'), sep="\t")
     print('Odds ratio matrix DONE!')
 
     # Score Matrix
     mbr_new = odds_ratio_matrix.applymap(np.log2)
-    mbr_new.to_csv(os.path.join(dir_output_MBRs, 'MBR_' + name + '_' + identity + '.tsv'), sep="\t")
+    mbr_new.to_csv(os.path.join(dir_output_MBRs_name_id, 'MBR_' + name + '_' + identity + '.tsv'), sep="\t")
     print('MBRs DONE!')
     return mbr_new
 
@@ -390,11 +390,11 @@ def entropy(q_ij, s_ij):
     return H
 
 
-def make_heatmap(S_ij, name, identity, encoding_size):
+def make_heatmap(dir_output_MBRs_name_id, S_ij, name, identity, encoding_size):
     sns.set(font_scale=2.0)
     plt.figure(figsize=(encoding_size, encoding_size))
     sns.heatmap(S_ij, xticklabels=1, yticklabels=1, cmap="YlGnBu")
-    plt.savefig(os.path.join(dir_output_MBRs, 'matrix_' + name + '_' + identity + '.pdf'))
+    plt.savefig(os.path.join(dir_output_MBRs_name_id, 'matrix_' + name + '_' + identity + '.pdf'))
     plt.close()
 
 
@@ -407,37 +407,39 @@ def make_heatmap(S_ij, name, identity, encoding_size):
 # file_alph = alphabet file with bear mapping
 # file_info = output file with information about the MBRs
 
-def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, RFAM_seed_file, id_blustClust, filter_nSeq, file_alph):
+def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, RFAM_seed_file_gz, id_blustClust, filter_nSeq, file_alph):
     name = os.path.basename(file_alph).split('.')[0]
     dir_not_similar = run_blustClust(basedir_blustclust, folder_seq, id_blustClust, name)
     dir_filter_n_seq = filter_n_seq(dir_not_similar, filter_nSeq, name, id_blustClust)
     dir_bear_filtered = get_bear(dir_filter_n_seq, folder_bear, name, id_blustClust)
-    dir_bear_alignment = add_gap(dir_bear_filtered, RFAM_seed_file, name, id_blustClust)
+    dir_bear_alignment = add_gap(dir_bear_filtered, RFAM_seed_file_gz, name, id_blustClust)
 
     # convert_new_bear_file(os.path.join('bear_alignment___'+id_blustClust), file_alph, name, id_blustClust)
     convert_new_bear_file(dir_bear_alignment, file_alph, name, id_blustClust)
 
 
 def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
-    if not os.path.exists(dir_output_MBRs):
-        os.makedirs(dir_output_MBRs)
-
     name = os.path.basename(file_alph).split('.')[0]
+
+    dir_output_MBRs_name_id = os.path.join(dir_output_MBRs, name + '_' + id_blustClust)
+    if not os.path.exists(dir_output_MBRs_name_id):
+        os.makedirs(dir_output_MBRs_name_id)
+
     with open(file_alph) as f:
         v_char = [x.split()[1] for x in f.readlines()]
 
-    sost = observed_substitution(blocks_folder, v_char, name, id_blustClust)
-    q_ij = make_q(sost, v_char, name, id_blustClust)  # freq_observed
+    sost = observed_substitution(dir_output_MBRs_name_id, blocks_folder, v_char, name, id_blustClust)
+    q_ij = make_q(dir_output_MBRs_name_id, sost, v_char, name, id_blustClust)  # freq_observed
 
     p_i = make_p(q_ij, v_char)
-    e_ij = make_e(p_i, v_char, name, id_blustClust)   # fr_expect
+    e_ij = make_e(dir_output_MBRs_name_id, p_i, v_char, name, id_blustClust)   # fr_expect
 
-    S_ij = make_matrix(q_ij, e_ij, name, id_blustClust)
+    S_ij = make_matrix(dir_output_MBRs_name_id, q_ij, e_ij, name, id_blustClust)
 
     E = Expected_score(S_ij, p_i)
     H = entropy(q_ij, S_ij)
 
-    with open(os.path.join(dir_output_MBRs, file_info), "w") as fw:
+    with open(os.path.join(dir_output_MBRs_name_id, file_info), "w") as fw:
         fw.write('Expected_score:\t' + str(E) + '\nEntropy:\t' + str(H))
 
-    make_heatmap(S_ij, name, id_blustClust, len(v_char))
+    make_heatmap(dir_output_MBRs_name_id, S_ij, name, id_blustClust, len(v_char))

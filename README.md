@@ -64,11 +64,11 @@ To build a sPSSM you need to specify:
 * the MBR version (for example, `Zbear_90`)
 * the MBR file (it can be one of the generated MBRs in the [MBRs](outputs/MBRs) folder)
 * the `alphabet` as in the [alphabets](data/alphabets) folder 
-* the [gapped_fam_dict.pickle](scripts/gapped_fam_dict.pickle)
+* the [gapped_fam_dict.pickle.gz](scripts/gapped_fam_dict.pickle) file
 
 #### Example:
 ```
-python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/MBR_Zbear_90.tsv data/alphabets/Zbear.tsv scripts/gapped_fam_dict.pickle
+python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/Zbear_90/MBR_Zbear_90.tsv data/alphabets/Zbear.tsv scripts/gapped_fam_dict.pickle.gz
 ```
 
 The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
@@ -116,12 +116,13 @@ python3 scripts/plot_RIG_and_RscapePower.py
 The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
 
 
+### Other
 
-### BlastClust and structural alignment from Rfam families alignment
+#### BlastClust and structural alignment from Rfam families alignment
 
 If you prefer not to use our precomputed structural alignments, you can perform it as follows.
 
-#### Dependencies: blastclust
+##### Dependencies: blastclust
 
 **Note**: the following instructions are for the **Linux** operating system. Please change the ftp link according to 
 your operating system to download the correct version of blastclust 
@@ -137,20 +138,20 @@ To calculate the alignments, you need to specify:
 
 * the `sequence_folder` as in the [sequence](seq_str_families/sequence) folder
 * the `structure_folder` with sequences in BEAR format as in the [bear](seq_str_families/bear) folder
-* the Rfam seed sequences (`Rfam_no_double.seed` in the main folder)
+* the Rfam seed sequences (the [Rfam_no_double.seed.gz](scripts/Rfam_no_double.seed.gz) file)
 * the `identity_score threshold`
 * the `seq_threshold` as the minimum number of RNAs in a Rfam family
 * the `alphabet` as in the [alphabets](data/alphabets) folder
 * the `bin`directory where it is installed `blastclust`
 
-#### Example:
+###### Example:
 ```
 cd scripts
-python3 scripts/BlustClust_filter_alignment.py seq_str_families/sequence/ seq_str_families/bear/ Rfam_no_double.seed 90 5 data/alphabets/Zbear.tsv ~/blast-2.2.26/bin/
+python3 scripts/BlustClust_filter_alignment.py seq_str_families/sequence/ seq_str_families/bear/ scripts/Rfam_no_double.seed.gz 90 5 data/alphabets/Zbear.tsv ~/blast-2.2.26/bin/
 ```
 
 
-### Convert bear files to other alphabets
+#### Convert bear files to other alphabets
 To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 
 to other structural alphabets, execute
 
