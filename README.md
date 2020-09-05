@@ -64,7 +64,7 @@ To build a sPSSM you need to specify:
 * the MBR version (for example, `Zbear_90`)
 * the MBR file (it can be one of the generated MBRs in the [MBRs](outputs/MBRs) folder)
 * the `alphabet` as in the [alphabets](data/alphabets) folder 
-* the [gapped_fam_dict.pickle.gz](scripts/gapped_fam_dict.pickle) file
+* the [gapped_fam_dict.pickle.gz](scripts/gapped_fam_dict.pickle.gz) file
 
 #### Example:
 ```
@@ -89,13 +89,13 @@ The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 
 #### - RIG scores together with (rescaled) sequence Entropy
 
-Execute
+To compute the (rescaled) entropy values.
 
 ```
-python3 scripts/XXXXX.py 
+python3 scripts/compute_entropy.py
 ```
 
-to compute the (rescaled) entropy values.
+The output will be written in the [entropy](outputs/entropy) folder.
 
 Execute
 

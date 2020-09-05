@@ -1,8 +1,8 @@
 ## Data
 
-This folder contains:
+This folder contains the files used as input in the scripts.
 
-- the `MBR.tsv` file, which contains the Matrix of Bear encoded RNA (MBR) from [Mattei et al., 2014](https://academic.oup.com/nar/article/42/10/6146/2436561);
+The `MBR.tsv` file, which contains the Matrix of Bear encoded RNA (MBR) from [Mattei et al., 2014](https://academic.oup.com/nar/article/42/10/6146/2436561);
 - the [alphabets](alphabets) folder, which contains the tables for mapping all the encodings with the structural elements;
 - the [bear_alignment](bear_alignment) folder, which contains the structural alignments expressed with the different 
 encodings, and obtained by removing redundant primary sequences up to 50% and up to 90% of similarity for each Rfam seed 
