@@ -77,7 +77,7 @@ The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
 
 ### Plots generation
  
-#### - RIG scores with WUSS notation from secondary structure consensus
+#### RIG scores with WUSS notation from secondary structure consensus
 Execute
 
 ```
@@ -87,7 +87,7 @@ python3 scripts/plot_RIG_with_WUSS_notation.py
 The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 
 
-#### - RIG scores together with (rescaled) sequence Entropy
+#### RIG scores together with (rescaled) sequence Entropy
 
 To compute the (rescaled) entropy values.
 
@@ -106,7 +106,7 @@ python3 scripts/XXXXX.py
 The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
 
 
-#### - RIG scores together with R-scape power values
+#### RIG scores together with R-scape power values
 Execute
 
 ```

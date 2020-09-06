@@ -1,4 +1,4 @@
-## How to build a new/customized alphabet from bear notation #############
+## How to build a new/customized alphabet from bear notation
 
 First column: bear characters. If multiple, write all the characters without spaces.
 Second column: new character for the mapping. Only one character is allowed.
