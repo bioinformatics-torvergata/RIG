@@ -1,6 +1,6 @@
 ## Relative Information Gain (RIG) scores
 
-This folder contains the RIG scores calculated using [RNA Blocks](../../outputs/RNA_Blocks/README.md) obtained by 
+This folder contains the RIG scores calculated using [RNA Blocks](../../outputs/RNA_Blocks) obtained by 
 removing redundant primary sequences up to 50% and up to 90% of similarity for each Rfam seed alignment.
 
 In particular,

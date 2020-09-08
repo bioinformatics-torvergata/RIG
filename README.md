@@ -13,7 +13,7 @@ Computed RIG scores presented in this work can be found in the [RIG](data/RIG) f
 
 ### 1. Prepare your system
 
-TODO: add instructions to satisfy all scripts' dependencies
+``` pip install -r requirements.txt```
 
 ### 2. Clone and enter the repository
 
@@ -23,6 +23,11 @@ cd RIG
 ```
 
 ## Usage
+
+### Calculate RIG scores
+
+# TODO missing code
+
 
 ### Build RNA Blocks from Rfam families alignment
 
