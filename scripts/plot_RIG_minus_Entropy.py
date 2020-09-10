@@ -87,7 +87,7 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
         plt.axhline(0.75, color='k')
 
         ax.set_title('{}'.format(RF))
-        ax.set_ylabel('{} RIG - Sequence Entropy'.format(encoding))
+        ax.set_ylabel('{} RIG - entropy RIG'.format(encoding))
         ax.set_xlabel('position in RF alignment')
 
         plt.xticks(rotation=45)

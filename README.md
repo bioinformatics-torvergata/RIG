@@ -29,6 +29,16 @@ cd RIG
 # TODO missing code
 
 
+### Compute the (rescaled) sequence entropy
+Execute
+
+```
+python3 scripts/compute_entropy.py
+```
+
+The output will be written in the [entropy](outputs/entropy) folder.
+
+
 ### Build RNA Blocks from Rfam families alignment
 
 To build RNA Blocks from structural alignments you need to specify:
@@ -79,7 +89,6 @@ python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/Zbear_90/MBR_Zbear_90.tsv dat
 The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
 
 
-
 ### Plots generation
  
 #### RIG scores with WUSS notation from secondary structure consensus
@@ -92,20 +101,11 @@ python3 scripts/plot_RIG_with_WUSS_notation.py
 The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 
 
-#### RIG scores together with (rescaled) sequence Entropy
-
-To compute the (rescaled) entropy values.
-
-```
-python3 scripts/compute_entropy.py
-```
-
-The output will be written in the [entropy](outputs/entropy) folder.
-
+#### RIG scores minus the (rescaled) sequence entropy
 Execute
 
 ```
-python3 scripts/XXXXX.py 
+python3 scripts/plot_RIG_minus_Entropy.py 
 ```
 
 The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
