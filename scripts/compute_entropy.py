@@ -20,7 +20,7 @@ def fromTextToAlign(rtext):
     input:
         - r.text from response (format: http://rfam.org/family/{RF}/alignment/fasta)
     output:
-        - String array with alignments
+        - string array with alignments
     """
 
     al = []

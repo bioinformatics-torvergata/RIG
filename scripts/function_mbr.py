@@ -1,4 +1,4 @@
-from collections import Counter
+from collections import Counter, defaultdict
 import os
 import pandas as pd
 import numpy as np
@@ -443,3 +443,90 @@ def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
         fw.write('Expected_score:\t' + str(E) + '\nEntropy:\t' + str(H))
 
     make_heatmap(dir_output_MBRs_name_id, S_ij, name, id_blustClust, len(v_char))
+
+
+def get_colored_chunks(color_string, base1=False):
+    """assigns color values to the SSE"""
+
+    i = 0
+    colored_chunks = []
+    while i < len(color_string):
+        # Starting color
+        my_color = color_string[i]
+        start_idx = i
+        while (i < len(color_string)) and (color_string[i] == my_color):
+            i += 1
+
+        end_idx = i
+
+        # rangeX = np.arange(start_idx, end_idx, 1)
+        rangeX = np.arange(start_idx - 0.1, end_idx + 0.1)
+
+        # rangeY = RIG_values[start_idx:end_idx]
+        rangeY = 1 * np.arange(start_idx, end_idx, 1)
+
+        # If it is a single point then draw a narrow band at point height
+        if end_idx - start_idx == 1:
+            # rangeX = [start_idx-0.2, start_idx+0.2]
+            rangeY = [1, 1]
+
+        if base1:
+            rangeX = rangeX + 1
+
+        colored_chunks.append([rangeX, rangeY, my_color])
+
+    return colored_chunks
+
+
+def load_and_color_WUSS_dictionary(WUSS_path):
+    # Symbols
+    stems = "><}{][)("
+    hairpinloops = "_"
+    bulgeInterior = "-"
+    gaps = "."
+
+    # Read WUSS dictionary
+    WUSS_dict = dict()
+    with open(WUSS_path) as f:
+        for line in f:
+            # RF\tWUSS
+            RF, WUSS = line.split('\t')
+
+            # Remove gaps from the consensus
+            WUSS_dict[RF] = WUSS.strip().replace(gaps, "")
+
+
+    # Colors WUSS dictionary
+    WUSS_color_dict = dict()
+
+    for RF, WUSS in WUSS_dict.items():
+        color_str = ""
+        for c in WUSS:
+            if c in stems:
+                color_str += "r"
+            elif c in hairpinloops:
+                color_str += "g"
+            elif c in bulgeInterior:
+                color_str += "c"
+            elif c in gaps:
+                color_str += "w"
+            elif c.isalpha():
+                color_str += "m"
+            else:
+                color_str += "b"
+
+        WUSS_color_dict[RF] = color_str
+
+    return WUSS_color_dict
+
+
+def load_rig_values(path_encoding_list):
+    RIG_dict = defaultdict(dict)
+
+    for path, encoding in path_encoding_list:
+        with open(path) as f:
+            for line in f:
+                data = line.split()
+                RIG_dict[encoding][data[0]] = [float(x) for x in data[1:]]
+
+    return RIG_dict
