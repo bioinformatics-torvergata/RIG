@@ -24,21 +24,6 @@ cd RIG
 
 ## Usage
 
-### Calculate RIG scores
-
-# TODO missing code
-
-
-### Compute the (rescaled) sequence entropy
-Execute
-
-```
-python3 scripts/compute_entropy.py
-```
-
-The output will be written in the [entropy](outputs/entropy) folder.
-
-
 ### Build RNA Blocks from Rfam families alignment
 
 To build RNA Blocks from structural alignments you need to specify:
@@ -87,6 +72,28 @@ python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/Zbear_90/MBR_Zbear_90.tsv dat
 ```
 
 The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
+
+
+### Calculate RIG scores
+To calculate the RIG scores, you need to specify:
+
+* the `sPSSM` file (it can be one of the generated MBRs in the [sPSSM](outputs/sPSSM) folder)
+
+```
+ python3 scripts/compute_RIG.py outputs/sPSSMs/Zbear_90/rfam_PSSM_dic_Zbear_90.pickle
+```
+
+The RIG scores will be written in the [RIGs](outputs/RIGs) folder.
+
+
+### Compute the (normalized) sequence entropy
+Execute
+
+```
+python3 scripts/compute_entropy.py
+```
+
+The output will be written in the [entropy](outputs/entropy) folder.
 
 
 ### Plots generation
