@@ -76,7 +76,7 @@ if not os.path.exists(RIG_and_RscapePower_tsv_path):
             c = 0
             for RFXXX in dataframe.index:
                 if RFXXX in RFXXX_to_pos_to_power_dict:
-                    for i, x in enumerate(dataframe.loc[RFXXX].dropna()):
+                    for i, x in enumerate(dataframe.at[RFXXX].dropna()):
                         pos = i + 1
                         power = -1
                         if pos in RFXXX_to_pos_to_power_dict[RFXXX]:

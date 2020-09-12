@@ -343,9 +343,9 @@ def make_e(dir_output_MBRs_name_id, p_i, v_bear, name, identity):
     for char in v_bear:
         for char2 in v_bear:
             if char == char2:
-                e_ij.loc[char, char2] = p_i[char] * p_i[char2]
+                e_ij.at[char, char2] = p_i[char] * p_i[char2]
             else:
-                e_ij.loc[char, char2] = 2 * p_i[char] * p_i[char2]
+                e_ij.at[char, char2] = 2 * p_i[char] * p_i[char2]
 
     e_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
 
@@ -375,7 +375,7 @@ def Expected_score(s_ij, p_i):
         for i2, char2 in enumerate(s_ij.columns.values):
             if i2 >= i:
                 # print(char, char2)
-                E += s_ij.loc[char, char2] * p_i[char] * p_i[char2]
+                E += s_ij.at[char, char2] * p_i[char] * p_i[char2]
     # print(E)
     return E
 
