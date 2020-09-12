@@ -11,6 +11,7 @@ dir_output_RNA_blocks = 'outputs/RNA_Blocks'
 dir_output_MBRs = 'outputs/MBRs'
 dir_output_blustclust = 'outputs/blustclust'
 
+
 # funtion to run BlustClust (filter on identity score)
 # folder = seq_str_families/sequence/
 # identity = threshold expressed by % (ex. 50)
@@ -24,7 +25,8 @@ def run_blustClust(basedir_blustclust, folder_seq, identity, name):
     patter_input = os.path.join(folder_seq, '*')
     patter_output = os.path.join(dir_not_similar, '$filename')
 
-    os.system(f'for file in {patter_input}; do filename=$(basename -- $file); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done')
+    os.system(
+        f'for file in {patter_input}; do filename=$(basename -- $file); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done')
 
     print('BlustClust DONE!')
     return dir_not_similar
@@ -44,7 +46,7 @@ def filter_n_seq(folder, n_seq_family, name, identity):
     for fam in sorted(os.listdir(folder)):
         output = subprocess.check_output("wc -l " + os.path.join(folder, fam), shell=True, universal_newlines=True)
         if int(output.strip().split()[0]) >= int(n_seq_family):
-            os.system('cp ' + os.path.join(folder, fam) + ' ' + os.path.join(dir_filter_n_seq,  fam))
+            os.system('cp ' + os.path.join(folder, fam) + ' ' + os.path.join(dir_filter_n_seq, fam))
             num_moved += 1
 
     # print(f'Moved {num_moved} families with more than {n_seq_family} family members.')
@@ -99,6 +101,7 @@ def distributeGaps(gappedReference, ungappedString):
     result = "".join(result)
     return result
 
+
 # assert(distributeGaps('--abcdef-g-', 'bombasi') == '--bombas-i-')
 
 
@@ -123,7 +126,8 @@ def add_gap(folder, seed_rfam, name, identity):
                     seq_name = line[1:-1]
                     # output = subprocess.check_output("wc -l not_similar/"+fam, shell=True)
 
-                    seq_alignment = subprocess.check_output('zgrep ' + seq_name+' ' + seed_rfam, shell=True, universal_newlines=True)
+                    seq_alignment = subprocess.check_output('zgrep ' + seq_name + ' ' + seed_rfam, shell=True,
+                                                            universal_newlines=True)
                     line = f.readline()
                     test = distributeGaps(seq_alignment.split()[1], line[0:-1])
                     line = f.readline()
@@ -149,13 +153,13 @@ def add_gap(folder, seed_rfam, name, identity):
 
 def decode(bear):
     alph_bear = {'abc': 'a', 'def': 'A', 'ghi=': '=',
-          'lmnop': 'l', 'qrstu': 'L', 'vwxyz^': '^',
-          '!"#': 'i', '$%&': 'I', '\'()+': '+',
-          '234': 'n', '567': 'N', '890>': '>',
-          'ABC': 's', 'DEF': 'S', 'GHIJ': '~',
-          'KLMN': 'b', 'OPQR': 'B', 'STUVW': '|',
-          'YZ~': 'y', '?_|': 'Y', '/\\@': '@',
-          '{}[]': '[', ':': ':' , '-': '-'}
+                 'lmnop': 'l', 'qrstu': 'L', 'vwxyz^': '^',
+                 '!"#': 'i', '$%&': 'I', '\'()+': '+',
+                 '234': 'n', '567': 'N', '890>': '>',
+                 'ABC': 's', 'DEF': 'S', 'GHIJ': '~',
+                 'KLMN': 'b', 'OPQR': 'B', 'STUVW': '|',
+                 'YZ~': 'y', '?_|': 'Y', '/\\@': '@',
+                 '{}[]': '[', ':': ':', '-': '-'}
 
     result = ""
     for ch in bear:
@@ -210,7 +214,7 @@ def convert_new_bear_file(folder, file_name, name, identity):
         with open(os.path.join(folder, fam)) as f:
             line = f.readline()
             while line:
-                o.write(decode_from_file(line, file_name)+"\n")
+                o.write(decode_from_file(line, file_name) + "\n")
                 line = f.readline()
         o.close()
 
@@ -226,15 +230,15 @@ def make_blocks(folder, name, identity):
     families = os.listdir(folder)
 
     for fam in families:
-        o = open(dir_output + '/' + fam, "w")
-        f = open(folder + fam).readlines()
+        o = open(os.path.join(dir_output, fam), "w")
+        f = open(os.path.join(folder, fam)).readlines()
         zipped = zip(*f)
         v = []
         for col in zipped:
             if '-' not in col:
                 c = Counter(col)
                 for key in c:
-                    if float(c[key])/float(len(col)) > 0.5:
+                    if float(c[key]) / float(len(col)) > 0.5:
                         v.append(col)
         new = zip(*v)
         for seq in new:
@@ -243,38 +247,39 @@ def make_blocks(folder, name, identity):
     print('Created the {} folder.'.format(dir_output))
 
 
-#Compute expected frequencies
-#folder=Blocks/blocks_new_bear_$alph_$id
-def expected_frequencies(folder,alph_bear):
-    list_=os.listdir(folder)
+# Compute expected frequencies
+# folder=Blocks/blocks_new_bear_$alph_$id
+def expected_frequencies(folder, alph_bear):
+    list_ = os.listdir(folder)
     for fam in list_:
-        f=open(folder+fam)
+        f = open(os.path.join(folder, fam))
 
-        line=f.readline()
-        while(line):
-            c=Counter(line.strip())
+        line = f.readline()
+        while line:
+            c = Counter(line.strip())
             for key in c:
                 alph_bear[key].append(c[key])
-            line=f.readline()
+            line = f.readline()
 
     for key in alph_bear:
-        alph_bear[key]=sum(alph_bear[key])
+        alph_bear[key] = sum(alph_bear[key])
 
-    #nnew dict with single character frequency
-    c=0
+    # nnew dict with single character frequency
+    c = 0
     for key in alph_bear:
-        c+=alph_bear[key]
+        c += alph_bear[key]
     for key in alph_bear:
-        alph_bear[key]=float(alph_bear[key])/float(c)
-    v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
-    fr_expected=pd.DataFrame(columns=v_bear, index=v_bear)
+        alph_bear[key] = float(alph_bear[key]) / float(c)
+    v_bear = ['a', 'A', '=', 'l', 'L', '^', 'i', 'I', '+', 'n', 'N', '>', 's', 'S', '~', 'b', 'B', '|', 'y', 'Y', '@',
+              '[', ':']
+    fr_expected = pd.DataFrame(columns=v_bear, index=v_bear)
 
     for index, row in fr_expected.iterrows():
         for col in v_bear:
-            if index==colonna:
-                fr_expected.ix[index, col] = alph_bear[index]*2
+            if index == colonna:
+                fr_expected.ix[index, col] = alph_bear[index] * 2
             else:
-                fr_expected.ix[index, col] = 2*alph_bear[index]*alph_bear[col]
+                fr_expected.ix[index, col] = 2 * alph_bear[index] * alph_bear[col]
 
     fr_expected.to_csv('expected_frequencies.tsv', sep="\t")
     # print('Expected_frequencies DONE!')
@@ -301,7 +306,8 @@ def observed_substitution(dir_output_MBRs_name_id, folder, v_bear, name, identit
                         substitution.at[el, tmp] += 1.0
 
     substitution = substitution + substitution.T - 1.0
-    substitution.to_csv(os.path.join(dir_output_MBRs_name_id, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
+    substitution.to_csv(os.path.join(dir_output_MBRs_name_id, 'substitution_' + name + '_' + identity + '.tsv'),
+                        sep="\t")
 
     print('Substitution matrix DONE!')
     return substitution
@@ -359,7 +365,8 @@ def make_matrix(dir_output_MBRs_name_id, freq_observed, fr_expect, name, identit
     # Odds ratio matrix
     odds_ratio_matrix = freq_observed.divide(fr_expect)
 
-    odds_ratio_matrix.to_csv(os.path.join(dir_output_MBRs_name_id, 'odds_ratio_matrix_' + name + '_' + identity + '.tsv'), sep="\t")
+    odds_ratio_matrix.to_csv(
+        os.path.join(dir_output_MBRs_name_id, 'odds_ratio_matrix_' + name + '_' + identity + '.tsv'), sep="\t")
     print('Odds ratio matrix DONE!')
 
     # Score Matrix
@@ -407,7 +414,8 @@ def make_heatmap(dir_output_MBRs_name_id, S_ij, name, identity, encoding_size):
 # file_alph = alphabet file with bear mapping
 # file_info = output file with information about the MBRs
 
-def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, RFAM_seed_file_gz, id_blustClust, filter_nSeq, file_alph):
+def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, RFAM_seed_file_gz, id_blustClust,
+                                filter_nSeq, file_alph):
     name = os.path.basename(file_alph).split('.')[0]
     dir_not_similar = run_blustClust(basedir_blustclust, folder_seq, id_blustClust, name)
     dir_filter_n_seq = filter_n_seq(dir_not_similar, filter_nSeq, name, id_blustClust)
@@ -432,7 +440,7 @@ def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
     q_ij = make_q(dir_output_MBRs_name_id, sost, v_char, name, id_blustClust)  # freq_observed
 
     p_i = make_p(q_ij, v_char)
-    e_ij = make_e(dir_output_MBRs_name_id, p_i, v_char, name, id_blustClust)   # fr_expect
+    e_ij = make_e(dir_output_MBRs_name_id, p_i, v_char, name, id_blustClust)  # fr_expect
 
     S_ij = make_matrix(dir_output_MBRs_name_id, q_ij, e_ij, name, id_blustClust)
 
@@ -494,7 +502,6 @@ def load_and_color_WUSS_dictionary(WUSS_path):
 
             # Remove gaps from the consensus
             WUSS_dict[RF] = WUSS.strip().replace(gaps, "")
-
 
     # Colors WUSS dictionary
     WUSS_color_dict = dict()
