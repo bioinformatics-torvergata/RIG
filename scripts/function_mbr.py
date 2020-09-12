@@ -26,7 +26,8 @@ def run_blustClust(basedir_blustclust, folder_seq, identity, name):
     patter_output = os.path.join(dir_not_similar, '$filename')
 
     os.system(
-        f'for file in {patter_input}; do filename=$(basename -- $file); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done')
+        f'for file in {patter_input}; do filename=$(basename -- $file); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done'
+    )
 
     print('BlustClust DONE!')
     return dir_not_similar

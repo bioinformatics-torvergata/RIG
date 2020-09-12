@@ -24,40 +24,49 @@ cd RIG
 
 ## Usage
 
-### Build RNA Blocks from Rfam families alignment
+### Short guide
+
+To calculate all RIG scores for all the `alphabet` as in the [alphabets](data/alphabets) folder, removing redundant
+primary sequences up to a 50% and 90% of identity, execute 
+ ```
+bash scripts/calculate_rig_scores.sh
+```
+
+#### Step by step
+##### Build RNA Blocks from Rfam families alignment
 
 To build RNA Blocks from structural alignments you need to specify:
 
 * the `structural_alignment_folder` as in folder [bear_alignment](data/bear_alignment) 
-* the `identity_score threshold`
+* the `identity_score_threshold`
 * the `alphabet` as in the [alphabets](data/alphabets) folder
 
-#### Example:
+###### Example:
 ```
-python3 scripts/make_RNA_Blocks.py data/bear_alignment/bear_new_alignment_Zbear_90/ 90 alphabets/Zbear.tsv
+python3 scripts/make_RNA_Blocks.py data/bear_alignment/bear_new_alignment_Zbear_90 90 alphabets/Zbear.tsv
 ```
 
 The RNA Blocks will be built in the [RNA_Blocks](outputs/RNA_Blocks) folder.
 
 
-### Build Matrix of Bear encoded RNA (MBR) from Rfam Blocks
+##### Build Matrix of Bear encoded RNA (MBR) from Rfam Blocks
 
 To build a MBR you need to specify:
 
 * the `RNA_blocks_folder` (built in the previous **RNA Blocks from Rfam families alignment** step)
-* the `identity_score threshold`
+* the `identity_score_threshold`
 * the `alphabet` as in the [alphabets](data/alphabets) folder
 * the `info_file` as output file that will collect all the information of the built blocks
 
-#### Example:
+###### Example:
 ```
-python3 scripts/make_MBR.py outputs/RNA_Blocks/blocks_new_bear_Zbear_90/ 90 data/alphabets/Zbear.tsv Zbear_90
+python3 scripts/make_MBR.py outputs/RNA_Blocks/blocks_new_bear_Zbear_90 90 data/alphabets/Zbear.tsv Zbear_90
 ```
 
 The MBR will be built in the [MBRs](outputs/MBRs) folder.
 
 
-### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
+##### Build a structural Position Specific Scoring Matrix (sPSSM) from a new Matrix of Bear encoded RNA (MBR)
 
 To build a sPSSM you need to specify:
 
@@ -66,7 +75,7 @@ To build a sPSSM you need to specify:
 * the `alphabet` as in the [alphabets](data/alphabets) folder 
 * the [gapped_fam_dict.pickle.gz](scripts/gapped_fam_dict.pickle.gz) file
 
-#### Example:
+##### Example:
 ```
 python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/Zbear_90/MBR_Zbear_90.tsv data/alphabets/Zbear.tsv scripts/gapped_fam_dict.pickle.gz
 ```
@@ -74,19 +83,20 @@ python3 scripts/make_PSSM.py Zbear_90 outputs/MBRs/Zbear_90/MBR_Zbear_90.tsv dat
 The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
 
 
-### Calculate RIG scores
+##### Calculate RIG scores
 To calculate the RIG scores, you need to specify:
 
 * the `sPSSM` file (it can be one of the generated MBRs in the [sPSSM](outputs/sPSSM) folder)
 
+##### Example:
 ```
- python3 scripts/compute_RIG.py outputs/sPSSMs/Zbear_90/rfam_PSSM_dic_Zbear_90.pickle
+python3 scripts/compute_RIG.py outputs/sPSSMs/Zbear_90/rfam_PSSM_dic_Zbear_90.pickle
 ```
 
 The RIG scores will be written in the [RIGs](outputs/RIGs) folder.
 
 
-### Compute the (normalized) sequence entropy
+#### Compute the (normalized) sequence entropy
 Execute
 
 ```
@@ -158,7 +168,6 @@ To calculate the alignments, you need to specify:
 
 ###### Example:
 ```
-cd scripts
 python3 scripts/BlustClust_filter_alignment.py seq_str_families/sequence/ seq_str_families/bear/ scripts/Rfam_no_double.seed.gz 90 5 data/alphabets/Zbear.tsv ~/blast-2.2.26/bin/
 ```
 
