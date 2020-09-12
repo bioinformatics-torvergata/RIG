@@ -82,7 +82,7 @@ counter = 0
 for rfam in rfams:
     print(rfam)
     rfam_list.append(rfam)
-    PSSM_b = buildPSSM_alphabet(rfams[rfam], mbr)  ###TODO load MBRs (dataframe)
+    PSSM_b = buildPSSM_alphabet(rfams[rfam], mbr)
 
     PSSMs_alpha.append(PSSM_b)
     counter += 1
