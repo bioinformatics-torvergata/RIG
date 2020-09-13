@@ -12,7 +12,7 @@ dir_output_sPSSMs = 'outputs/sPSSMs'
 def mapAligns(gapped_fam_dict, alphamap):
     """convert alignments in the new alphabet"""
     for RF in gapped_fam_dict:
-        print(RF)
+        # print(RF)
         for ID in gapped_fam_dict[RF]:
             if gapped_fam_dict[RF][ID].get('bear'):
                 gapped_fam_dict[RF][ID]['alpha'] = "".join(
@@ -65,8 +65,13 @@ mbr = pd.read_table(args.mbr, index_col=0)
 mapAligns(gapped_fam_dict, alphamap)
 
 rfams = {}
-for RF in gapped_fam_dict:
-    print(RF)
+
+num_families_div_10 = len(gapped_fam_dict) // 10
+
+for num_fam, RF in enumerate(gapped_fam_dict):
+    # if num_fam % num_families_div_10 == 0:
+    #    print('{}% ({}/{})'.format((num_fam // num_families_div_10) * 10, num_fam, len(gapped_fam_dict)))
+
     if RF not in ignore_these_families:
         rfams[RF] = [
             [gapped_fam_dict[RF][ID]['sequence'] for ID in gapped_fam_dict[RF]],
@@ -77,15 +82,19 @@ for RF in gapped_fam_dict:
 PSSMs_alpha = []
 rfam_list = []
 
+num_families_div_10 = len(rfams) // 10
+
 # use RFAMS
-counter = 0
-for rfam in rfams:
-    print(rfam)
+print('Build PSSM: STARTED')
+for num_fam, rfam in enumerate(rfams):
+    if num_fam % num_families_div_10 == 0:
+        print('{:.2f}% ({}/{})'.format((num_fam / len(rfams)) * 100.0, num_fam, len(rfams)))
+
     rfam_list.append(rfam)
     PSSM_b = buildPSSM_alphabet(rfams[rfam], mbr)
 
     PSSMs_alpha.append(PSSM_b)
-    counter += 1
+print('Build PSSM: DONE!')
 
 
 dir_output_sPSSMs_name_id = os.path.join(dir_output_sPSSMs, mbrVersion)

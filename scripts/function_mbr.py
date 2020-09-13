@@ -231,19 +231,19 @@ def make_blocks(folder, name, identity):
     families = os.listdir(folder)
 
     for fam in families:
-        o = open(os.path.join(dir_output, fam), "w")
-        f = open(os.path.join(folder, fam)).readlines()
-        zipped = zip(*f)
-        v = []
-        for col in zipped:
-            if '-' not in col:
-                c = Counter(col)
-                for key in c:
-                    if float(c[key]) / float(len(col)) > 0.5:
-                        v.append(col)
-        new = zip(*v)
-        for seq in new:
-            o.write(''.join(seq))
+        with open(os.path.join(dir_output, fam), "w") as o:
+            f = open(os.path.join(folder, fam)).readlines()
+            zipped = zip(*f)
+            v = []
+            for col in zipped:
+                if '-' not in col:
+                    c = Counter(col)
+                    for key in c:
+                        if float(c[key]) / float(len(col)) > 0.5:
+                            v.append(col)
+            new = zip(*v)
+            for seq in new:
+                o.write(''.join(seq))
 
     print('Created the {} folder.'.format(dir_output))
 
@@ -277,7 +277,7 @@ def expected_frequencies(folder, alph_bear):
 
     for index, row in fr_expected.iterrows():
         for col in v_bear:
-            if index == colonna:
+            if index == col:#onna:
                 fr_expected.ix[index, col] = alph_bear[index] * 2
             else:
                 fr_expected.ix[index, col] = 2 * alph_bear[index] * alph_bear[col]
@@ -293,9 +293,14 @@ def expected_frequencies(folder, alph_bear):
 def observed_substitution(dir_output_MBRs_name_id, folder, v_bear, name, identity):
     substitution = pd.DataFrame(1.0, columns=v_bear, index=v_bear)
 
-    list_ = sorted(os.listdir(folder))
-    for fam in list_:
-        print(fam)
+    sorted_rfam_families_list = sorted(os.listdir(folder))
+    num_families_div_10 = len(sorted_rfam_families_list) // 10
+
+    print('Substitution matrix: STARTED')
+    for num_fam, fam in enumerate(sorted_rfam_families_list):
+        if num_fam % num_families_div_10 == 0:
+            print('{:.2f}% ({}/{})'.format((num_fam / len(sorted_rfam_families_list)) * 100.0, num_fam, len(sorted_rfam_families_list)))
+
         with open(os.path.join(folder, fam)) as f:
             f = [x.strip() for x in f.readlines()]
             v1, v2 = np.triu_indices(len(f))
@@ -310,13 +315,15 @@ def observed_substitution(dir_output_MBRs_name_id, folder, v_bear, name, identit
     substitution.to_csv(os.path.join(dir_output_MBRs_name_id, 'substitution_' + name + '_' + identity + '.tsv'),
                         sep="\t")
 
-    print('Substitution matrix DONE!')
+    print('Substitution matrix: DONE!')
     return substitution
 
 
 # substitution=dataframe returned by observed_substitution
 # v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def make_q(dir_output_MBRs_name_id, substitution, v_bear, name, identity):
+    print('q_ij: STARTED')
+
     number_couple = 0
     for j in range(0, len(v_bear)):
         number_couple += substitution.iloc[j, j:].sum()
@@ -325,7 +332,7 @@ def make_q(dir_output_MBRs_name_id, substitution, v_bear, name, identity):
     q_ij = substitution.divide(number_couple)
     q_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
 
-    print('q_ij DONE!')
+    print('q_ij: DONE!')
     return q_ij
 
 

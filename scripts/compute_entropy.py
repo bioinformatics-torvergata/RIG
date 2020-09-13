@@ -69,7 +69,7 @@ def removeGapsFromAlign(sscons, align, gapCharacter="."):
 # print(removeGapsFromAlign("aaaa.....aaaa", ["AAAABBBBBAAAA","AAAABBBBBAAAA","BBBBAAAAABBBB"]))
 
 for rf_ in families:
-    print(rf_)
+    # print(rf_)
     errors = []
     try:
         families.get(rf_)['gapless'] = removeGapsFromAlign(
@@ -127,9 +127,13 @@ def seq_RIG_H(s, char_amount=4):
 #    'AGAACGGAGCGGUUUCUCGUUUAACCCUUGAAGACACCGCCCGUUCAGAGGGUAUCUCUCGAACCCGAAAUAACUAAAGCCAACGUGAACUUUUGCGGACCUC--UGGUCCGCU']))
 
 
+num_families_div_10 = len(families) // 10
+
 # Compute Entropy
-for rf_ in families:
-    print(rf_)
+for num_fam, rf_ in enumerate(families):
+    if num_fam % num_families_div_10 == 0:
+        print('{:.2f}% ({}/{})'.format((num_fam / len(families)) * 100.0, num_fam, len(families)))
+
     errorsEntropy = []
     try:
         families.get(rf_)['entropy'] = alignmentToShannon(families.get(rf_).get('gapless', None))
