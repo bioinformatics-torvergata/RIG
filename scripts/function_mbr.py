@@ -264,7 +264,7 @@ def expected_frequencies(folder, alph_bear):
 
     for index, row in fr_expected.iterrows():
         for col in v_bear:
-            if index == col:#onna:
+            if index == col:  # onna:
                 fr_expected.ix[index, col] = alph_bear[index] * 2
             else:
                 fr_expected.ix[index, col] = 2 * alph_bear[index] * alph_bear[col]
@@ -286,7 +286,8 @@ def observed_substitution(dir_output_MBRs_name_id, folder, v_bear, name, identit
     print('Substitution matrix: STARTED')
     for num_fam, fam in enumerate(sorted_rfam_families_list):
         if num_fam % num_families_div_10 == 0:
-            print('{:.2f}% ({}/{})'.format((num_fam / len(sorted_rfam_families_list)) * 100.0, num_fam, len(sorted_rfam_families_list)))
+            print('{:.2f}% ({}/{})'.format((num_fam / len(sorted_rfam_families_list)) * 100.0, num_fam,
+                                           len(sorted_rfam_families_list)))
 
         with open(os.path.join(folder, fam)) as f:
             f = [x.strip() for x in f.readlines()]
@@ -534,3 +535,20 @@ def load_rig_values(path_encoding_list):
                 RIG_dict[encoding][data[0]] = [float(x) for x in data[1:]]
 
     return RIG_dict
+
+
+def removeGapsFromRIG(sscons, rig, gapCharacter="."):
+    """
+    rimuove dall'array rig le posizioni corrispondenti ai gap in sscons
+    input:
+        sscons in formato WUSS (o qualunque altro formato che identifichi i gap con "-")
+        rig come array
+    output:
+        rig modificato
+    """
+    assert len(sscons) == len(rig), "different lengths!\n sscons w gaps:{}, rig:{}".format(len(sscons), len(rig))
+
+    cleanRig = [r for ss, r in zip(sscons, rig) if ss != gapCharacter]
+    if len(sscons) - sscons.count(gapCharacter) != len(cleanRig):
+        raise ValueError('gaps non rimossi correttamente!')
+    return cleanRig

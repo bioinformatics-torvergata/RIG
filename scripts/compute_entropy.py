@@ -3,9 +3,11 @@ from collections import defaultdict
 from collections import Counter
 import gzip
 import numpy as np
+import sys
+import pickle
 
 # Paths and directories
-WUSS_path = "data/SS_cons/SS_cons_WUSS.tsv"
+WUSS_path = "data/Rfam13.0/SS_cons/SS_cons_WUSS.tsv"
 
 dir_rfam_alignments_fasta = '/home/guarracino/git/RIG/data/alignments/'
 dir_output_entropy = 'outputs/entropy/'
@@ -13,20 +15,15 @@ dir_output_entropy = 'outputs/entropy/'
 if not os.path.exists(dir_output_entropy):
     os.makedirs(dir_output_entropy)
 
+path_gapfam_pickle_gz = sys.argv[1]
+with gzip.open(path_gapfam_pickle_gz, 'rb') as afile:
+    gapped_fam_dict = pickle.load(afile)
 
 # RF from consensus list and request primary sequence alignments from RFAM
-def fromTextToAlign(rtext):
-    """converts a fast response from the API into a string array, ignoring IDs
-    input:
-        - r.text from response (format: http://rfam.org/family/{RF}/alignment/fasta)
-    output:
-        - string array with alignments
-    """
-
+def fromTextToAlign(seqId_to_info_to_str_dict):
     al = []
-    for a in rtext.split(">"):
-        if a:
-            al.append("".join(a.split("\n")[1:]))
+    for seq_id, info_to_str_dict in seqId_to_info_to_str_dict.items():
+        al.append(info_to_str_dict['sequence'])
     return al
 
 
@@ -39,8 +36,7 @@ with open(WUSS_path) as f:
         rf_, cons = line.strip('\n').split('\t')
         families[rf_]['SS_cons'] = cons.strip()
 
-        with gzip.open(os.path.join(dir_rfam_alignments_fasta, rf_ + '.alignment.gapped.fasta.gz'), 'rt') as f_fa:
-            families[rf_]['align'] = fromTextToAlign(f_fa.read())
+        families[rf_]['align'] = fromTextToAlign(gapped_fam_dict[rf_])
 
 
 # 2 remove gaps by looking at the consensus

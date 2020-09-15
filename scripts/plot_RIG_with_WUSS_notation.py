@@ -10,15 +10,15 @@ sns.set(context='paper', style='white', palette='deep', font='serif', font_scale
 import function_mbr
 
 # Paths and directories
-WUSS_path = "data/SS_cons/SS_cons_WUSS.tsv"
-RIG_dir = "data/RIG/nogaps/"  # gaps removed from the consensus
+WUSS_path = "data/Rfam13.0/SS_cons/SS_cons_WUSS.tsv"
+RIG_dir = "outputs/RIGs/"
 
 bear90_path = os.path.join(RIG_dir, "bear_90_RIGs.tsv")
 bear50_path = os.path.join(RIG_dir, "bear_50_RIGs.tsv")
 qbear90_path = os.path.join(RIG_dir, "qbear_90_RIGs.tsv")
 qbear50_path = os.path.join(RIG_dir, "qbear_50_RIGs.tsv")
-zbear90_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
-zbear50_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
+zbear90_path = os.path.join(RIG_dir, "Zbear_90_RIGs.tsv")
+zbear50_path = os.path.join(RIG_dir, "Zbear_90_RIGs.tsv")
 
 RIG_with_WUSS_output_dir = 'plots/RIG_WUSS/'
 
@@ -38,6 +38,17 @@ RIG_dict = function_mbr.load_rig_values([
     [zbear90_path, 'zbear90'],
     [zbear50_path, 'zbear50'],
 ])
+
+# Remove gaps
+with open(WUSS_path) as f:
+    for line in f:
+        RF, WUSS = line.strip('\n').split('\t')
+
+        for encoding, rf_to_rigs_dict in RIG_dict.items():
+            if RF in rf_to_rigs_dict:
+                RIG_dict[encoding][RF] = function_mbr.removeGapsFromRIG(WUSS, rf_to_rigs_dict[RF])
+            else:
+                print('Missing', RF)
 
 
 def plot_RIG_WUSS(RF, RIG_dict, WUSS_color_dict, encodings, filename='test'):
@@ -93,9 +104,10 @@ def plot_RIG_WUSS(RF, RIG_dict, WUSS_color_dict, encodings, filename='test'):
 
 for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
     print(RF_)
-    plot_RIG_WUSS(RF_,
-                  RIG_dict=RIG_dict,
-                  WUSS_color_dict=WUSS_color_dict,
-                  encodings=['bear90', 'qbear90', 'zbear90'],
-                  filename=f"{RIG_with_WUSS_output_dir}{RF_}_90"
-                  )
+    plot_RIG_WUSS(
+        RF_,
+        RIG_dict=RIG_dict,
+        WUSS_color_dict=WUSS_color_dict,
+        encodings=['bear90', 'qbear90', 'zbear90'],
+        filename=f"{RIG_with_WUSS_output_dir}{RF_}_90"
+    )

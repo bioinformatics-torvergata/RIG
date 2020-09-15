@@ -12,21 +12,18 @@ import function_mbr
 sns.set(context='paper', style='whitegrid', palette='deep', font='serif', font_scale=3, color_codes=True, rc=None)
 
 # Paths and directories
-WUSS_path = "data/SS_cons/SS_cons_WUSS.tsv"
-RIG_dir = "data/RIG/nogaps/"  # gaps removed from the consensus
+WUSS_path = "data/Rfam13.0/SS_cons/SS_cons_WUSS.tsv"
+RIG_dir = "outputs/RIGs/"
 path_entropy = 'outputs/entropy/entropy.tsv'
-
-RIG_dir = "data/RIG/nogaps/"  # gaps removed from the consensus
 
 bear90_path = os.path.join(RIG_dir, "bear_90_RIGs.tsv")
 bear50_path = os.path.join(RIG_dir, "bear_50_RIGs.tsv")
 qbear90_path = os.path.join(RIG_dir, "qbear_90_RIGs.tsv")
 qbear50_path = os.path.join(RIG_dir, "qbear_50_RIGs.tsv")
-zbear90_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
-zbear50_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
+zbear90_path = os.path.join(RIG_dir, "Zbear_90_RIGs.tsv")
+zbear50_path = os.path.join(RIG_dir, "Zbear_90_RIGs.tsv")
 
-
-RIG_vs_ENT_output_dir = 'plots/RIG_ENT/'
+RIG_vs_ENT_output_dir = 'plots/RIG_Entropy/'
 
 if not os.path.exists(RIG_vs_ENT_output_dir):
     os.makedirs(RIG_vs_ENT_output_dir)
@@ -38,10 +35,8 @@ with open(path_entropy) as f:
         dat = line.split()
         ENT_dict[dat[0]] = [x for x in map(float, dat[1:])]
 
-
 # Colors WUSS dictionary
 WUSS_color_dict = function_mbr.load_and_color_WUSS_dictionary(WUSS_path)
-
 
 # Load RIG values
 RIG_dict = function_mbr.load_rig_values([
@@ -53,6 +48,16 @@ RIG_dict = function_mbr.load_rig_values([
     [zbear50_path, 'zbear50'],
 ])
 
+# Remove gaps
+with open(WUSS_path) as f:
+    for line in f:
+        RF, WUSS = line.strip('\n').split('\t')
+
+        for encoding, rf_to_rigs_dict in RIG_dict.items():
+            if RF in rf_to_rigs_dict:
+                RIG_dict[encoding][RF] = function_mbr.removeGapsFromRIG(WUSS, rf_to_rigs_dict[RF])
+            else:
+                print('Missing', RF)
 
 ##Dati di RIG - entropy RIG
 """
@@ -67,7 +72,7 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
 
         if len(ENT_dict[RF]) != len(RIG_dict[encoding][RF]):
             print('None')
-            #ENT_dict[RF] = ENT_dict[RF] + (len(ENT_dict[RF]) - len(RIG_dict[encoding][RF])) * [0.0]
+            # ENT_dict[RF] = ENT_dict[RF] + (len(ENT_dict[RF]) - len(RIG_dict[encoding][RF])) * [0.0]
             return None
 
         fig, ax = plt.subplots(1, figsize=(20, 10), sharex='all')
@@ -113,10 +118,11 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
 
 for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
     print(RF_)
-    plot_RF_delta_RIG_ENT(RF_,
-                          RIG_dict=RIG_dict,
-                          ENT_dict=ENT_dict,
-                          WUSS_color_dict=WUSS_color_dict,
-                          encodings=['bear90', 'qbear90', 'zbear90'],
-                          filename=f"{RIG_vs_ENT_output_dir}{RF_}_90"
-                          )
+    plot_RF_delta_RIG_ENT(
+        RF_,
+        RIG_dict=RIG_dict,
+        ENT_dict=ENT_dict,
+        WUSS_color_dict=WUSS_color_dict,
+        encodings=['qbear90', 'qbear90', 'zbear90'],
+        filename=f"{RIG_vs_ENT_output_dir}{RF_}_90"
+    )

@@ -118,7 +118,7 @@ To calculate the RIG scores, you need to specify:
 
 * the `sPSSM` file (it can be one of the generated MBRs in the [sPSSM](outputs/sPSSM) folder)
 
-##### Example:
+##### Examples:
 ```
 python3 scripts/compute_RIG.py outputs/sPSSMs/bear_90/rfam_PSSM_dic_bear_90.pickle
 python3 scripts/compute_RIG.py outputs/sPSSMs/qbear_90/rfam_PSSM_dic_qbear_90.pickle
@@ -140,7 +140,7 @@ The RIG scores will be written in the [RIGs](outputs/RIGs) folder.
 Execute
 
 ```
-python3 scripts/compute_entropy.py
+python3 scripts/compute_entropy.py data/Rfam13.0/gapped_fam/gapped_fam_dict.pickle.gz
 ```
 
 The output will be written in the [entropy](outputs/entropy) folder.
@@ -152,7 +152,7 @@ The output will be written in the [entropy](outputs/entropy) folder.
 Execute
 
 ```
-python3 scripts/plot_RIG_with_WUSS_notation.py 
+python3 scripts/plot_RIG_with_WUSS_notation.py
 ```
 
 The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
@@ -162,7 +162,7 @@ The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
 Execute
 
 ```
-python3 scripts/plot_RIG_minus_Entropy.py 
+python3 scripts/plot_RIG_minus_Entropy.py
 ```
 
 The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
@@ -172,7 +172,7 @@ The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
 Execute
 
 ```
-python3 scripts/plot_RIG_and_RscapePower.py 
+python3 scripts/plot_RIG_and_RscapePower.py
 ```
 
 The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
