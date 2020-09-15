@@ -20,20 +20,18 @@ def mapAligns(gapped_fam_dict, alphamap):
                 )
 
 
-# mbrVersion = "Zbear_62"
 mbrVersion = sys.argv[1]
 
-# MBRs = "62/MBR_Zbear_62.tsv"
 MBR = sys.argv[2]
 
-# ALPHAMAP = "Zbear.tsv"
 ALPHAMAP = sys.argv[3]
 
-# GAPFAMDICT = "scripts/gapped_fam_dict.pickle.gz"
 GAPFAMDICT = sys.argv[4]
 
-ignore_these_families = ['RF00210', 'RF01879', 'RF02767', 'RF02768', 'RF02770', 'RF02773', 'RF02775', 'RF02781',
-                         'RF02783']
+ignore_these_families = [
+    #'RF00210', 'RF01879',
+    'RF02767', 'RF02768', 'RF02770', 'RF02773', 'RF02775', 'RF02781', 'RF02783'
+]
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--mbr", help="the substitution matrix to test")
@@ -82,12 +80,12 @@ for num_fam, RF in enumerate(gapped_fam_dict):
 PSSMs_alpha = []
 rfam_list = []
 
-num_families_div_10 = len(rfams) // 10
+num_families_div_20 = len(rfams) // 20
 
 # use RFAMS
 print('Build PSSM: STARTED')
 for num_fam, rfam in enumerate(rfams):
-    if num_fam % num_families_div_10 == 0:
+    if num_fam % num_families_div_20 == 0:
         print('{:.2f}% ({}/{})'.format((num_fam / len(rfams)) * 100.0, num_fam, len(rfams)))
 
     rfam_list.append(rfam)

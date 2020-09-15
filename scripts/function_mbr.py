@@ -5,11 +5,15 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import re
+import gzip
+import pickle
 import subprocess
+
+import shutil
 
 dir_output_RNA_blocks = 'outputs/RNA_Blocks'
 dir_output_MBRs = 'outputs/MBRs'
-dir_output_blustclust = 'outputs/blustclust'
+dir_output_blustclust = 'outputs/alignments'
 
 
 # funtion to run BlustClust (filter on identity score)
@@ -23,10 +27,10 @@ def run_blustClust(basedir_blustclust, folder_seq, identity, name):
 
     blustclust_run = os.path.join(basedir_blustclust, 'blastclust')
     patter_input = os.path.join(folder_seq, '*')
-    patter_output = os.path.join(dir_not_similar, '$filename')
+    patter_output = os.path.join(dir_not_similar, '$filename.txt')
 
     os.system(
-        f'for file in {patter_input}; do filename=$(basename -- $file); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done'
+        f'for file in {patter_input}; do filename=$(basename -- $file .fasta); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done'
     )
 
     print('BlustClust DONE!')
@@ -71,8 +75,8 @@ def get_bear(folder, folder_bear, name, identity):
             for line in f.readlines():
                 seq.append(line.split()[0])
 
-        o = open(os.path.join(dir_bear_filtered, fam_clean), "w")
-        with open(os.path.join(folder_bear, fam_clean)) as f2:
+        o = open(os.path.join(dir_bear_filtered, fam_clean.split('.')[0] + '.constraint.folded.fastb'), "w")
+        with open(os.path.join(folder_bear, fam_clean.split('.')[0] + '.constraint.folded.fastb')) as f2:
             line = f2.readline()
             while line:
                 if line[0] == ">" and line[1:-1] in seq:
@@ -107,7 +111,7 @@ def distributeGaps(gappedReference, ungappedString):
 
 
 # Function to Add gap based on RFAM alignment from seed
-def add_gap(folder, seed_rfam, name, identity):
+def add_gap(folder, path_gapfam_pickle_gz, name, identity):
     # folder=bear_filtered
     # seed_rfam
 
@@ -115,35 +119,19 @@ def add_gap(folder, seed_rfam, name, identity):
     if not os.path.exists(dir_bear_alignment):
         os.makedirs(dir_bear_alignment)
 
+    with gzip.open(path_gapfam_pickle_gz, 'rb') as afile:
+        gapfamdict = pickle.load(afile)
+
     c = 0
     for fam in sorted(os.listdir(folder)):
         c += 1
+        rfam_id = fam.split('.')[0]
 
-        o = open(os.path.join(dir_bear_alignment, fam), "w")
-        with open(os.path.join(folder, fam)) as f:
-            line = f.readline()
-            while line:
-                if line[0] == ">":
-                    seq_name = line[1:-1]
-                    # output = subprocess.check_output("wc -l not_similar/"+fam, shell=True)
-
-                    seq_alignment = subprocess.check_output('zgrep ' + seq_name + ' ' + seed_rfam, shell=True,
-                                                            universal_newlines=True)
-                    line = f.readline()
-                    test = distributeGaps(seq_alignment.split()[1], line[0:-1])
-                    line = f.readline()
-                    line = f.readline()
-                    bear_seq = line
-                    gap_pos = []
-                    for i, el in enumerate(test):
-                        if el == '-':
-                            gap_pos.append(i)
-                    for i in gap_pos:
-                        bear_seq = bear_seq[:i] + "-" + bear_seq[i:]
-                    o.write(bear_seq)
-                else:
-                    line = f.readline()
-        o.close()
+        with open(os.path.join(dir_bear_alignment, fam), "w") as o:
+            with open(os.path.join(folder, fam)) as f:
+                for line in f:
+                    if line[0] == ">":
+                        o.write(gapfamdict[rfam_id][line.strip('\n')]['bear'] + '\n')
 
         # print(fam+"\t"+str(c)+" famiglie su "+str(len(lista_fam_filter2)))
 
@@ -211,13 +199,12 @@ def convert_new_bear_file(folder, file_name, name, identity):
         os.makedirs(dir_bear_new_alignment)
 
     for fam in sorted(os.listdir(folder)):
-        o = open(os.path.join(dir_bear_new_alignment, fam), "w")
-        with open(os.path.join(folder, fam)) as f:
-            line = f.readline()
-            while line:
-                o.write(decode_from_file(line, file_name) + "\n")
+        with open(os.path.join(dir_bear_new_alignment, fam.split('.')[0] + '.folded'), "w") as o:
+            with open(os.path.join(folder, fam)) as f:
                 line = f.readline()
-        o.close()
+                while line:
+                    o.write(decode_from_file(line, file_name) + "\n")
+                    line = f.readline()
 
     print('Decoding BEAR from File DONE! New alignments are in the {} folder.'.format(dir_bear_new_alignment))
 
@@ -322,8 +309,6 @@ def observed_substitution(dir_output_MBRs_name_id, folder, v_bear, name, identit
 # substitution=dataframe returned by observed_substitution
 # v_bear=['a','A','=','l','L','^','i','I','+','n','N','>','s','S','~','b','B','|','y','Y','@','[', ':']
 def make_q(dir_output_MBRs_name_id, substitution, v_bear, name, identity):
-    print('q_ij: STARTED')
-
     number_couple = 0
     for j in range(0, len(v_bear)):
         number_couple += substitution.iloc[j, j:].sum()
@@ -421,17 +406,21 @@ def make_heatmap(dir_output_MBRs_name_id, S_ij, name, identity, encoding_size):
 # filter_nSeq = threshold on number of sequences in a family after filtering
 # file_alph = alphabet file with bear mapping
 # file_info = output file with information about the MBRs
-
-def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, RFAM_seed_file_gz, id_blustClust,
+def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, path_gapfam_pickle_gz, id_blustClust,
                                 filter_nSeq, file_alph):
     name = os.path.basename(file_alph).split('.')[0]
     dir_not_similar = run_blustClust(basedir_blustclust, folder_seq, id_blustClust, name)
     dir_filter_n_seq = filter_n_seq(dir_not_similar, filter_nSeq, name, id_blustClust)
     dir_bear_filtered = get_bear(dir_filter_n_seq, folder_bear, name, id_blustClust)
-    dir_bear_alignment = add_gap(dir_bear_filtered, RFAM_seed_file_gz, name, id_blustClust)
+    dir_bear_alignment = add_gap(dir_bear_filtered, path_gapfam_pickle_gz, name, id_blustClust)
 
-    # convert_new_bear_file(os.path.join('bear_alignment___'+id_blustClust), file_alph, name, id_blustClust)
     convert_new_bear_file(dir_bear_alignment, file_alph, name, id_blustClust)
+
+    # Cleaning
+    shutil.rmtree(dir_not_similar)
+    shutil.rmtree(dir_filter_n_seq)
+    shutil.rmtree(dir_bear_filtered)
+    shutil.rmtree(dir_bear_alignment)
 
 
 def Make_MBR_from_blocks(blocks_folder, id_blustClust, file_alph, file_info):
