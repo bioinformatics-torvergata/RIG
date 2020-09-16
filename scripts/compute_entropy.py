@@ -7,15 +7,14 @@ import sys
 import pickle
 
 # Paths and directories
-WUSS_path = "data/Rfam13.0/SS_cons/SS_cons_WUSS.tsv"
-
-dir_rfam_alignments_fasta = '/home/guarracino/git/RIG/data/alignments/'
 dir_output_entropy = 'outputs/entropy/'
 
 if not os.path.exists(dir_output_entropy):
     os.makedirs(dir_output_entropy)
 
-path_gapfam_pickle_gz = sys.argv[1]
+WUSS_path = sys.argv[1]
+
+path_gapfam_pickle_gz = sys.argv[2]
 with gzip.open(path_gapfam_pickle_gz, 'rb') as afile:
     gapped_fam_dict = pickle.load(afile)
 

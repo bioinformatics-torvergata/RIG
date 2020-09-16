@@ -6,13 +6,14 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 
 import seaborn as sns
+import sys
 
 import function_mbr
 
 sns.set(context='paper', style='whitegrid', palette='deep', font='serif', font_scale=3, color_codes=True, rc=None)
 
 # Paths and directories
-WUSS_path = "data/Rfam13.0/SS_cons/SS_cons_WUSS.tsv"
+WUSS_path = sys.argv[1]
 RIG_dir = "outputs/RIGs/"
 path_entropy = 'outputs/entropy/entropy.tsv'
 
@@ -20,8 +21,8 @@ bear90_path = os.path.join(RIG_dir, "bear_90_RIGs.tsv")
 bear50_path = os.path.join(RIG_dir, "bear_50_RIGs.tsv")
 qbear90_path = os.path.join(RIG_dir, "qbear_90_RIGs.tsv")
 qbear50_path = os.path.join(RIG_dir, "qbear_50_RIGs.tsv")
-zbear90_path = os.path.join(RIG_dir, "Zbear_90_RIGs.tsv")
-zbear50_path = os.path.join(RIG_dir, "Zbear_90_RIGs.tsv")
+zbear90_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
+zbear50_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
 
 RIG_vs_ENT_output_dir = 'plots/RIG_Entropy/'
 
@@ -118,11 +119,12 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
 
 for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
     print(RF_)
+
     plot_RF_delta_RIG_ENT(
         RF_,
         RIG_dict=RIG_dict,
         ENT_dict=ENT_dict,
         WUSS_color_dict=WUSS_color_dict,
-        encodings=['qbear90', 'qbear90', 'zbear90'],
+        encodings=['qbear90', 'zbear90'],
         filename=f"{RIG_vs_ENT_output_dir}{RF_}_90"
     )

@@ -20,17 +20,16 @@ dir_output_blustclust = 'outputs/alignments'
 # folder = seq_str_families/sequence/
 # identity = threshold expressed by % (ex. 50)
 # return a folder with selected sequences
-def run_blustClust(basedir_blustclust, folder_seq, identity, name):
+def run_blustClust(path_blustclust, folder_seq, identity, name):
     dir_not_similar = os.path.join(dir_output_blustclust, 'not_similar_' + name + '_' + identity)
     if not os.path.exists(dir_not_similar):
         os.makedirs(dir_not_similar)
 
-    blustclust_run = os.path.join(basedir_blustclust, 'blastclust')
     patter_input = os.path.join(folder_seq, '*')
     patter_output = os.path.join(dir_not_similar, '$filename.txt')
 
     os.system(
-        f'for file in {patter_input}; do filename=$(basename -- $file .fasta); echo $filename; {blustclust_run} -i $file -o {patter_output} -p F -S ' + identity + ' ; done'
+        f'for file in {patter_input}; do filename=$(basename -- $file .fasta); echo $filename; {path_blustclust} -i $file -o {patter_output} -p F -S ' + identity + ' ; done'
     )
 
     print('BlustClust DONE!')
@@ -75,8 +74,8 @@ def get_bear(folder, folder_bear, name, identity):
             for line in f.readlines():
                 seq.append(line.split()[0])
 
-        o = open(os.path.join(dir_bear_filtered, fam_clean.split('.')[0] + '.constraint.folded.fastb'), "w")
-        with open(os.path.join(folder_bear, fam_clean.split('.')[0] + '.constraint.folded.fastb')) as f2:
+        o = open(os.path.join(dir_bear_filtered, fam_clean.split('.')[0] + '.folded.fastb'), "w")
+        with open(os.path.join(folder_bear, fam_clean.split('.')[0] + '.folded.fastb')) as f2:
             line = f2.readline()
             while line:
                 if line[0] == ">" and line[1:-1] in seq:
@@ -98,12 +97,14 @@ def get_bear(folder, folder_bear, name, identity):
 
 def distributeGaps(gappedReference, ungappedString):
     assert len(gappedReference.replace('-', '')) == len(ungappedString), 'ungapped strings should be equal'
+
     result = list(ungappedString)
     gaplist = [m.start() for m in re.finditer('-', gappedReference)]
 
     for gap in gaplist:
         result.insert(gap, '-')
     result = "".join(result)
+
     return result
 
 
@@ -407,10 +408,10 @@ def make_heatmap(dir_output_MBRs_name_id, S_ij, name, identity, encoding_size):
 # filter_nSeq = threshold on number of sequences in a family after filtering
 # file_alph = alphabet file with bear mapping
 # file_info = output file with information about the MBRs
-def BlustClust_filter_alignment(basedir_blustclust, folder_seq, folder_bear, path_gapfam_pickle_gz, id_blustClust,
+def BlustClust_filter_alignment(path_blustclust, folder_seq, folder_bear, path_gapfam_pickle_gz, id_blustClust,
                                 filter_nSeq, file_alph):
     name = os.path.basename(file_alph).split('.')[0]
-    dir_not_similar = run_blustClust(basedir_blustclust, folder_seq, id_blustClust, name)
+    dir_not_similar = run_blustClust(path_blustclust, folder_seq, id_blustClust, name)
     dir_filter_n_seq = filter_n_seq(dir_not_similar, filter_nSeq, name, id_blustClust)
     dir_bear_filtered = get_bear(dir_filter_n_seq, folder_bear, name, id_blustClust)
     dir_bear_alignment = add_gap(dir_bear_filtered, path_gapfam_pickle_gz, name, id_blustClust)

@@ -28,12 +28,12 @@ encoding](../alphabets/qbear.tsv), and obtained by removing redundant primary se
 Rfam seed alignment.
 
 
-- [bear_new_alignment_Zbear_50](bear_new_alignment_Zbear_50) contains the structural alignment expressed with the [qBEAR
-encoding](../alphabets/Zbear.tsv), and obtained by removing redundant primary sequences up to 50% of similarity for each
+- [bear_new_alignment_zbear_50](bear_new_alignment_zbear_50) contains the structural alignment expressed with the [qBEAR
+encoding](../alphabets/zbear.tsv), and obtained by removing redundant primary sequences up to 50% of similarity for each
 Rfam seed alignment.
-- [bear_new_alignment_Zbear_62](bear_new_alignment_Zbear_62) contains the structural alignment expressed with the [qBEAR
-encoding](../alphabets/Zbear.tsv), and obtained by removing redundant primary sequences up to 62% of similarity for each
+- [bear_new_alignment_zbear_62](bear_new_alignment_zbear_62) contains the structural alignment expressed with the [qBEAR
+encoding](../alphabets/zbear.tsv), and obtained by removing redundant primary sequences up to 62% of similarity for each
 Rfam seed alignment.
-- [bear_new_alignment_Zbear_90](bear_new_alignment_Zbear_90) contains the structural alignment expressed with the [qBEAR
-encoding](../alphabets/Zbear.tsv), and obtained by removing redundant primary sequences up to 90% of similarity for each
+- [bear_new_alignment_zbear_90](bear_new_alignment_zbear_90) contains the structural alignment expressed with the [qBEAR
+encoding](../alphabets/zbear.tsv), and obtained by removing redundant primary sequences up to 90% of similarity for each
 Rfam seed alignment.

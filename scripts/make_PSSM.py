@@ -29,8 +29,8 @@ ALPHAMAP = sys.argv[3]
 GAPFAMDICT = sys.argv[4]
 
 ignore_these_families = [
-    #'RF00210', 'RF01879',
-    'RF02767', 'RF02768', 'RF02770', 'RF02773', 'RF02775', 'RF02781', 'RF02783'
+    #'RF00210', 'RF01879', #RF is missing
+    #'RF02767', 'RF02768', 'RF02770', 'RF02773', 'RF02775', 'RF02781', 'RF02783'
 ]
 
 parser = argparse.ArgumentParser()
