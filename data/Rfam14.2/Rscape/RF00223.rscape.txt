@@ -1,0 +1,71 @@
+# R-scape :: RNA Structural Covariation Above Phylogenetic Expectation
+# R-scape 1.5.16 elenarivas@fas.harvard.edu (August 2020)
+# Copyright (C) 2016-2019 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+#-------------------------------------------------------------------------------------------------------
+# MSA RF00223_IRES_Bip nseq 9 (9) alen 263 (277) avgid 81.12 (81.01) nbpairs 33 (33)
+# Two-set statistical test (one test for annotated basepairs, another for all other pairs)
+#
+#
+# Method Target_E-val [cov_min,cov_max] [FP | TP True Found | Sen PPV F] 
+# GTp    0.05         [-4.28,10.02]     [0 | 0 33 0 | 0.00 0.00 0.00] 
+#
+#       left_pos       right_pos        score          E-value       substitutions      power
+#-------------------------------------------------------------------------------------------------------
+no significant pairs
+
+# The given structure
+# SS_cons :::((((((,,,,,<<<<<<-------------<<<<<<<--------------------
+#
+# SS_cons --<<<<<<<<<_______________________________>>>>>>>>>------>>>
+#
+# SS_cons -->>>>-------------------------------------->>>>>>,,<<<<<___
+#
+# SS_cons >>>>>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#
+# SS_cons ,,,,,,,,,,,,,,,,,,,,)))))):::::::::::
+#
+
+# Power analysis of given structure 
+#
+# covary  left_pos      right_pos    substitutions      power
+#----------------------------------------------------------------
+          4		266		1		0.00
+          5		265		3		0.00
+          6		264		0		0.00
+          7		263		0		0.00
+          8		262		1		0.00
+          9		261		2		0.00
+          15		170		1		0.00
+          16		169		0		0.00
+          17		168		0		0.00
+          18		167		0		0.00
+          19		166		4		0.00
+          20		165		0		0.00
+          34		126		2		0.00
+          35		125		2		0.00
+          36		124		3		0.00
+          37		123		2		0.00
+          38		120		1		0.00
+          39		119		0		0.00
+          40		118		3		0.00
+          63		111		1		0.00
+          64		110		1		0.00
+          65		109		0		0.00
+          66		108		1		0.00
+          67		107		0		0.00
+          68		106		0		0.00
+          69		105		1		0.00
+          70		104		0		0.00
+          71		103		0		0.00
+          173		185		1		0.00
+          174		184		2		0.00
+          175		183		1		0.00
+          176		182		0		0.00
+          177		181		1		0.00
+#
+# BPAIRS 33
+# avg substitutions per BP  1.0
+# BPAIRS expected to covary 0.0 +/- 0.0
+# BPAIRS observed to covary 0
+#

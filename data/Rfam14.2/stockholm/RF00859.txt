@@ -1,0 +1,43 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00859
+#=GF ID   mir-234
+#=GF DE   microRNA mir-234
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   50.00
+#=GF TC   55.10
+#=GF NC   47.80
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF CL   CL00092
+#=GF DR   MIPF; MIPF0000315;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   12672692
+#=GF RT   The microRNAs of Caenorhabditis elegans.
+#=GF RA   Lim LP, Lau NC, Weinstein EG, Abdelhakim A, Yekta S, Rhoades MW, Burge CB,
+#=GF RA   Bartel DP
+#=GF RL   Genes Dev. 2003;17:991-1008.
+#=GF RN   [2]
+#=GF RM   12747828
+#=GF RT   MicroRNAs and other tiny endogenous RNAs in C. elegans.
+#=GF RA   Ambros V, Lee RC, Lavanway A, Williams PT, Jewell D
+#=GF RL   Curr Biol. 2003;13:807-818.
+#=GF WK   MicroRNA
+#=GF SQ   4
+
+
+Z81468.1/1975-1876           AACACAAAAAAUGAUCAAACGGUAUUCCAGAGUUGAUAAUAAAAAUGCG-UCAGUCCGCAAUCUAUUAUUGCUCGAGAAUACCCUUUGACUA--CUAUGUGUA
+AAGD02003360.1/7138-7240     GUGGUGAACCAAGCUCAAACGGUAUUCGACGGUGAAUAAUAAAAAUGACAUUGCGACUCAUUCUAUUAUUGCUCGAGAAUACCCUUUGACACGGUUCACCUUU
+CAAC02000444.1/319384-319479 GACUCUAGCAAAGAUCAAACGGUAUUCCUGAGUGAAUAAUAAAAAUGAG-UC------CAUUCUAUUAUUGCUCGAGAAUACCCUUUGACAAGCUGAAAAGUG
+ABEG02008127.1/4482-4381     AUGCAACAAUCAGCUCAAACGGUAUUCUUUGGUUAAUAAUAAGGAUGGCAUCACGACUCAUUAUAUUAUUGCUCAAGAAUACCCUUUGACAAA-UGUCGCGUG
+#=GC SS_cons                 ::::::::::::::<<<<<-<<<<<<<--<<<<-<<<<<<<--<<<<<<_______>>>>>>->>>>>>>>>>>-->>>>>>>->>>>>::::.:::::::::
+#=GC RF                      auguuaaAaaaaGaUCAAACGGUAUUCuagaGuuaAUAAUAAAaaUGggAUcacgaccCAuucUAUUAUugCucgAGAAUACCCUUUGACaag.UuaagugUg
+
+//

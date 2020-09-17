@@ -301,8 +301,9 @@ def observed_substitution(dir_output_MBRs_name_id, folder, v_bear, name, identit
                         substitution.at[el, tmp] += 1.0
 
     substitution = substitution + substitution.T - 1.0
-    substitution.to_csv(os.path.join(dir_output_MBRs_name_id, 'substitution_' + name + '_' + identity + '.tsv'),
-                        sep="\t")
+
+    # - the `substitution_qbear_50.tsv` matrix with the observed substitutions;
+    # substitution.to_csv(os.path.join(dir_output_MBRs_name_id, 'substitution_' + name + '_' + identity + '.tsv'), sep="\t")
 
     print('Substitution matrix: DONE!')
     return substitution
@@ -317,7 +318,9 @@ def make_q(dir_output_MBRs_name_id, substitution, v_bear, name, identity):
     # print(number_couple)
 
     q_ij = substitution.divide(number_couple)
-    q_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
+
+    # - the `q_ij_qbear_50.tsv` matrix with the observed relative frequencies;
+    # q_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'q_ij_' + name + '_' + identity + '.tsv'), sep="\t")
 
     print('q_ij: DONE!')
     return q_ij
@@ -348,7 +351,8 @@ def make_e(dir_output_MBRs_name_id, p_i, v_bear, name, identity):
             else:
                 e_ij.at[char, char2] = 2 * p_i[char] * p_i[char2]
 
-    e_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
+    # - the `E_ij_qbear_50.tsv` matrix with the expected relative frequencies by chance;
+    # e_ij.to_csv(os.path.join(dir_output_MBRs_name_id, 'E_ij_' + name + '_' + identity + '.tsv'), sep='\t')
 
     print('e_ij DONE!')
     return e_ij

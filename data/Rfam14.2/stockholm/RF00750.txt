@@ -1,0 +1,53 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00750
+#=GF ID   mir-458
+#=GF DE   microRNA mir-458
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   80.00
+#=GF TC   81.70
+#=GF NC   63.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000179;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   18469162
+#=GF RT   A microRNA catalog of the developing chicken embryo identified by a deep
+#=GF RT   sequencing approach.
+#=GF RA   Glazov EA, Cottee PA, Barris WC, Moore RJ, Dalrymple BP, Tizard ML
+#=GF RL   Genome Res. 2008;18:957-964.
+#=GF RN   [2]
+#=GF RM   15937218
+#=GF RT   The developmental miRNA profiles of zebrafish as determined by small RNA
+#=GF RT   cloning.
+#=GF RA   Chen PY, Manninga H, Slanchev K, Chien M, Russo JJ, Ju J, Sheridan R, John
+#=GF RA   B, Marks DS, Gaidatzis D, Sander C, Zavolan M, Tuschl T
+#=GF RL   Genes Dev. 2005;19:1288-1293.
+#=GF RN   [3]
+#=GF RM   18463306
+#=GF RT   Conservation of small RNA pathways in platypus.
+#=GF RA   Murchison EP, Kheradpour P, Sachidanandam R, Smith C, Hodges E, Xuan Z,
+#=GF RA   Kellis M, Grutzner F, Stark A, Hannon GJ
+#=GF RL   Genome Res. 2008;18:995-1004.
+#=GF WK   MicroRNA
+#=GF SQ   7
+
+
+AANH01006599.1/90205-90129   GUGUGGACGGCAGCGCCAUUUUCAGAGCUAUAAGUGUGAAGU-GGUCAUAGCUCUUUAAAUGGUACUGCCGUGUGCAC
+BAAF04063537.1/2161-2085     CUGCAGACUCCAGCGCCAUUUUCAGAGCUAUAAGUGUGAAGU-GAUGAUAGCUCUUUCAAUGGUACUGCAGUAAGCAU
+CAAE01013759.1/80040-80116   GUGCAGACGGCAGCGCCAUUUUCAGAGCUAUCAGUGCCAGCG-GGUCAUAGCUCUUUAAAUGGUUCUGCUGUAGGCAC
+BX322629.9/12571-12494       GUGCAGAUAGCAGCGCCAUUUACAGAGCUAUAAGCAUCAUAGUUGUCAUAGCUCUUUGAAUGGUACUGCCAUAUGCAC
+AADN03006674.1/322433-322356 GUGCAGAUGGCAGCGCCAUUUUCAGAGCUAUAAACAGCGUCAUUGUCAUAGCUCUUUGAAUGGUACUGCCAUAUGUAC
+CAAB02019872.1/7521-7596     CUGCAGACAGCAGCGCCAUUUUCAGAGCUAUCAGU--CAACGUGGUCAUAGCUCUUUAAAUGGUACUGCUGUAGGCAC
+AAWZ02012080.1/11427-11350   GUGCAGAUGGCAGCGCCAUUUUUGGAGCUAUAAACACUCUCACUGUCAUAGCUCUUUGAAUGGUACUGCCAUAUGUAC
+#=GC SS_cons                 <<<<--<<<<<<<-<<<<<<<--<<<<<<<<________________>>>>>>>>-->>>>>>>->>>>>>>-->>>>
+#=GC RF                      gUGCAGAcgGCAGCgCCAUUuUCaGAGCUAUAAguaucaacaugGUcAUAGCUCuUUaAAUGGuACUGCcgUAuGCAc
+
+//

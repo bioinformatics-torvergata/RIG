@@ -1,0 +1,67 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01916
+#=GF ID   mir-988
+#=GF DE   microRNA mir-988
+#=GF AU   Boursnell C; 0000-0002-3494-4451
+#=GF SE   Predicted; ClustalW2
+#=GF SS   Predicted; RNAalifold
+#=GF GA   65.00
+#=GF TC   68.50
+#=GF NC   43.10
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0000276; microRNA;
+#=GF DR   MIPF; MIPF0000724;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17989255
+#=GF RT   Systematic discovery and characterization of fly microRNAs using 12
+#=GF RT   Drosophila genomes
+#=GF RA   Stark A, Kheradpour P, Parts L, Brennecke J, Hodges E, Hannon GJ, Kellis M
+#=GF RL   Genome Res. 2007;17:1865-1879.
+#=GF RN   [2]
+#=GF RM   20037610
+#=GF RT   Evolutionary flux of canonical microRNAs and mirtrons in Drosophila
+#=GF RA   Berezikov E, Liu N, Flynt AS, Hodges E, Rooks M, Hannon GJ, Lai EC
+#=GF RL   Nat Genet. 2010;42:6-9.
+#=GF RN   [3]
+#=GF RM   18463636
+#=GF RT   Drosophila endogenous small RNAs bind to Argonaute 2 in somatic cells
+#=GF RA   Kawamura Y, Saito K, Kin T, Ono Y, Asai K, Sunohara T, Okada TN, Siomi MC,
+#=GF RA   Siomi H
+#=GF RL   Nature. 2008;453:793-797.
+#=GF RN   [4]
+#=GF RM   19961592
+#=GF RT   Direct sequencing and expression analysis of a large number of miRNAs in
+#=GF RT   Aedes aegypti and a multi-species survey of novel mosquito miRNAs
+#=GF RA   Li S, Mead EA, Liang S, Tu Z
+#=GF RL   BMC Genomics. 2009;10:581.
+#=GF RN   [5]
+#=GF RM   20167119
+#=GF RT   Identification of microRNAs expressed in two mosquito vectors, Aedes
+#=GF RT   albopictus and Culex quinquefasciatus
+#=GF RA   Skalsky RL, Vanlandingham DL, Scholle F, Higgs S, Cullen BR
+#=GF RL   BMC Genomics. 2010;11:119.
+#=GF RN   [6]
+#=GF RM   17989254
+#=GF RT   Evolution, biogenesis, expression, and target predictions of a
+#=GF RT   substantially expanded set of Drosophila microRNAs
+#=GF RA   Ruby JG, Stark A, Johnston WK, Kellis M, Bartel DP, Lai EC
+#=GF RL   Genome Res. 2007;17:1850-1864.
+#=GF WK   MicroRNA
+#=GF SQ   4
+
+
+AAWU01031362.1/14278-14363       -----------GACCCGCUGCGGGUGUGUGCUUUGUGACAACGAGAUUCAGC--UUUGAAAUCAUCCCCUUGUUGCAAACCUCACGCUUGCGGUGGGGG-----
+AAGE02017684.1/78061-77987       ----------------GCUGCGGGUGUGUGCUUUGUGACAAUGAGAUUCGGU---UCGAUAUCAUCCCCUUGUUGCAAACCUCACGCUUGCGGU----------
+AE013599.4/8046473-8046377       CGGCG--GUACCGGGCAUUUUGGGUGUGUGAUUUGUAGCAAAGUGAUAUGUA--UUUG--AUCAUCCCCUUGUUGCAAACCUCACGCCAAAGAUGA-UCUGCGA
+AAAB01008807.1/10005270-10005171 --GUGGAGCAUUGGACAUUGCCGGUGUGUGUUUUGUGACAAUGAGAUUUAAUAGUUUAAGUUCAUCCCCUUGUUGCAAACCUCACGCUGGCGGUGUUUCCGA--
+#=GC SS_cons                     ..:::..::::<<<<<<<<<<-<<<<<<-<-<<<<<<<<<<-<-<<<_____.._________>>>->->>>>>>>>>>->->>>>>>->>>>>>-.>>>>:..
+#=GC RF                          ..GuG..GuAucgggCacugcggGuGuGUGuuuuGugaCaauGaGauuuaau..UUUgAaaUCauCCCCuuGucgCaaaCCUCaCgCcugcgguGa.cccga..
+
+//

@@ -86,19 +86,22 @@ def plot_RIG_WUSS(RF, RIG_dict, WUSS_color_dict, encodings, filename='test'):
     #               where=list(WUSS_color_dict[RF])=='r',interpolate=True,
     #               facecolor='r', alpha=0.2 )
 
-    ax.set_title(f'-{encodings[0][-2:]}- RIG - {RF}')
+    ax.set_title(f'-{encodings[0][-2:]}- RIG - {RF}', fontsize=30)
 
-    ax.set_xlabel('alignment position (nt)')
-    ax.set_ylabel('RIG')
+    ax.set_xlabel('alignment position (nt)', fontsize=28)
+    ax.set_ylabel('RIG', fontsize=28)
     ax.set_ylim([0, 1])
 
+    plt.xticks(fontsize=22)
+    plt.yticks(fontsize=22)
+
     # Add the legend
-    legend = ax.legend(handles=legend_elements, loc='best', frameon=1)
+    legend = ax.legend(handles=legend_elements, loc='best', frameon=1, fontsize=22)
     frame = legend.get_frame()
     frame.set_facecolor('w')
 
     plt.tight_layout()
-    plt.savefig(filename + ".pdf")
+    # plt.savefig(filename + ".pdf")
     plt.savefig(filename + ".png", ppi=600)
 
     plt.close()
@@ -106,6 +109,7 @@ def plot_RIG_WUSS(RF, RIG_dict, WUSS_color_dict, encodings, filename='test'):
 
 for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
     print(RF_)
+
     plot_RIG_WUSS(
         RF_,
         RIG_dict=RIG_dict,
@@ -113,3 +117,4 @@ for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
         encodings=['bear90', 'qbear90', 'zbear90'],
         filename=f"{RIG_with_WUSS_output_dir}{RF_}_90"
     )
+

@@ -1,0 +1,49 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00955
+#=GF ID   mir-1829
+#=GF DE   microRNA mir-1829
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   50.00
+#=GF TC   52.20
+#=GF NC   43.10
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000460;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   18392026
+#=GF RT   Discovering microRNAs from deep sequencing data using miRDeep.
+#=GF RA   Friedlander MR, Chen W, Adamidi C, Maaskola J, Einspanier R, Knespel S,
+#=GF RA   Rajewsky N
+#=GF RL   Nat Biotechnol. 2008;26:407-415.
+#=GF RN   [2]
+#=GF RM   19460142
+#=GF RT   Dynamic expression of small non-coding RNAs, including novel microRNAs and
+#=GF RT   piRNAs/21U-RNAs, during Caenorhabditis elegans development.
+#=GF RA   Kato M, de Lencastre A, Pincus Z, Slack FJ
+#=GF RL   Genome Biol. 2009;10:R54.
+#=GF RN   [3]
+#=GF RM   20062054
+#=GF RT   Comprehensive discovery of endogenous Argonaute binding sites in
+#=GF RT   Caenorhabditis elegans.
+#=GF RA   Zisoulis DG, Lovci MT, Wilbert ML, Hutt KR, Liang TY, Pasquinelli AE, Yeo
+#=GF RA   GW
+#=GF RL   Nat Struct Mol Biol. 2010;17:173-179.
+#=GF WK   MicroRNA
+#=GF SQ   3
+
+
+Z69660.1/8193-8134   AAGCGAAAUUCAAGAUGGUUGUAAAACAUCGAGUACUACAACCACUGGAAUUUCUCUAUU
+Z79601.1/10621-10562 AAGGGGACUUCUAAUUGUUUGUAAAAAAUCGAGUAUUACAACCAUUGGAAUUUCUCUAUU
+Z78542.1/11427-11486 AAGCGAUCUUCUAGAUGGUUGUAAAACAUCGAGUAUUACAACCACUGGAAUUUCUCUAUU
+#=GC SS_cons         :<<-<<<<<<<<<<-<<<<<<<<<-<<_____>>->>>>>>>>>>>>>>>>>>>->>:::
+#=GC RF              AAGcGaacUUCuAGaUGGUUGUAaAAcAUCGAgUAuUACAACCACUgGAAuuuCUCUAUU
+
+//

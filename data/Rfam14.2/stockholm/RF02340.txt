@@ -1,0 +1,39 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02340
+#=GF ID   DENV_SLA
+#=GF DE   Dengue virus SLA
+#=GF AU   Eberhardt R; 0000-0001-6152-1369
+#=GF SE   Published; PMID:19004935
+#=GF SS   Published; PMID:19004935
+#=GF GA   34.00
+#=GF TC   34.00
+#=GF NC   33.90
+#=GF TP   Cis-reg;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0005836; regulatory_region;
+#=GF RN   [1]
+#=GF RM   19004935
+#=GF RT   Structural and functional studies of the promoter element for dengue virus
+#=GF RT   RNA replication.
+#=GF RA   Lodeiro MF, Filomatori CV, Gamarnik AV
+#=GF RL   J Virol. 2009;83:993-1008.
+#=GF RN   [2]
+#=GF RM   21994804
+#=GF RT   Functional RNA elements in the dengue virus genome.
+#=GF RA   Gebhard LG, Filomatori CV, Gamarnik AV
+#=GF RL   Viruses. 2011;3:1739-1756.
+#=GF WK   Flavivirus
+#=GF SQ   4
+
+
+GQ398255.1/1-71 AGUUGUUAGUCUACGUGGACCGACAAGAACAGUUUCGAAUCGGAAGCUU-GCUUAACGUAGUUCUAACAGUU
+DQ863634.1/1-71 AGUUGUUAGUCUACGUGGACCGACAAGAACAGUUUCGACUCGGAAGCUU-GCUUAACGUAGUGCUGACAGUU
+GQ398276.1/1-72 AGUUGUUAGUCUACGUGGACCGACAAAGACAGAUUCUUUGAGGGAGCUAAGCUCAACGUAGUUCUAACAGUU
+GQ398256.1/1-71 AGUUGUUAGUCUGUGUGGACCGACAAGGACAGUUCCAAAUCGGAAGCUU-GCUUAACACAGUUCUAACAGUU
+#=GC SS_cons    :::((((((-((((((,,,<<<<---<<<____>>>--->>>><<<___._>>>,))))))--)))))):::
+#=GC RF         AGUUGUuAGUCUacGUGGACCgaCAAGgACAGuUcCgaaucGGgAGCUu.GCUcAACguAGUuCUaACAGUU
+
+//

@@ -1,0 +1,66 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00249
+#=GF ID   mir-46
+#=GF DE   mir-46/mir-47/mir-281 microRNA precursor family
+#=GF AU   Griffiths-Jones SR; 0000-0001-6043-807X
+#=GF SE   Griffiths-Jones SR
+#=GF SS   Predicted; PFOLD
+#=GF GA   50.00
+#=GF TC   54.50
+#=GF NC   48.10
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 24.88 -Z 549862.597050 CM SEQDB
+#=GF DR   MIR; MI0000017;
+#=GF DR   MIR; MI0000018;
+#=GF DR   MIR; MI0000366;
+#=GF DR   MIR; MI0000370;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF RN   [1]
+#=GF RM   11679671
+#=GF RT   An abundant class of tiny RNAs with probable regulatory roles in
+#=GF RT   Caenorhabditis elegans.
+#=GF RA   Lau NC, Lim LP, Weinstein EG, Bartel DP
+#=GF RL   Science 2001;294:858-862.
+#=GF RN   [2]
+#=GF RM   12844358
+#=GF RT   Computational identification of Drosophila microRNA genes.
+#=GF RA   Lai EC, Tomancak P, Williams RW, Rubin GM
+#=GF RL   Genome Biol 2003;4:R42.
+#=GF RN   [3]
+#=GF RM   12919683
+#=GF RT   The small RNA profile during Drosophila melanogaster development.
+#=GF RA   Aravin AA, Lagos-Quintana M, Yalcin A, Zavolan M, Marks D, Snyder B,
+#=GF RA   Gaasterland T, Meyer J, Tuschl T
+#=GF RL   Dev Cell 2003;5:337-350.
+#=GF CC   miR-46 (MIR:MI0000017) and miR-47 (MIR:MI0000018) are expressed in C.
+#=GF CC   elegans from related hairpin precursor sequences [1]. The predicted
+#=GF CC   hairpin precursor sequences for Drosophila miR-281 (MIR:MI0000366,
+#=GF CC   MIR:MI0000370) [2,3] are also related and so are also present in this
+#=GF CC   family. The hairpin precursors (represented here) are predicted based on
+#=GF CC   base pairing and cross-species conservation -- their extents are not
+#=GF CC   known. In this case the mature sequences are expressed from the 3' arms of
+#=GF CC   the hairpin precursors.
+#=GF WK   Mir-46/mir-47/mir-281_microRNA_precursor_family
+#=GF SQ   11
+
+
+Z69663.1/519-592               AACUGA-AGAGAGCAGUCUAUUGACAGUCGGUUAC---UCGAAAUCUUU-ACUGUCAUGGAGGCGCUCUCU-UCAGAUGA
+Z82094.1/4737-4814             AGCUGA-AGAGAGCCGUCUAUUGACAGUUCAAGACCACGAGUCGUUGUGUGCUGUCAUGGAGUCGCUCUCU-UCAGAUGA
+AAGD02001364.1/45012-44939     AGCUGA-AGAGAGCCGUCUAUUGACAGUUCGUUUC----UAUACUUAUGUACUGUCAUGGAGUCGCUCUCU-UCAGAUGA
+AAGD02008041.1/22073-22144     GACUGA-AGAGAGCAUUCUGUUGACAGUUCGAUUC------CGAACUCCUACUGUCAUGGAGGCGCUCUCU-UCAGGUGA
+CAAC02000474.1/2327234-2327305 GACUGA-AGGGAGCUUUCUUUUGACAGUUCGAUUU------CGAACUCUUACUGUCAUGGAGGCGCUCUCU-UCAGGUGA
+CAAC02000548.1/1087471-1087541 AGCUGA-AGAGAGCCGUCUAUUGACAGUUCGCUUG-------UUUCAUGUGCUGUCAUGGAGUCGCUCUCU-UCAGAUGA
+ABEG02000765.1/32563-32488     AGCUGA-AGAGAGCCGUCUAUUGACAGUUCGUCUCU--GUUCAGUCAGGUACUGUCAUGGAGUCGCUCUCU-UCAGAUGA
+EU047595.1/860-934             GAAUAA-AGAGAGCUGUCCGUCGACAGUCCAGAAA---CUAUUUAAUAUCACUGUCAUGGAAUUGCUCUCU-UUGUAUAA
+ACKM01001453.1/97066-97131     GGCUGA-AGAGAGCAGUCUGUUGACAGUUAGAAUG------------GACACUGUCAUGGAGUCGCUCUCU-UCAGAAAC
+CADV01004502.1/1105-1177       GGCCUA-AGAGAGCCACCUGUUGACAGUUGGAGCC----AG-AUUUAGAUACUGUCAUGGAGUUGCUCUCU-UAAGGCAA
+ABJB010980769.1/513-586        -CCCGAAAGAGAGCAAUCCGUGGACAGUGUGUAUG----UCCGAAAUGGAACUGUCAUGGAGUCGCUCUCUUUCGGGCG-
+#=GC SS_cons                   ::<<<<.<<<<<<<--<<<<<-<<<<<<_______....___________>>>>>>>>>>>--->>>>>>>.>>>>::::
+#=GC RF                        agCuGA.AGAGAGCagUCuaUUGACAGUucGauuc....uauaauuuuguACUGUCAugGAGUCGCUCUCU.UCaGaUGA
+
+//

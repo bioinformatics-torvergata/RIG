@@ -1,0 +1,53 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02837
+#=GF ID   Bcj7
+#=GF DE   Burkholderia RNA 7 (anti-hemB)
+#=GF AU   Argasinska J; 0000-0003-2678-2824
+#=GF SE   Argasinska J
+#=GF SS   Predicted; RNAfold
+#=GF GA   95.00
+#=GF TC   95.70
+#=GF NC   93.70
+#=GF TP   Gene; sRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 604040.189692 --mxsize
+#=GF SM   128 CM SEQDB
+#=GF DR   SO; 0000370; small_regulatory_ncRNA;
+#=GF DR   GO; 0005515; protein binding;
+#=GF DR   GO; 0097311; bacterial biofilm matrix;
+#=GF RN   [1]
+#=GF RM   23142676
+#=GF RT   Experimental identification of small non-coding regulatory RNAs in the
+#=GF RT   opportunistic human pathogen Burkholderia cenocepacia J2315.
+#=GF RA   Ramos CG, Grilo AM, da Costa PJ, Leitao JH
+#=GF RL   Genomics. 2013;101:139-148.
+#=GF RN   [2]
+#=GF RM   23282220
+#=GF RT   Computational discovery and RT-PCR validation of novel Burkholderia
+#=GF RT   conserved and Burkholderia pseudomallei unique sRNAs.
+#=GF RA   Khoo JS, Chai SF, Mohamed R, Nathan S, Firdaus-Raih M
+#=GF RL   BMC Genomics. 2012;13:S13.
+#=GF RN   [3]
+#=GF RM   29142288
+#=GF RT   Identification of small RNAs abundant in Burkholderia cenocepacia biofilms
+#=GF RT   reveal putative regulators with a potential role in carbon and iron
+#=GF RT   metabolism.
+#=GF RA   Sass A, Kiekens S, Coenye T
+#=GF RL   Sci Rep. 2017;7:15665.
+#=GF CC   Co-purified with Hfq, expression confirmed by Northern blot. Putative
+#=GF CC   functional homologue of SP-RydB and predicted target hemB.[1] Named
+#=GF CC   anti-hemB in [2]. Named ncS04 and shown to be expressed in biofilm [3].
+#=GF WK   Burkholderia_cenocepacia
+#=GF SQ   3
+
+
+
+AM747720.1/292918-293078 AUUUUCGAGAUCGUUGGUAUAUGAUAGCGAUCGAGCGGCACGC-GUUGCGUGCAGCUCCCCGCUUCUCCUCCCUGAGCGGGUGCCUGUCGUUUUUCGAUUAGGCUGUUUGACCCGCCGUUCAACGGCGGGUUUUUUUAUGAGCCGGCCGAAUCCGCAGGUAC
+CP000614.1/394014-394174 AUUUUCGAGAUCGUUGGUAUAUGAUAGCGAUCGAGCGGCGCGC-GUUGCGUGCUGCUCCCCGCUUCUCCUCCCUGAGCGGGUGCCUGUCGUUUUUCGAUUAGGCUGUUUGACCCGCCGUUCGACGGCGGGUUUUUUUAUGAGCCGGCCGAAUCCGCAGACAC
+CP002580.1/318812-318970 AAUUUCGAGA-CAAUGGUAUAUGAUAGCGAUCGAGUGCCGCGCCAAGGCGCGAUGCUCCCCGCUUCUCCUCCCUGAGCGGGUGCCUGUCGUUAUUCGAUUAGGCUGUUUGACCCGCCGCGAAACGGCGGGUUUUUUUAUGCGCCAACCGA--CGGCAAGCCU
+#=GC SS_cons             ::::::::<<<<<<<<________>>>>>>>><<<<-<<<<<<.___>>>>>>->>>><<<<<<-<________>>>>>>>-<<<<<-<<---<<<<----<<<<----<<<<<<<<<<___>>>>>>>>>>-------->>>>--->>>>-->>>>>>>::
+#=GC RF                  AuUUUCGAGauCgcugGUAUAUGAcagcGauCGaGcGgCgCGC.guuGCGcGcugCuCCCCGCuUCUCCUCCCUGaGCGGGUgccuGUCgUUuuuCGAUUAGGCuGUUUgaCCCGCCGuuaaaCGGCGGGucUUUUUAUGaGCCggCCGaaUCcGCaggcac
+
+//

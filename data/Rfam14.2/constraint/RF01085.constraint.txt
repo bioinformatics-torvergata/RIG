@@ -1,0 +1,6 @@
+>K01778.1/151-266
+AAGAUAUCUGUACCGUCUUCUCCCCGACGGUUUCAAUCCAUAGCUUCACGUUGUGUAGCGUAGGUGGAAGGUAUCGUGUGGUGUAUAAACACCACAUAGUCUCUUAGGGGAGACCA
+xx<....<....<<..<x.xxxxxx>..>>.......<<...<<.x<.xx.xx.>x.>>.xxx..>>..>....>..<.<<.<.x.xx.>.>>.>..xxxxxxxxxxxxxxxxxxx
+>K01776.1/83-200
+AAGAUAUCUGUACCGCCUGCUCCCCGGUGGUUUCGAUCCAUGGCUUCACGAUGUGUUGCAUAGAUGGAAGAUAUCGUGUGGUGUUGAAAAACACCACAUAGUCUCUUAGGGGAGACCA
+xx<....<....<<..<x.xxxxxx>..>>.......<<...<<.x<.xx.xx.>x.>>.xxx..>>..>....>..<.<<.<...x.xx.>.>>.>..xxxxxxxxxxxxxxxxxxx

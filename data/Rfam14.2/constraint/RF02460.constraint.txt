@@ -1,0 +1,6 @@
+>M64479.1/655-746
+AGGACGCUGAAAGAUGCGUAGCUACCCUCCUGGUGCACUUCCUGGUGCAAAGCAGAACCAAAGGGUACGGUGGUACGGCGGACAGUAGUCCU
+.<<.<.<..xxxxx..<<...<..<<<..x.<...<.<.xxxx.>.>..xxxxxxx..>.x.>>>..xx>.xx..>>x..xx..>.x>.>>.
+>L06057.1/646-739
+UGGGCGCUGAAAGAUGCGUAGCUACCCUUCUGGAGCCACUUCCUGGUGGUAAGCAGAAAUCCAAGGGUACGGUGGUACGGUGGAAAGCAGUCCC
+.<<.<.<..xxxxx..<<...<..<<<..x..<...<.<.xxxx.>.>..xxxxxxxx..>.x.>>>..xx>.xx..>>x..xx..>.x>.>>.

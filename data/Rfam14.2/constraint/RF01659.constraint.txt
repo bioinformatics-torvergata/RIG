@@ -1,0 +1,6 @@
+>DQ789465.1/2-125
+UGGCAGCGUUGUUUGAGAGUUUACUCCCGUGAGGAAGCAUCUAUUUAUCGCUGCGAGAUAAAAUAUGUCCUUUAUUCCCGCUCCUGAAUUUUGUUUCUUGCGCGAUGAUGCGGCCAUGACAAUU
+..<<..x..x.......x.x...<.<xxxx>.>...x...x......xxx..>>xx.xxxxxx....x<<xx....xx<<<x<xx<..xx.xxx..>xx>x>>>xx.....>>x....xxxxxx
+>AY948708.1/1-122
+CUGCAACUAUUCAAGAGAUUUGCCUCCCGUGGGGCACGCCUUUUUUCGUUGCGAAAUAAAACAUGUCCUUUAUUCCCGCUCCUGGAUUGUGUUUCUUGCGCGAUGAUAUGGCUAUGACAAUU
+..<<..x..x.......x.x...<.<xxxx>.>.....x......xxx..>>xx.xxxxxx....x<<xx....xx<<<x<xx<..xx.xxx..>xx>x>>>xx.....>>x....xxxxxx

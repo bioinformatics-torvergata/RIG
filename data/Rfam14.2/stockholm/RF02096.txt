@@ -1,0 +1,56 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02096
+#=GF ID   mir-2973
+#=GF DE   mir-2973 microRNA precursor
+#=GF AU   Moore B; 0000-0002-4074-1933
+#=GF SE   Published; PMID:21627805
+#=GF SS   Published; PMID:21627805
+#=GF GA   61.00
+#=GF TC   61.00
+#=GF NC   60.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 26.94 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   21627805
+#=GF RT   Song exposure regulates known and novel microRNAs in the zebra finch
+#=GF RT   auditory forebrain.
+#=GF RA   Gunaratne PH, Lin YC, Benham AL, Drnevich J, Coarfa C, Tennakoon JB,
+#=GF RA   Creighton CJ, Kim JH, Milosavljevic A, Watson M, Griffiths-Jones S,
+#=GF RA   Clayton DF
+#=GF RL   BMC Genomics. 2011;12:277.
+#=GF RN   [2]
+#=GF RM   20360741
+#=GF RT   The genome of a songbird.
+#=GF RA   Warren WC, Clayton DF, Ellegren H, Arnold AP, Hillier LW, Kunstner A,
+#=GF RA   Searle S, White S, Vilella AJ, Fairley S, Heger A, Kong L, Ponting CP,
+#=GF RA   Jarvis ED, Mello CV, Minx P, Lovell P, Velho TA, Ferris M, Balakrishnan
+#=GF RA   CN, Sinha S, Blatti C, London SE, Li Y, Lin YC, George J, Sweedler J,
+#=GF RA   Southey B, Gunaratne P, Watson M, Nam K, Backstrom N, Smeds L, Nabholz B,
+#=GF RA   Itoh Y, Whitney O, Pfenning AR, Howard J, Volker M, Skinner BM, Griffin
+#=GF RA   DK, Ye L, McLaren WM, Flicek P, Quesada V, Velasco G, Lopez-Otin C, Puente
+#=GF RA   XS, Olender T, Lancet D, Smit AF, Hubley R, Konkel MK, Walker JA, Batzer
+#=GF RA   MA, Gu W, Pollock DD, Chen L, Cheng Z, Eichler EE, Stapley J, Slate J,
+#=GF RA   Ekblom R, Birkhead T, Burke T, Burt D, Scharff C, Adam I, Richard H,
+#=GF RA   Sultan M, Soldatov A, Lehrach H, Edwards SV, Yang SP, Li X, Graves T,
+#=GF RA   Fulton L, Nelson J, Chinwalla A, Hou S, Mardis ER, Wilson RK
+#=GF RL   Nature. 2010;464:757-762.
+#=GF WK   MicroRNA
+#=GF SQ   7
+
+
+AACV01021033.1/30811-30888 GACU-GCAUGGGAUAAUCGAUUAUCAUGUGCGCUCGGUAUAACUGGACCGCACGGGAUAAUCGAUUAUCCCAUGCAGUU
+CR855037.1/53819-53896     GACC-GUACGGGAUAAUCGAUUAUCCCGUGCGAUCGGCAUAAAUCAACCGCACGGGAUAAUCGAUUAUCCCGUGCGGUU
+AAAA02006271.1/2367-2444   GACC-GCAGGGGAUAAUCGAUUAUCCCGUGCGGUCGGGUUAUACGGACCACACGGGAUAAUCGAUUAUCCCGUGCGGUC
+AC232156.1/17736-17659     AACC-GCACGGGAAGAUCGCUUAUCCCGUGCGGGCGGCUUAAGCGACCCGCACGGGAUAAGCGAUCUUCCCGUGCGGUC
+FJ032633.1/123484-123407   GACC-ACACGGGAUAAACGAUUAUCCCGUGCAGUCGAGUUAAGUGGACCGCACGGGAUAAUCGAUUAUCCCGUGCGGUC
+ABRL01002367.1/1543-1619   AACC-GCACGGGAUAAUC-AUUUUCCCGUGCGGUCGUGUUAAGUGGACCGCACGGGAUAAUCGAUUAUCCUGUGCGGUC
+AC225085.1/31339-31416     GGCUCGCACGGGAUAAUGCAUUAUUCCGUGCGGGUGCUUAA-GCGGACCGCAUGGGAUAAUGCAUUAUCCCGUGCAGUC
+#=GC SS_cons               <<<<.<<<<<<<<<<<<<<<<<<<<<<<<<<---<<_______>>---->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#=GC RF                    gaCc.GCAcGGGAuaAucgaUUaUcCCGUGCGgucgguuUAAgcggACCGCACGGgAuAAucgaUuaUCCCgUGCgGuc
+
+//

@@ -1,0 +1,57 @@
+# R-scape :: RNA Structural Covariation Above Phylogenetic Expectation
+# R-scape 1.5.16 elenarivas@fas.harvard.edu (August 2020)
+# Copyright (C) 2016-2019 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+#-------------------------------------------------------------------------------------------------------
+# MSA RF00155_SNORA66 nseq 25 (25) alen 133 (145) avgid 81.77 (81.40) nbpairs 23 (23)
+# Two-set statistical test (one test for annotated basepairs, another for all other pairs)
+#
+#
+# Method Target_E-val [cov_min,cov_max] [FP | TP True Found | Sen PPV F] 
+# GTp    0.05         [-7.95,17.66]     [0 | 0 23 0 | 0.00 0.00 0.00] 
+#
+#       left_pos       right_pos        score          E-value       substitutions      power
+#-------------------------------------------------------------------------------------------------------
+no significant pairs
+
+# The given structure
+# SS_cons ::<<<<<<-------------<<<<________>>>>---------------->>>>>>:
+#
+# SS_cons ::::::::::::::<<<<<<<-------------<<<<<<___________>>>>>>---
+#
+# SS_cons ---->>->>>>>:::::::::::::
+#
+
+# Power analysis of given structure 
+#
+# covary  left_pos      right_pos    substitutions      power
+#----------------------------------------------------------------
+          3		59		2		0.00
+          4		58		1		0.00
+          5		57		0		0.00
+          6		56		0		0.00
+          7		55		0		0.00
+          8		54		1		0.00
+          22		37		0		0.00
+          23		36		2		0.00
+          24		35		0		0.00
+          25		34		0		0.00
+          75		132		5		0.01
+          76		131		2		0.00
+          77		130		6		0.03
+          78		129		2		0.00
+          79		128		0		0.00
+          80		126		6		0.03
+          81		125		3		0.00
+          95		117		2		0.00
+          96		116		0		0.00
+          97		115		4		0.00
+          98		114		2		0.00
+          99		113		4		0.00
+          100		112		4		0.00
+#
+# BPAIRS 23
+# avg substitutions per BP  2.0
+# BPAIRS expected to covary 0.1 +/- 0.3
+# BPAIRS observed to covary 0
+#

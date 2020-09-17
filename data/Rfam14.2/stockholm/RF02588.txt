@@ -1,0 +1,37 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02588
+#=GF ID   HCV_package-SL6067
+#=GF DE   Hepatitis C virus RNA packaging signal 6067
+#=GF AU   Argasinska J; 0000-0003-2678-2824
+#=GF SE   Argasinska J
+#=GF SS   Published; PMID:26972799
+#=GF GA   38.80
+#=GF TC   38.80
+#=GF NC   38.20
+#=GF TP   Cis-reg;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 549862.597050 --mxsize
+#=GF SM   128 CM SEQDB
+#=GF DR   SO; 0000233; mature_transcript;
+#=GF DR   GO; 0019072; viral genome packaging;
+#=GF RN   [1]
+#=GF RM   26972799
+#=GF RT   Identification of novel RNA secondary structures within the hepatitis C
+#=GF RT   virus genome reveals a cooperative involvement in genome packaging.
+#=GF RA   Stewart H, Bingham RJ, White SJ, Dykeman EC, Zothner C, Tuplin AK,
+#=GF RA   Stockley PG, Twarock R, Harris M
+#=GF RL   Sci Rep. 2016;6:22952.
+#=GF WK   Hepatitis_C_virus
+#=GF SQ   3
+
+
+
+AF169004.1/6067-6096 CGUGGGUCCGGGGGAGGGCGCGGUCCAAUG
+AB047641.1/6067-6096 CGUGGGACCGGGGGAAGGCGCAGUCCAAUG
+AB047639.1/6067-6096 CGUGGGACCGGGGGAGGGCGCGGUCCAAUG
+#=GC SS_cons         <<<-<<<<<<__________>>>>>>->>>
+#=GC RF              CGUGGGaCCGGGGGAGGGCGCGGuCCAAUG
+
+//

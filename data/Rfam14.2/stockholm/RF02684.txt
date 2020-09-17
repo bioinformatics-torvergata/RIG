@@ -1,0 +1,46 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02684
+#=GF ID   Twister-P5
+#=GF DE   Type-P5 twister ribozyme
+#=GF AU   Argasinska J; 0000-0003-2678-2824
+#=GF SE   Weinberg Z, Ames TD
+#=GF SS   Published; PMID:24240507
+#=GF GA   37.00
+#=GF TC   37.40
+#=GF NC   36.30
+#=GF TP   Gene; ribozyme;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 549862.597050 --mxsize
+#=GF SM   128 CM SEQDB
+#=GF DR   SO; 0000374; ribozyme;
+#=GF DR   GO; 0003824; catalytic activity;
+#=GF RN   [1]
+#=GF RM   24240507
+#=GF RT   A widespread self-cleaving ribozyme class is revealed by bioinformatics.
+#=GF RA   Roth A, Weinberg Z, Chen AG, Kim PB, Ames TD, Breaker RR
+#=GF RL   Nat Chem Biol. 2014;10:56-60.
+#=GF WK   Twister_ribozyme
+#=GF SQ   15
+
+
+ADGO01024387.1/128-188     AGU-GAGGGGA--------------UCGA----------------U-CUAA-ACUACUGG------CUUG----UUUCGUGCAAGUCACCGGU-CCCAAGUCCGG
+AAGJ04114413.1/2461-2520   AGG-GAGGGAGGGGUAUU-------GGA-AC-----CA-A-ACCUC-UUAA-CCAAC-------------CGUC-------------GCCCGU-CCCAAGUCGGG
+ADGO01161384.1/289-353     CGCAGAGCACGCCC-----------UACG-------------GGGC-GUAAUGCGGCCUCACCACUGGGG----UG----------AGCCAGU-UGCAAGCCUGG
+AGTN01271243.1/82-136      CGCAGAGUGAGCCGG----------GAAA------------CCGGC-UUAAUGCGGG------------CAGAG--------------GCGGU-CACAACCCCGC
+AACY023459782.1/1089-1018  UGAUGAGGGGCGGGGGG--------CCAGA------GA-CCCCCCG-UUAAAUC-GCCAU------GUCA----ACCG-----ACAUGCUGGU-CCCAAGCCCAG
+ABSN01019877.1/251-306     CGCAGAUGACGGUGCC---------ACCA--------C--GGCACC-GUAAUGCGAC-------------AAG---------------CAGGU-UCCAAUCCCUG
+AGTN01047810.1/109-173     UGCAGAUGGGCGCC-----------UUCG-------------GGCG-UUAAUGC-GC------------U-GAAACCAAAGGUUCCACCAGGU-CCAAAGUCCUG
+ADGO01160766.1/269-331     CGCAGAGGGCAGCCC----------UUCG------------GGGCU-GUAAUGC-ACUCCCC---ACCUGGGGA--------------GCGGU-CCCAAGUCCGC
+ADJT01008886.1/61472-61402 UGCAGAGUGAGAAAGCUCAUUACCG----UUUGGUGAUGGGCUUUU-GUAAUGC-AG-------------AGCG--------------CCGGU-CACAAUCCCGG
+ADJT01008886.1/64658-64588 UGCAGAGUGAGAAAGCCCAUUACCG----UUUGGUGAUGGGCUUUC-GUAAUGC-AG-------------AGUG--------------CCGGU-CACAAUCCCGG
+CP002416.1/1391738-1391681 UCCAGAGUGACGGAACGA-------CU--CU-----UC---CUCCG-GUAAUGC-GG-------------UGGC--------------CCGGU-CACAAGUCCGG
+ACCJ01000536.1/4231-4175   CGCAGAGCAACGGGGCA--------GCAA----------UGCCCCG-GUAAUGCGGG-------------GGA---------------ACGGU-UGCAACCCCGU
+AGTN01403367.1/395-332     CGCAGAGUGACGGGAGGG------U-UUAUC-----GGCCCUCCCG-GUAAUGCGGC-------------AGC---------------CCGGUUCGCAAGCCCGG
+ABNI01036125.1/91-37       CGCAGAGUGACGGCCC---------UUCG-----------GGGCCG-GUAAUGCGGC-------------GAG---------------CCGGU-CACAAGCCCGG
+ABMG01007509.1/2-60        GGU-GAGCGGCCCCGCCC-------GUAA---------GGACGGGGACUAA-ACCAC-------------AAGU--------------CCGGU-CGCAAGUCCGG
+#=GC SS_cons               <<<<--AAA<<<<<<__........____............>>>>>.>--->>>>BB.............----..............<<<__.aaa__bb_>>>
+#=GC RF                    cGCAGAGgGagggggCu........uuaa............ccccc.gUAAUGCgAC.............aGgg..............CCGGU.CcCAAGCCCGG
+
+//

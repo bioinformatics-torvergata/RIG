@@ -1,0 +1,106 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00746
+#=GF ID   mir-454
+#=GF DE   microRNA mir-454
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   70.00
+#=GF TC   71.20
+#=GF NC   67.80
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000174;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   15937218
+#=GF RT   The developmental miRNA profiles of zebrafish as determined by small RNA
+#=GF RT   cloning.
+#=GF RA   Chen PY, Manninga H, Slanchev K, Chien M, Russo JJ, Ju J, Sheridan R, John
+#=GF RA   B, Marks DS, Gaidatzis D, Sander C, Zavolan M, Tuschl T
+#=GF RL   Genes Dev. 2005;19:1288-1293.
+#=GF RN   [2]
+#=GF RM   16954537
+#=GF RT   Many novel mammalian microRNA candidates identified by extensive cloning
+#=GF RT   and RAKE analysis.
+#=GF RA   Berezikov E, van Tetering G, Verheul M, van de Belt J, van Laake L, Vos J,
+#=GF RA   Verloop R, van de Wetering M, Guryev V, Takada S, van Zonneveld AJ, Mano
+#=GF RA   H, Plasterk R, Cuppen E
+#=GF RL   Genome Res. 2006;16:1289-1298.
+#=GF RN   [3]
+#=GF RM   17604727
+#=GF RT   A mammalian microRNA expression atlas based on small RNA library
+#=GF RT   sequencing.
+#=GF RA   Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, Pfeffer S,
+#=GF RA   Rice A, Kamphorst AO, Landthaler M, Lin C, Socci ND, Hermida L, Fulci V,
+#=GF RA   Chiaretti S, Foa R, Schliwka J, Fuchs U, Novosel A, Muller RU, Schermer B,
+#=GF RA   Bissels U, Inman J, Phan Q, Chien M, Weir DB, Choksi R, De Vita G,
+#=GF RA   Frezzetti D, Trompeter HI, Hornung V, Teng G, Hartmann G, Palkovits M, Di
+#=GF RA   Lauro R, Wernet P, Macino G, Rogler CE, Nagle JW, Ju J, Papavasiliou FN,
+#=GF RA   Benzing T, Lichter P, Tam W, Brownstein MJ, Bosio A, Borkhardt A, Russo
+#=GF RA   JJ, Sander C, Zavolan M, Tuschl T
+#=GF RL   Cell. 2007;129:1401-1414.
+#=GF RN   [4]
+#=GF RM   20733160
+#=GF RT   Deep sequencing of the small RNA transcriptome of normal and malignant
+#=GF RT   human B cells identifies hundreds of novel microRNAs.
+#=GF RA   Jima DD, Zhang J, Jacobs C, Richards KL, Dunphy CH, Choi WW, Yan Au W,
+#=GF RA   Srivastava G, Czader MB, Rizzieri DA, Lagoo AS, Lugar PL, Mann KP, Flowers
+#=GF RA   CR, Bernal-Mizrachi L, Naresh KN, Evens AM, Gordon LI, Luftig M, Friedman
+#=GF RA   DR, Weinberg JB, Thompson MA, Gill JI, Liu Q, How T, Grubor V, Gao Y,
+#=GF RA   Patel A, Wu H, Zhu J, Blobe GC, Lipsky PE, Chadburn A, Dave SS
+#=GF RL   Blood. 2010;116:e118-e127.
+#=GF RN   [5]
+#=GF RM   18463306
+#=GF RT   Conservation of small RNA pathways in platypus.
+#=GF RA   Murchison EP, Kheradpour P, Sachidanandam R, Smith C, Hodges E, Xuan Z,
+#=GF RA   Kellis M, Grutzner F, Stark A, Hannon GJ
+#=GF RL   Genome Res. 2008;18:995-1004.
+#=GF RN   [6]
+#=GF RM   18256158
+#=GF RT   MicroRNA profile of Marek's disease virus-transformed T-cell line MSB-1:
+#=GF RT   predominance of virus-encoded microRNAs.
+#=GF RA   Yao Y, Zhao Y, Xu H, Smith LP, Lawrie CH, Watson M, Nair V
+#=GF RL   J Virol. 2008;82:4007-4015.
+#=GF RN   [7]
+#=GF RM   18469162
+#=GF RT   A microRNA catalog of the developing chicken embryo identified by a deep
+#=GF RT   sequencing approach.
+#=GF RA   Glazov EA, Cottee PA, Barris WC, Moore RJ, Dalrymple BP, Tizard ML
+#=GF RL   Genome Res. 2008;18:957-964.
+#=GF RN   [8]
+#=GF RM   18463306
+#=GF RT   Conservation of small RNA pathways in platypus.
+#=GF RA   Murchison EP, Kheradpour P, Sachidanandam R, Smith C, Hodges E, Xuan Z,
+#=GF RA   Kellis M, Grutzner F, Stark A, Hannon GJ
+#=GF RL   Genome Res. 2008;18:995-1004.
+#=GF WK   Mir-454_microRNA_precursor_family
+#=GF SQ   17
+
+
+AAVX01227898.1/233-348       AGC--GGGUUACCCCGGCAGCUGAAACCCUAUCUAUAUUGCGUCUGCUUUGAAUUUCUGC-CUUAAGUAGUGCAAUAUCGCUUAUAGGGU----UUUGG-CCCCGGGUUCG---AGCAUCAAGAGCC
+AAIY01209324.1/410-527       CUU--UUUAAUUACCAGAUCCCAGAAGCUUAUUGAUAUU--CUCUGCUGUGUAAAUAUCU-CUUGAGUAGUGCAGUAUUGCUUGUAGGCUAAAAACCCA-ACAUUGGGAAG---AACAGUGAGCAAG
+BAAF04080581.1/3530-3641     CUC--CCCAGAGCCUUGCAGAUGGGACCCUAUCAAUGUUGCCUCUGCUCUCAGCAGCAUU-UCUCAGUAGUGCAAUAUUGCUUAUAGGGU----GUCGU-CUGUGGGGGAC---UACCUC----GUG
+AAFR03045417.1/66257-66371   GUU--GAUAAUUAAUAGAUCCAUGAACCCUAUCAAUGUGGUCUCUGCUGUGUACAUAGCU--GUAAGUAGUGCAAUAUUGCUUAUAGGGU----UUUAG-UUUUUGGAAAG---AACAGUGGCCAAG
+AC091299.2/31120-31004       UUGAGAAUUAAUCCUAAUUCUUGGGACCCUAUCAGUAUUGCCUCUGCUGUCCACUGUGUU--CAGAGUAGUGCAAUAUUGCUAAUAGGGU----UUUAG-GUUUUAGGUUG---UACCUUCAGUCAG
+BX957246.7/151285-151170     GAU--AAAUGCAUCUUGCAGGCGAGACCCUAUCAAUAUUGCCUCUGCUUUUCUCACUGUUUAUGGAGUAGUGCAAUAUUGCUUAUAGGGU----CUUGA-CUUUAAGGCUAAUCUGCAAU----AUC
+AANH01010010.1/101669-101555 GUC--CACGUGCCCUCGCAGAUGAGACCCUAUCAAUGUUGCCUCUGCUUUCACUUGAGUCAACAGAGUAGUGCAAUAUUGCUUAUAGGGU----CUUGC-CUGUGAGGGAGG-CUCCCCG----GGC
+AAPN01410228.1/3072-2958     UGU--GGAUAUUACCAGAUCCUGGAACCCUAUCGAUAUUGUCUCUGCUGUGUAAAUAGCU--GUGAGUAGUGCAAUAUUGCUUAUAGGGU----UUUAG-UGUUUGGGAAA---ACCAUUGGGCAGA
+AAVX01021344.1/1948-2058     ACU--UUUGACACUCAAGUACUGGGACCCUAUCGAUAUUGCCUCUGCUUUGUAGAUGGCU--GUGAGUAGUGCAAUAUUGCUUAUAGGGU----UUCAG-UGCUUGGGAAC---UUCAAC----AGU
+AAQQ01354557.1/209-98        UCU--GUUUAUCACCAGAUCCUAGAACCCUAUCAAUAUUGUCUCUGCUGUGUAAAUAGCU--CUGAGCAGUGCAAUAUUGCUUAUAGGGU----UUUGG-UAUUUGGAAAG---AACAAUG---AGG
+AAGV020132411.1/1224-1110    CCU--GUUUAUUACCAGAUCCUAGAACCCUAUCGAUAUUGUCUCUGCUGUGUAAAUAGCU--CUGAGUAGUGCAAUAUUGCUUAUAGGGU----UUUAG-UGUUUGGGAAG---AACAAUGGGCAGG
+AAWR02012955.1/98530-98416   CCU--GUUAACCACCAGAUCCUAGAACCCUAUCGAUAUUGUCUCUGCUGUGUAAAUCGCU--CUGAGUAGUGCAAUAUUGCUUAUAGGGU----UUUGG-UGUUUGGGAAG---AACAAUGAGGAGG
+AC099850.7/126354-126468     UCU--GUUUAUCACCAGAUCCUAGAACCCUAUCAAUAUUGUCUCUGCUGUGUAAAUAGUU--CUGAGUAGUGCAAUAUUGCUUAUAGGGU----UUUGG-UGUUUGGAAAG---AACAAUGGGCAGG
+AC194680.6/59690-59576       UCU--GUUUAUCACCAGAUCCUAGAACCCUAUCAAUAUUGUCUCUGCUGUGUAAAUAGUU--CUGAGUAGUGCAAUAUUGCUUAUAGGGU----UUUGG-UGUUUGGGAAG---AACAAUGGGCAGG
+ADDD01030165.1/4010-4124     UUC--C---UAACCUUAAGGAUGAGACCCUAUCAAUAUUGCCUCUGCU-UUUGUGCUCAG--GGUAGUAGUGCAAUAUUGCUUAUAGGGU----CUUUUCUUUUGAGGGUAUUCUUCAUGGAGAGAA
+AAWZ02023259.1/25574-25460   CCU--GUGAGAACUCUGAGGAUAAGACCCUAUCAAUAUUGCCUCUGCUUCUGUGCUGGAU--UCAAGUAGUGCAAUAUUGCUUAUAGGGU----CUUUU-CUUUGGGGAGG---CGCUCUUCGUGGG
+CAAB02012616.1/1355-1471     --UUCCCUGUGGCCUUACUGGUGAGACCCUAUCAAUGUUGCCUCUGCUUUCACAUGUGUUCACUCAGUAGUGCAAUAUUGCUUAUAGGGU----CUUGC-CUCUGAGGGCA---GACCUUCCUCAGA
+#=GC SS_cons                 <<<..<-------<<<<---<<<<<<<<<<<<<<<<<<<<<--<<<<<____________..___>>>>>->>>>>>>>>--->>>>>>>....>>>>>.--->>>>----...----->---->>>
+#=GC RF                      ccu..cuuuauuaCcagaugccgagACCCUAUCaAUaUUGcCUCUGCUuUguaaauaguU..uugAGUAGUgCAAuAUuGCUUAUAGGGU....cucgg.uuuuugGGaag...aaCauggagcagg
+
+//

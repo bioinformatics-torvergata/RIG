@@ -1,0 +1,37 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00852
+#=GF ID   mir-231
+#=GF DE   microRNA mir-231
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   70.00
+#=GF TC   71.80
+#=GF NC   48.80
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 23 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000307;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   19755563
+#=GF RT   Repertoire and evolution of miRNA genes in four divergent nematode
+#=GF RT   species.
+#=GF RA   de Wit E, Linsen SE, Cuppen E, Berezikov E
+#=GF RL   Genome Res. 2009;19:2064-2074.
+#=GF WK   MicroRNA
+#=GF SQ   4
+
+
+CAAC02000486.1/217689-217765 CAAUGUUGUUCUGUCUGUUUCCAUAGCUUAUAUUGU-------AAGGUACUUAUAAGCUCGUGAACAACAGGCAGGACAACUGG
+AAGD02000085.1/638-717       CGAUGUUGUUCUGACUGUUUCCAUAGCUUAUAUUGUCUC----AAAAUGCAUAUAAGCUCGUGAACAACAGGCAGGACAACUGG
+ABEG02000475.1/1322-1404     CAU-GUUGUUCUGACUGUUUCAAAAGCUUAUAUUGUUCGUUCAAAGUUACUUAUAAGCUCGUGAUCAACAGGCAGGACAACUAU
+FO080424.1/6436-6354         CAG-GUUGUUCUGACUGUUUCAAAAGCUUGUAGUAUCUUAAUAAAUAAACAUAUAAGCUCGUGAUCAACAGGCAGAACAACUCG
+#=GC SS_cons                 ::<.<<<<<<<<<-<<<<<<<<--<<<<<<<<___________________>>>>>>>>-->>>-->>>>>->>>>>>>>>>::
+#=GC RF                      CAa.GUUGUuCUGaCUGUUUCaAaAGCUUaUAuUgUcuuaauAAAgauACaUAuAAGCUCGuGAuCAACAGGCAGgACAACuag
+
+//

@@ -1,0 +1,60 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00666
+#=GF ID   mir-32
+#=GF DE   microRNA mir-32
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   70.00
+#=GF TC   83.90
+#=GF NC   55.70
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000069;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17604727
+#=GF RT   A mammalian microRNA expression atlas based on small RNA library
+#=GF RT   sequencing.
+#=GF RA   Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, Pfeffer S,
+#=GF RA   Rice A, Kamphorst AO, Landthaler M, Lin C, Socci ND, Hermida L, Fulci V,
+#=GF RA   Chiaretti S, Foa R, Schliwka J, Fuchs U, Novosel A, Muller RU, Schermer B,
+#=GF RA   Bissels U, Inman J, Phan Q, Chien M, Weir DB, Choksi R, De Vita G,
+#=GF RA   Frezzetti D, Trompeter HI, Hornung V, Teng G, Hartmann G, Palkovits M, Di
+#=GF RA   Lauro R, Wernet P, Macino G, Rogler CE, Nagle JW, Ju J, Papavasiliou FN,
+#=GF RA   Benzing T, Lichter P, Tam W, Brownstein MJ, Bosio A, Borkhardt A, Russo
+#=GF RA   JJ, Sander C, Zavolan M, Tuschl T
+#=GF RL   Cell. 2007;129:1401-1414.
+#=GF RN   [2]
+#=GF RM   17105755
+#=GF RT   Discovery and profiling of bovine microRNAs from immune-related and
+#=GF RT   embryonic tissues.
+#=GF RA   Coutinho LL, Matukumalli LK, Sonstegard TS, Van Tassell CP, Gasbarre LC,
+#=GF RA   Capuco AV, Smith TP
+#=GF RL   Physiol Genomics. 2007;29:35-43.
+#=GF RN   [3]
+#=GF RM   11679670
+#=GF RT   Identification of novel genes coding for small expressed RNAs.
+#=GF RA   Lagos-Quintana M, Rauhut R, Lendeckel W, Tuschl T
+#=GF RL   Science. 2001;294:853-858.
+#=GF WK   Mir-32_microRNA_precursor_family
+#=GF SQ   8
+
+
+AAHX01036962.1/16073-16142 GGGGAUAUUGCACAUUACUAAGUUGCAUGUUGUCACGGCCUCAAUGCAAUUUAGUGUGUGUGAUAUUCUC
+AAVX01589492.1/985-916     GGAGGUAUUGCACACUACCAAGUUGCAUGUUGUGAGAGCCUGGGUGCAGCUUGGUGUGUGCGAUACUUUC
+AAPN01052295.1/18887-18956 GGAGAUAUUGCACAUUACUAAGUUGCAUGUUGUCAAGGCCUCUGUGCAAUUUAGUGUGUGCGAUAUUUUC
+AAIY01185602.1/2030-1961   GGAGGUAUUGCACAUUACUAAGUUGCAUGUUGUCACGGCCUCAGUGCAACUUAGUAUGUGUGAUAUUUUC
+AAFR03054052.1/72588-72657 GGAGAUAUUGCACAUUACUAAGUUGCAUGUUGUCACGGCUUUAGUGCAAUUUAGUAUGUGUGAUAUUUUC
+AAWR02025452.1/3351-3282   GGAGAUAUUGCACAUUACUAAGUUGCACGUUGUCACGGCCUCAGUGCAAUUUAGUGUGUGUGAUAUUUUC
+AAWZ02000933.1/24032-23963 GGGGAUAUUGCACAUUACUAAGUUGCAUGUUGUCACGGGCUCAGUGCAAUUUAGUGUGUGCGAUAUUUUC
+AY866030.1/492-561         GGAGAUAUUGCACAUUACUAAGUUGCAUGUUGUCACGGCCUCAAUGCAAUUUAGUGUGUGUGAUAUUUUC
+#=GC SS_cons               <<<<<<<<<<<<<<<-<<<<<<<<<<<<<--<<____>>-->->>>>>>>>>>>>>>>>>>>>>>>>>>>
+#=GC RF                    GgagaUAUugCACAcUACuAAguUGCAcgUUGucAcGgCCUcagUGCAacUUaGUgUGUGcgAUAuuuuC
+
+//

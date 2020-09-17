@@ -1,0 +1,40 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00997
+#=GF ID   mir-942
+#=GF DE   microRNA mir-942
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   78.00
+#=GF TC   78.90
+#=GF NC   76.50
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000511;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17616659
+#=GF RT   Patterns of known and novel small RNAs in human cervical cancer.
+#=GF RA   Lui WO, Pourmand N, Patterson BK, Fire A
+#=GF RL   Cancer Res. 2007;67:6031-6043.
+#=GF RN   [2]
+#=GF RM   18186931
+#=GF RT   Identification of novel homologous microRNA genes in the rhesus macaque
+#=GF RT   genome.
+#=GF RA   Yue J, Sheng Y, Orwig KE
+#=GF RL   BMC Genomics. 2008;9:8.
+#=GF WK   MicroRNA
+#=GF SQ   2
+
+
+AANU01203167.1/13489-13404 AUUAAGAGAGUACCUUCUCUGUUUUGGCCAUGUGUGUACUCACAGCCCCUCACACGUGGCCGAAACAGAGAAGGUACUUUCCUAAU
+AL391476.20/31705-31790    AUUAGGAGAGUAUCUUCUCUGUUUUGGCCAUGUGUGUACUCACAGCCCCUCACACAUGGCCGAAACAGAGAAGUUACUUUCCUAAU
+#=GC SS_cons               <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<______________>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#=GC RF                    auuagGagaGuacCuuCuCuGuuucGGCCacGuGuGUACUCACAGCCCCUCaCaCguGGCCgaaaCaGaGaaGguaCucuCcuaau
+
+//

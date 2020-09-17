@@ -1,0 +1,83 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00813
+#=GF ID   mir-11
+#=GF DE   microRNA mir-11
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   50.00
+#=GF TC   51.30
+#=GF NC   48.70
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 24.71 -Z 549862.597050 CM SEQDB
+#=GF CL   CL00083
+#=GF DR   MIPF; MIPF0000252;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   20807255
+#=GF RT   Next-generation small RNA sequencing for microRNAs profiling in the honey
+#=GF RT   bee Apis mellifera.
+#=GF RA   Chen X, Yu X, Cai Y, Zheng H, Yu D, Liu G, Zhou Q, Hu S, Hu F
+#=GF RL   Insect Mol Biol. 2010;19:799-805.
+#=GF RN   [2]
+#=GF RM   19961592
+#=GF RT   Direct sequencing and expression analysis of a large number of miRNAs in
+#=GF RT   Aedes aegypti and a multi-species survey of novel mosquito miRNAs.
+#=GF RA   Li S, Mead EA, Liang S, Tu Z
+#=GF RL   BMC Genomics. 2009;10:581.
+#=GF RN   [3]
+#=GF RM   20167119
+#=GF RT   Identification of microRNAs expressed in two mosquito vectors, Aedes
+#=GF RT   albopictus and Culex quinquefasciatus.
+#=GF RA   Skalsky RL, Vanlandingham DL, Scholle F, Higgs S, Cullen BR
+#=GF RL   BMC Genomics. 2010;11:119.
+#=GF RN   [4]
+#=GF RM   20167119
+#=GF RT   Identification of microRNAs expressed in two mosquito vectors, Aedes
+#=GF RT   albopictus and Culex quinquefasciatus.
+#=GF RA   Skalsky RL, Vanlandingham DL, Scholle F, Higgs S, Cullen BR
+#=GF RL   BMC Genomics. 2010;11:119.
+#=GF RN   [5]
+#=GF RM   20817720
+#=GF RT   Functional shifts in insect microRNA evolution.
+#=GF RA   Marco A, Hui JH, Ronshaugen M, Griffiths-Jones S
+#=GF RL   Genome Biol Evol. 2010;2:686-696.
+#=GF RN   [6]
+#=GF RM   20199675
+#=GF RT   MicroRNAs of Bombyx mori identified by Solexa sequencing.
+#=GF RA   Liu S, Li D, Li Q, Zhao P, Xiang Z, Xia Q
+#=GF RL   BMC Genomics. 2010;11:148.
+#=GF RN   [7]
+#=GF RM   20229201
+#=GF RT   Novel microRNAs in silkworm (Bombyx mori).
+#=GF RA   Cai Y, Yu X, Zhou Q, Yu C, Hu H, Liu J, Lin H, Yang J, Zhang B, Cui P, Hu
+#=GF RA   S, Yu J
+#=GF RL   Funct Integr Genomics. 2010;10:405-415.
+#=GF WK   Mir-11_microRNA_precursor_family
+#=GF SQ   15
+
+
+AAPP01019528.1/447265-447343   GCACUUGCCAAGAACUC-UCUCUGUGACUUG----------UGUCCUUUUU--U------UC------GA----------AAC---UCACAUCACAGUCUGAGUUCUUGCUGAGAGC
+AAPQ01006441.1/419197-419271   GCACUUGCCAAGAACUU-UCUCUGUGACCUG----------CGU---GUAC--U------GA------AA----------AGC----CGCAUCACAGUCUGAGUUCUUGCUGAGCGC
+AAPT01019388.1/147488-147568   CCACUCGUCAAGAACUC-UCUCUGUGACUUG----------CGU---GAAC--U------UUCAUGUGAA----------AAU----CGCAUCACAGUCUGAGUUCUUGCUGAGCGC
+AAPU01010953.1/16155-16075     GCACUUAACAAGAACUU-UUUCUGUGACCUG----------CGU---GAAU--UCCUAUAUG------CA----------AAC----CGCAUCACAGUCUGAGUUCUUGCUUAGCGC
+AAFS01000036.1/6151-6079       CCUCUUGUCAAGAACUU-AUUCUGUGACCUG----------CGU---GACA--U------U--------U----------AGC----CACAUCACAGUCUGAGUUCUUGCUGAGCGU
+AAGE02023911.1/46406-46483     GUGCCGCGCGAGAACUC-CGGCUGUGACCUG----------UGU---ACAC--U------UU------AUC-------CAAAU----CACAUCACAGUCUGAGUUCUUGCUUGGAGG
+AAAB01008987.1/3180576-3180487 GCAUCCGGCAAGAACUUGGAACUGUGAUCUGUGUGGUUAUUAGC---CGCG--U------UC------GA----------AGCUCUUCACAUCACAGUCUGAGUUCUUGCUCGAUGG
+AAWU01011517.1/5912-5834       GUGCCGCGCGAGAACUC-CGGCUGUGACCUG----------UGU---GCCCCGU------GU------UG----------AACU--UCACAUCACAGUCUGAGUUCUUGCUUGGCGC
+AAQB01008624.1/142840-142924   CUUCUUGUCAAGAUCUC-UCUCUGUGACCUG----------CGU---GAGA--U------UU------AUCAUAUAUGAAAAC----CGCAUCACAGUCUGAGUUCUUGCUGAGCGG
+AASS01008809.1/103-177         GCACUUGUCAAGAACUU-UCUCUGUGACCCG----------CGU---GAAC--U------UA------AA----------AGC----CGCAUCACAGUCUGAGUUCUUGCUGAGUGC
+BAAB01121158.1/452-382         UUUUGUGGCUAGCACUC-GACAUGUGACCUG----------UGU---UCGG--U------A--------------------AU----CACAUCACAGUCAGAGUUCUAGCUACACGG
+AAZX01002631.1/4523-4598       ACUCCCUGGUGGGACUC-UGUCUGUGACUUG----------UGU---AGUC--U------UG------AA---------UGGU----CACAUCACAGGCAGAGUUCUAGUUAGGUGG
+AAJJ01003245.1/4924-4995       AUGCAUU-CUGGGAUUC-UGACUGUGACCUG----------UGU---GUGU--C------U--------G----------AUU----CACAUCACAGGCAGAGUUCUAGCUAUGCGU
+AE014297.2/17448293-17448219   GCACUUGUCAAGAACUU-UCUCUGUGACCCG----------CGU---GUAC--U------UA------AA----------AGC----CGCAUCACAGUCUGAGUUCUUGCUGAGUGC
+AEKZ01001463.1/24443-24522     GUACCCUGAUGGAGCUC-UGGCUGUGACUUG----------UGU---GUUA--A------CU------GAAU-----UAAAAU----CACAUCACAGGCAGAGUUCUAGUUAGGUAA
+#=GC SS_cons                   :<<<<<<-<<<<<<<<<.---<<<<<<--<<..........-<<...____.._......__......__.........._>>....>>-->>>>>>--->>>>>>>>>->>>>>>:
+#=GC RF                        gcaCccggCaAGAACUc.uauCUGUGACCuG..........uGu...gaau..U......Uu......aa..........AaC....CaCAUCACAGUCUgAGUUCUuGCuggGugg
+
+//

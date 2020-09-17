@@ -1,0 +1,40 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02549
+#=GF ID   YFV_3UTR
+#=GF DE   Pseudoknot PSK3
+#=GF AU   Argasinska J; 0000-0003-2678-2824
+#=GF SE   Argasinska J
+#=GF SS   Published; PMID:20739539
+#=GF GA   50.00
+#=GF TC   53.20
+#=GF NC   36.20
+#=GF TP   Cis-reg;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 30.00 -Z 549862.597050 --mxsize
+#=GF SM   128 CM SEQDB
+#=GF DR   SO; 0005836; regulatory_region;
+#=GF DR   SO; 0000205; three_prime_UTR;
+#=GF RN   [1]
+#=GF RM   20739539
+#=GF RT   An RNA pseudoknot is required for production of yellow fever virus
+#=GF RT   subgenomic RNA by the host nuclease XRN1.
+#=GF RA   Silva PA, Pereira CF, Dalebout TJ, Spaan WJ, Bredenbeek PJ
+#=GF RL   J Virol. 2010;84:11395-11406.
+#=GF CC   Minimal yellow fever virus (YFV) 3ÔÇÖUTR region required for stalling of
+#=GF CC   the host exonuclease XRN1. Its PKS3 pseudoknot structure serves as a
+#=GF CC   molecular signal to stall the exonuclease and is the sole viral
+#=GF CC   requirement for subgenomic flavivirus RNA (sfRNA) production. 
+#=GF WK   Yellow_fever
+#=GF SQ   3
+
+
+
+X15062.1/10531-10610   GAAGUUGUCAGCCCAGAACCCCACACGAGUUUUGCCACUGCUAAGCUGUGAGGCAGUGCAGGCUGGGACAGCCGACCUCC
+AY960143.1/432-511     GAAGUUGUCAGCCCAGAACUCCACACGAGUUUUGCCACUGCUAAGCUGUGAGGCAGUGCAGGCUGGGACAGCCGACCUCC
+AF094612.1/10429-10508 AAAGUUGUCAGCCCAGAACUCCACACGAGUUUUGCCACUGCUAAGCUGUGAGGCAGUGCAGGCUGGGACAGCCGACCUCC
+#=GC SS_cons           :::::::((((((<<<<<<_________>>>>>>,<<<<<<<__AAAAA__>>>>>>>,,))))))::::::::aaaaa:
+#=GC RF                gAAGUUGuCaGCCCagaaCuCCACACGAGuuuuGCCaCuGCuAAGCUGUGAgGCaGuGCAGGCuGgGACAGCCGACCUCC
+
+//

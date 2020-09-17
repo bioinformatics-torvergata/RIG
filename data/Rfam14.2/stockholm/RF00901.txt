@@ -1,0 +1,42 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00901
+#=GF ID   MIR845_1
+#=GF DE   microRNA MIR845_1
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   80.00
+#=GF TC   88.90
+#=GF NC   66.50
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 24.83 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000369;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17299599
+#=GF RT   High-throughput sequencing of Arabidopsis microRNAs: evidence for frequent
+#=GF RT   birth and death of MIRNA genes.
+#=GF RA   Fahlgren N, Howell MD, Kasschau KD, Chapman EJ, Sullivan CM, Cumbie JS,
+#=GF RA   Givan SA, Law TF, Grant SR, Dangl JL, Carrington JC
+#=GF RL   PLoS One. 2007;2:e219.
+#=GF RN   [2]
+#=GF RM   17182867
+#=GF RT   A diverse and evolutionarily fluid set of microRNAs in Arabidopsis
+#=GF RT   thaliana.
+#=GF RA   Rajagopalan R, Vaucheret H, Trejo J, Bartel DP
+#=GF RL   Genes Dev. 2006;20:3407-3425.
+#=GF WK   MicroRNA
+#=GF SQ   2
+
+
+AL031326.1/29579-29495 GCGUUUCCAUCACGUCGAUUGCUGUCAGAGCCACGCCU-----AUGAAGAAUUUGUGCGGCUCUGAUACCAA-UUGAUGCUAUGGAAACAU
+AL031326.1/26214-26124 CGGUUUCCAUCACGUCAAUUGCUAUCAGAGCAACGCAUGAUGUAUAAUAACUAAGCGUCGCUCUGAUACCAAAUUGAUGCAAUGGAAACAU
+#=GC SS_cons           ::<<<<<<<<--<<<<<<<<<-<<<<<<<<<<<<<<__________________>>>>>>>>>>>>>>->>>->>>>>>-->>>>>>>>::
+#=GC RF                ggGuuuCCauCACguCaauuGCuauCaGaGCcgCgCaUGAUGUAUaAuaAaUaaGcGcgGCuCuGauaCCaaAuuGauGCaauGGaaaCAU
+
+//

@@ -1,0 +1,41 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00839
+#=GF ID   mir-452
+#=GF DE   microRNA mir-452
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   90.00
+#=GF TC   94.90
+#=GF NC   69.70
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 26.48 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000287;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   20733160
+#=GF RT   Deep sequencing of the small RNA transcriptome of normal and malignant
+#=GF RT   human B cells identifies hundreds of novel microRNAs.
+#=GF RA   Jima DD, Zhang J, Jacobs C, Richards KL, Dunphy CH, Choi WW, Yan Au W,
+#=GF RA   Srivastava G, Czader MB, Rizzieri DA, Lagoo AS, Lugar PL, Mann KP, Flowers
+#=GF RA   CR, Bernal-Mizrachi L, Naresh KN, Evens AM, Gordon LI, Luftig M, Friedman
+#=GF RA   DR, Weinberg JB, Thompson MA, Gill JI, Liu Q, How T, Grubor V, Gao Y,
+#=GF RA   Patel A, Wu H, Zhu J, Blobe GC, Lipsky PE, Chadburn A, Dave SS
+#=GF RL   Blood. 2010;116:e118-e127.
+#=GF WK   Mir-452_microRNA_precursor_family
+#=GF SQ   4
+
+
+AAHY01212658.1/43863-43947 GCUAAGCAGUUACAACUGUUUGCAGAGGAAACUGAGACUUUAUAACUAUGUCUCAGUCUCAUCUGCAAAGAGGUAAGUGCUUUGC
+AANN01683404.1/5649-5565   GCUAGGCACUUACAACUGUUUGCAGAGGAAACUGAGACUCUGUACCCGUGGCUCAGUUUUCUUUGCAAAGGAGUAAGUGCUUUGC
+AANG01462441.1/3814-3730   GUUAUGCACUUACAACUGUUUGCAGAGGAAACUGAGACUUUGUAACUACAUCUCACUCUCAUCUGCAAAGGAGUAAGUGCUUUGC
+U92285.1/12-96             GCUAAGCACUUACAACUGUUUGCAGAGGAAACUGAGACUUUGUAACUAUGUCUCAGUCUCAUCUGCAAAGAAGUAAGUGCUUUGC
+#=GC SS_cons               <<<<<<<<<<<<<---<-<<<<<<<<-<<<<<<<<<<<___________>>>>>>>>>>>->>>>>>>>->->>>>>>>>>>>>>
+#=GC RF                    GcuaaGCacuuaCAACuGuuuGCaGaGGagacuGaGacUuUgUAaCuauguCuCagucuCauCuGCaaaGaaGuaaguGCuuugC
+
+//

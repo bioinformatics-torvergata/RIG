@@ -1,0 +1,48 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF02009
+#=GF ID   mir-987
+#=GF DE   microRNA mir-987
+#=GF AU   Boursnell C; 0000-0002-3494-4451
+#=GF SE   Predicted; ClustalW2
+#=GF SS   Predicted; RNAalifold
+#=GF GA   80.00
+#=GF TC   105.30
+#=GF NC   48.50
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0000276; microRNA;
+#=GF DR   MIPF; MIPF0000859;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17989255
+#=GF RT   Systematic discovery and characterization of fly microRNAs using 12
+#=GF RT   Drosophila genomes
+#=GF RA   Stark A, Kheradpour P, Parts L, Brennecke J, Hodges E, Hannon GJ, Kellis M
+#=GF RL   Genome Res. 2007;17:1865-1879.
+#=GF RN   [2]
+#=GF RM   20037610
+#=GF RT   Evolutionary flux of canonical microRNAs and mirtrons in Drosophila
+#=GF RA   Berezikov E, Liu N, Flynt AS, Hodges E, Rooks M, Hannon GJ, Lai EC
+#=GF RL   Nat Genet. 2010;42:6-9.
+#=GF RN   [3]
+#=GF RM   17989254
+#=GF RT   Evolution, biogenesis, expression, and target predictions of a
+#=GF RT   substantially expanded set of Drosophila microRNAs
+#=GF RA   Ruby JG, Stark A, Johnston WK, Kellis M, Bartel DP, Lai EC
+#=GF RL   Genome Res. 2007;17:1850-1864.
+#=GF WK   MicroRNA
+#=GF SQ   3
+
+
+AE013599.4/5200627-5200523 GAACAAUGUUGGACUGUGUUUAAAGUAAAUAGUCUGGAUUGAUGAAAGUUGCAUUCGAGAAUUCAUCAACAGGCAUUUACUUCAACUGCAGUUUGAACAAAAUGC
+AC008341.3/60747-60643     GAACAAUGUUGGACUGUGUUUAAAGUAAAUAGUCUGGAUUGAUGAAAGUUGCAUUCGAGAAUUCAUCAACAGGCAUUUACUUCAACUGCAGUUUGAACAAAAUGC
+AASS01002766.1/1118-1014   GAACAAUGUUGGACUGUGUUUAAAGUAAAUAGUCUGGAUUGAUGAAAGUUGCAUUCGAGAAUUCAUCAACAGGCAUUUACUUCAACUGCAGUUUGAACAAAAUGC
+#=GC SS_cons               ::::::::<--<<<<<<--<<-<<<<<<<<-<<<<<---<<<<<<<--<<_______>>-->>>>>>>->>>>>>>>>>>>>->>-->>>>>>-->:::::::::
+#=GC RF                    GAACAAUGuUGgaCuGcGUuuAaaGuaaauAGcCuGGAUuGauGaaAGcuGCAUUCGagAAuuCauCaACaGgCauuuaCuuCaaCUgCaGucUGaACAAAAUGC
+
+//

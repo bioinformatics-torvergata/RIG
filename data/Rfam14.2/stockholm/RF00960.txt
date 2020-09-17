@@ -1,0 +1,44 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00960
+#=GF ID   mir-661
+#=GF DE   microRNA mir-661
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   70.00
+#=GF TC   73.40
+#=GF NC   38.00
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 28 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000465;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   16505370
+#=GF RT   The colorectal microRNAome.
+#=GF RA   Cummins JM, He Y, Leary RJ, Pagliarini R, Diaz LA Jr, Sjoblom T, Barad O,
+#=GF RA   Bentwich Z, Szafranska AE, Labourier E, Raymond CK, Roberts BS, Juhl H,
+#=GF RA   Kinzler KW, Vogelstein B, Velculescu VE
+#=GF RL   Proc Natl Acad Sci U S A. 2006;103:3687-3692.
+#=GF RN   [2]
+#=GF RM   18186931
+#=GF RT   Identification of novel homologous microRNA genes in the rhesus macaque
+#=GF RT   genome.
+#=GF RA   Yue J, Sheng Y, Orwig KE
+#=GF RL   BMC Genomics. 2008;9:8.
+#=GF WK   Mir-661_microRNA_precursor_family
+#=GF SQ   4
+
+
+AADB02012369.1/40293-40205 GGAGAGGCU--G-----UGCUGUGGGGCAGGCGCAGGCCUG---------AGCCCUGGUUUCGGGCUGCCUGGGUCUCUGGCCUG-C-GCGUGACUUUGGGGUGGCU
+AANU01106914.1/19156-19059 GGAGAGGCU--G-----UGCUGUGGGGCAGGCGCUGGCCUGGGUGGCCUGAGCCCUGAUUUUGGGCUGCCUGGGUAUCUGGCCCG-U-GCGUGACCUUGGGGCGGCU
+ABDC01279171.1/1188-1088   GGCGCAGCCCUG-----UGCUGUGGGACAGGCACUUGCUCACACUGCCUGGGCCCUGGGUCCAGGCUGCCUGGGUCUCUGGCCAG-CAGUGUGACCUUGGGGAGGCU
+AAQR03179319.1/18024-18127 GGAGGUGCA--GCCCUGUGCUGUGGGGCAGGCUCUUGUUGUGGUGGCUGGGGCCCUGAUUCUGCGCUCCCUGGGUCUCUGGCCAGCA-GCGUGACCUUGGAGAUGCC
+#=GC SS_cons               :::::<<<<..-.....-<<<-<--<<<<-<<<<<<<<<-<---------<<<<<-<<<________>>>->>>->>>->>>>>>.>.>>->>->>-->->>>>>>>
+#=GC RF                    GGaGagGCc..G.....UgCcGuGGGGCaGGCgCugGccugggugGCuuGagCCCUGgcUuuggGCUgcCUGGGUcucUggCcaG.c.GCGuGACCUUgGgGcgGCc
+
+//

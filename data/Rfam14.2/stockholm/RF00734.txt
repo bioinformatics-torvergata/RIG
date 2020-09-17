@@ -1,0 +1,44 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00734
+#=GF ID   mir-52
+#=GF DE   microRNA mir-52
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   70.00
+#=GF TC   71.70
+#=GF NC   40.70
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000160;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   11679671
+#=GF RT   An abundant class of tiny RNAs with probable regulatory roles in
+#=GF RT   Caenorhabditis elegans.
+#=GF RA   Lau NC, Lim LP, Weinstein EG, Bartel DP
+#=GF RL   Science. 2001;294:858-862.
+#=GF RN   [2]
+#=GF RM   11679671
+#=GF RT   An abundant class of tiny RNAs with probable regulatory roles in
+#=GF RT   Caenorhabditis elegans.
+#=GF RA   Lau NC, Lim LP, Weinstein EG, Bartel DP
+#=GF RL   Science. 2001;294:858-862.
+#=GF WK   Mir-52_microRNA_precursor_family
+#=GF SQ   5
+
+
+AL023835.1/60854-60953         UCCAACUCUAACAGUCCACCCGUACAUAUGUUUCCGUGCUUGACAGCGAAGCUCAAUCACGUUACAAUGAAAGGGUAGCCGGUUAUUGAAGUUGGGUCUU
+AAGD02004810.1/56-151          ACCCUCUACUACCGUCCACCCGUACAUAUGUUUCCGUGCUUGACA-UUGUGCUCAAUCACGUUACAAUAUAUGGGUCGCCGG---UCUUAGGCGGUUCUU
+CAAC02000470.1/1061940-1062037 UCCCGCUCUGACAGUCCACCCGUACAUAUGUUUCCGUGCUUGACA-UAGAGCUCAAUCACGAUACAAUGAGCGGGUAGCCGGUCAUCG-AGUCGGAACAU
+Z68760.4/4495-4396             CCCGAUUCUGACAGUCCACCCGUACAUUUGUUUCCGUGCUUGACUUCAAAGCUCAAUCACGGCACAAUAUAUGGGUCGCCAGUCAUUGUAGUCGGAAUUU
+ABEG02004146.1/13598-13695     UUCGGCUCUGACAGUCCACCCGUACAUAUGUUUCCGUGCUUGACA-AUGAGUUCAAUCACGUCACAAUUUAUGGGUCGCCGGUCAUUG-AGUUGAACAUU
+#=GC SS_cons                   :<<<<<<<<<<<-<-<-<<<<<<-<<<-<<<---<<<<-<<<<<_.____>->>>>->>>>-->>>>>>->>>>>>->->->>>>-->->>>>>>:::::
+#=GC RF                        ucCggcucugaCaGUCCaCCCguAcauauGuUUCCGuGCuuGaCa.uagaGcuCaaUCaCGuuaCaauguacGGGuaGCCgGucaUuguagccGgaucuU
+
+//

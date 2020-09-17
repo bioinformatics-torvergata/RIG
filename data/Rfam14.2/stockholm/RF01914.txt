@@ -1,0 +1,79 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01914
+#=GF ID   mir-932
+#=GF DE   microRNA mir-932
+#=GF AU   Boursnell C; 0000-0002-3494-4451
+#=GF SE   Predicted; ClustalW2
+#=GF SS   Predicted; RNAalifold
+#=GF GA   55.00
+#=GF TC   55.40
+#=GF NC   53.00
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0000276; microRNA;
+#=GF DR   MIPF; MIPF0000588;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   20037610
+#=GF RT   Evolutionary flux of canonical microRNAs and mirtrons in Drosophila
+#=GF RA   Berezikov E, Liu N, Flynt AS, Hodges E, Rooks M, Hannon GJ, Lai EC
+#=GF RL   Nat Genet. 2010;42:6-9.
+#=GF RN   [2]
+#=GF RM   20199675
+#=GF RT   MicroRNAs of Bombyx mori identified by Solexa sequencing
+#=GF RA   Liu S, Li D, Li Q, Zhao P, Xiang Z, Xia Q
+#=GF RL   BMC Genomics. 2010;11:148.
+#=GF RN   [3]
+#=GF RM   17989254
+#=GF RT   Evolution, biogenesis, expression, and target predictions of a
+#=GF RT   substantially expanded set of Drosophila microRNAs
+#=GF RA   Ruby JG, Stark A, Johnston WK, Kellis M, Bartel DP, Lai EC
+#=GF RL   Genome Res. 2007;17:1850-1864.
+#=GF RN   [4]
+#=GF RM   18714353
+#=GF RT   The silkworm (Bombyx mori) microRNAs and their expressions in multiple
+#=GF RT   developmental stages
+#=GF RA   Yu X, Zhou Q, Li SC, Luo Q, Cai Y, Lin WC, Chen H, Yang Y, Hu S, Yu J
+#=GF RL   PLoS One. 2008;3:e2997.
+#=GF RN   [5]
+#=GF RM   17989255
+#=GF RT   Systematic discovery and characterization of fly microRNAs using 12
+#=GF RT   Drosophila genomes
+#=GF RA   Stark A, Kheradpour P, Parts L, Brennecke J, Hodges E, Hannon GJ, Kellis M
+#=GF RL   Genome Res. 2007;17:1865-1879.
+#=GF RN   [6]
+#=GF RM   19961592
+#=GF RT   Direct sequencing and expression analysis of a large number of miRNAs in
+#=GF RT   Aedes aegypti and a multi-species survey of novel mosquito miRNAs
+#=GF RA   Li S, Mead EA, Liang S, Tu Z
+#=GF RL   BMC Genomics. 2009;10:581.
+#=GF RN   [7]
+#=GF RM   20167119
+#=GF RT   Identification of microRNAs expressed in two mosquito vectors, Aedes
+#=GF RT   albopictus and Culex quinquefasciatus
+#=GF RA   Skalsky RL, Vanlandingham DL, Scholle F, Higgs S, Cullen BR
+#=GF RL   BMC Genomics. 2010;11:119.
+#=GF RN   [8]
+#=GF RM   18651924
+#=GF RT   In silico prediction and characterization of microRNAs from red flour
+#=GF RT   beetle (Tribolium castaneum)
+#=GF RA   Singh J, Nagaraju J
+#=GF RL   Insect Mol Biol. 2008;17:427-436.
+#=GF WK   MicroRNA
+#=GF SQ   5
+
+
+BAAB01137739.1/1246-1337   GAGGGUGUUGAGGCUUCAAUUCCGUAGUGCAUUGCAGUGCAUGCUGCCACCU---GCAAGCAGUGCGGGAGUGAGGCUGAGGCAUGCCUUAACUA-
+AAWU01016737.1/86715-86620 GAUCUUGUAAUGGCUUCAAUUCCGUAGUGCAUUGCAGUGUAUUUUUUCACCUACUGCAAGCAAUGUGGAAGUGAAGCUGAUUGCAAUGGAAAGCGC
+AAJJ01002053.1/7802-7709   CGGAGUGC-GUGUCUUCAAUUCCGUAGUGCAUUGCAGUGUUUGUAGCAGCAGUCUGCAAGCAGUGCGGAAGUGAGGAUUCGUCUCUGCUAUCCUU-
+AC004277.1/28838-28743     UUGGUUUUGAAGUUUUCAAUUCCGUAGUGCAUUGCAGUGUGUUUCAUUAUUUACUGCAAGCGCUGCGGAUUUGGCAACUUUGACGACCUUCAUCAU
+AAGH01003759.1/5919-5824   UUGGUUUUGAAGUUUUCAAUUCCGUAGUGCAUUGCAGUGUGUUUAAUUAUUUACUGCAAGCGCUGCGGAUUUGGCAACUUUGACGACCUUCAUCAU
+#=GC SS_cons               ::<<<<<<<<<<<<<<<<-<<<<<<<-<<<-<<<<<<<<____________>>>>>>>>>>>->>>>>>>->>>>>>>>>>>>->>>>::::::::
+#=GC RF                    uaggucgcggcggccuCAAuuCCGuAGuGCAUUGCaGugUaUuUuauuAcuuaCuGCAAGCaaUgCGGaagUGaggccgccgccgaccuuaAuuau
+
+//

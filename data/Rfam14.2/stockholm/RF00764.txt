@@ -1,0 +1,90 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00764
+#=GF ID   mir-191
+#=GF DE   microRNA mir-191
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   51.00
+#=GF TC   51.10
+#=GF NC   50.10
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000194;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   14691248
+#=GF RT   Identification of many microRNAs that copurify with polyribosomes in
+#=GF RT   mammalian neurons.
+#=GF RA   Kim J, Krichevsky A, Grad Y, Hayes GD, Kosik KS, Church GM, Ruvkun G
+#=GF RL   Proc Natl Acad Sci U S A. 2004;101:360-365.
+#=GF RN   [2]
+#=GF RM   15345052
+#=GF RT   Microarray analysis of microRNA expression in the developing mammalian
+#=GF RT   brain.
+#=GF RA   Miska EA, Alvarez-Saavedra E, Townsend M, Yoshii A, Sestan N, Rakic P,
+#=GF RA   Constantine-Paton M, Horvitz HR
+#=GF RL   Genome Biol. 2004;5:R68.
+#=GF RN   [3]
+#=GF RM   16766679
+#=GF RT   Identification and characterization of two novel classes of small RNAs in
+#=GF RT   the mouse germline: retrotransposon-derived siRNAs in oocytes and germline
+#=GF RT   small RNAs in testes.
+#=GF RA   Watanabe T, Takeda A, Tsukiyama T, Mise K, Okuno T, Sasaki H, Minami N,
+#=GF RA   Imai H
+#=GF RL   Genes Dev. 2006;20:1732-1743.
+#=GF RN   [4]
+#=GF RM   17604727
+#=GF RT   A mammalian microRNA expression atlas based on small RNA library
+#=GF RT   sequencing.
+#=GF RA   Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, Pfeffer S,
+#=GF RA   Rice A, Kamphorst AO, Landthaler M, Lin C, Socci ND, Hermida L, Fulci V,
+#=GF RA   Chiaretti S, Foa R, Schliwka J, Fuchs U, Novosel A, Muller RU, Schermer B,
+#=GF RA   Bissels U, Inman J, Phan Q, Chien M, Weir DB, Choksi R, De Vita G,
+#=GF RA   Frezzetti D, Trompeter HI, Hornung V, Teng G, Hartmann G, Palkovits M, Di
+#=GF RA   Lauro R, Wernet P, Macino G, Rogler CE, Nagle JW, Ju J, Papavasiliou FN,
+#=GF RA   Benzing T, Lichter P, Tam W, Brownstein MJ, Bosio A, Borkhardt A, Russo
+#=GF RA   JJ, Sander C, Zavolan M, Tuschl T
+#=GF RL   Cell. 2007;129:1401-1414.
+#=GF RN   [5]
+#=GF RM   20403161
+#=GF RT   Small RNA expression and strain specificity in the rat.
+#=GF RA   Linsen SE, de Wit E, de Bruijn E, Cuppen E
+#=GF RL   BMC Genomics. 2010;11:249.
+#=GF RN   [6]
+#=GF RM   18463306
+#=GF RT   Conservation of small RNA pathways in platypus.
+#=GF RA   Murchison EP, Kheradpour P, Sachidanandam R, Smith C, Hodges E, Xuan Z,
+#=GF RA   Kellis M, Grutzner F, Stark A, Hannon GJ
+#=GF RL   Genome Res. 2008;18:995-1004.
+#=GF RN   [7]
+#=GF RM   17105755
+#=GF RT   Discovery and profiling of bovine microRNAs from immune-related and
+#=GF RT   embryonic tissues.
+#=GF RA   Coutinho LL, Matukumalli LK, Sonstegard TS, Van Tassell CP, Gasbarre LC,
+#=GF RA   Capuco AV, Smith TP
+#=GF RL   Physiol Genomics. 2007;29:35-43.
+#=GF RN   [8]
+#=GF RM   17306260
+#=GF RT   Identification and characterization of microRNAs from the bovine adipose
+#=GF RT   tissue and mammary gland.
+#=GF RA   Gu Z, Eleswarapu S, Jiang H
+#=GF RL   FEBS Lett. 2007;581:981-988.
+#=GF WK   miR-191
+#=GF SQ   5
+
+
+AAYZ01449103.1/1170-1080  AGCUGGACAGCGGGCAACGGAAUCCCAAAAGCAGCUGUUGUCUCGAGAGCAUUCCAGCUGCGCUUGGAUUUCGUUCCCUGCUUUCCUGCCC
+AAPN01354695.1/4366-4456  AGCUUGACAGCAGGCAACGGAAUCCCAAAAGCAGCUGUUGUCUCCAGAGCAUUCCAGCUGCAGUUGGAUUUCGUUCCCUGCUAUCCUGCAA
+CT010508.10/218074-218164 GGCUGGACAGCGGGCAACGGAAUCCCAAAAGCAGCUGUUGUCUCCAGAGCAUUCCAGCUGCACUUGGAUUUCGUUCCCUGCUCUCCUGCCU
+AC137630.9/69177-69087    GGCUGGACAGCGGGCAACGGAAUCCCAAAAGCAGCUGUUGUCUCCAGAGCAUUCCAGCUGCGCUUGGAUUUCGUCCCCUGCUCUCCUGCCU
+AAWZ02016383.1/6922-6832  GGUUUGAUAGUGGGCAACGGAAUCCCAAAAGCAGCUGUUUUCCUCUUAAAGUUCCAGCUGCACUUGGAUUUCGUUCCUUGCUUUCCUACCC
+#=GC SS_cons              <<<-<<<-<<<<<<-<<<<<<<<<<-<<--<<<<<<<-<<<_______>>>--->>>>>>>-->>>>>>>>>>>>->>>>>>->>>->>>:
+#=GC RF                   gGcUgGacaGcgGGCaaCGgaauCCCaaAAGCaGCuGUugcCuccagAgcaUUCCaGCuGCacuuGGauuuCGuuCCCcgCuuuCcUgCcu
+
+//

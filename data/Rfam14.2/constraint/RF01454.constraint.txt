@@ -1,0 +1,9 @@
+>L07884.1/1-120
+UAAACGUUUCACCGGUUUGUAAAUUGGAACUUCGUAGUUCGCCAGACGCCUUCUUCGUAUCAAGGAACUGGAAAUUGUACGGUGAGUCUGUCAUUUUAUUUUCUACUUUUCGUACCAGUC
+....<xxxx.xxxx>...........<........x...>.<..<.xx<<..xxxxxxxxx..>>x.>..>x..xx..xx<<......x.xxxxxxxx.xxxxxxxxxxxx...>>xxxx
+>J04357.1/1-123
+GACAAACGUUUUACCGGUUUGUAAAUAGGAGCACACAAGCUCGCUAGUCGCCCCCUUCGUAUCGGGGAUCUAGAGAUUAAACGGUAUACCUGUCAUUUUAAAUUUCUACUUUUCGUACCAGUC
+..<...<xxxx.xxxx>...>.......<........x...>.<..<.xx<<..xxxxxxxxx..>>x.>..>x..xx..xx<<......x.xxxxxxxxx.xxxxxxxxxxxx...>>xxxx
+>AB034916.1/2-123
+AACAAACGUUUUACCGGUUUGUAAAUUGGAAUUCUCGAAUUCGCCAGUCGCCUUCUUCGUAUCAAGGAUCUGGAAUUUGAACGGUAUCUUUAUCAUUUUAAUUUCUACUUUUCGUACCAGUC
+..<...<xxxx.xxxx>...>.......<........x...>.<..<.xx<<..xxxxxxxxx..>>x.>..>x..xx..xx<<......x.xxxxxxxxxxxxxxxxxxxxx...>>xxxx

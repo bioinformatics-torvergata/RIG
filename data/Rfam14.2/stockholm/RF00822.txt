@@ -1,0 +1,51 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00822
+#=GF ID   mir-274
+#=GF DE   microRNA mir-274
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   70.00
+#=GF TC   79.40
+#=GF NC   55.20
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000264;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   12844358
+#=GF RT   Computational identification of Drosophila microRNA genes.
+#=GF RA   Lai EC, Tomancak P, Williams RW, Rubin GM
+#=GF RL   Genome Biol. 2003;4:R42.
+#=GF RN   [2]
+#=GF RM   17989254
+#=GF RT   Evolution, biogenesis, expression, and target predictions of a
+#=GF RT   substantially expanded set of Drosophila microRNAs.
+#=GF RA   Ruby JG, Stark A, Johnston WK, Kellis M, Bartel DP, Lai EC
+#=GF RL   Genome Res. 2007;17:1850-1864.
+#=GF RN   [3]
+#=GF RM   17989255
+#=GF RT   Systematic discovery and characterization of fly microRNAs using 12
+#=GF RT   Drosophila genomes.
+#=GF RA   Stark A, Kheradpour P, Parts L, Brennecke J, Hodges E, Hannon GJ, Kellis M
+#=GF RL   Genome Res. 2007;17:1865-1879.
+#=GF WK   MicroRNA
+#=GF SQ   7
+
+
+AASS01003576.1/752-851       UCCUGUGUUGCAGUUUCGUUUUGUGACCGACACUAACGGGUA---AUUGUUUG--------GC-----------C-AGCAG-------GAU-------UACUCGUUUUUGCGAUCACAAAUCAUGAAAUUGCAGCAA
+AAFS01001069.1/28638-28734   UCCCGUGCUGCAGUUUCAUUUUGUGACCGACACUAACGGGUA---AUGGCU-G--------GC-----------C-GC-AG-------GAC-------UACUCGUUUUUGCGAUCACAA-UACUGAAAUUGCAGCAA
+AANI01017486.1/215294-215400 CUGUUUGUUGCAGUUUCGGUUUGUGACCGACACUAACGGGUA---GUUGGGGC--------AC-----------C-UCGAA-------UACGCUGUUUUACUCGUUUUUGCGAUCACAAAUUCUGAAAUUGCAACGA
+AAQB01007682.1/34817-34703   UAUCCUGUUGCAGUUUCAUUUUGUGACCGACACUAACGGGUA---GUAACGGGUUAACAAAGU-----------C-GUUUUUCUGGCCUUU-------UACUCGUUUUUGCGAUCACAAAUUCUGAAAUUGCAGCAA
+AAPP01019289.1/330187-330287 AGAAAUGUUGCAGUUUCGUUUUGUGACCGACACUAACGGGUA---UUUUACAG--------GA-----------CAUACAG-------GAU-------UACUCGUUUUUGCGAUCACAAAUCCUGAAAUUGCAGCAA
+AAPU01011627.1/22605-22713   UCCUGUGUUGCAGUUUCGGUUUGUGACCGACACUAACGGGUAGUUGAGGCAUC--------UCGUAUU------C-GCUGU-------UUU------AUACUCGUUUUUGCGAUCACAAAUUCUGAAAUUGCAACGA
+AAPT01020611.1/127253-127143 GUGCGUGUUGCAGUUUCGGUUUGUGACCGACACUAACGGGUA---GUUAAAGG--------GCAUCCUCGCAUUC-UGCUG-------GCU-------UACUCGUUUUUGCGAUCACAAAUUCUGAAAUUGCAACGA
+#=GC SS_cons                 :::::<<<<<<<<<<<<<<-<<<<<<-<<-<<--<<<<<<<<...<<<<<___........__..........._.>>---.......>>>.......>>>>>>>>-->>>>->>>>>>--->>>>>>>>>>>>>>:
+#=GC RF                      uuuuuuGcuGCaguuuCggUuuGuGaCCGACaCUaaCGgGua...gucgcagg........gc...........C.gcuau.......gac.......uaCuCGuuUUuGCGAuCaCaaAUuccGaaauuGCagCaA
+
+//

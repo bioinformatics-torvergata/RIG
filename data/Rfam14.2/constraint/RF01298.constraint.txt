@@ -1,0 +1,9 @@
+>U72853.1/1-69
+UGCCAAUGAUGAGACCAAUCACAGACCUGUUCUGAAAGCAAUGAGGACAGCUUACUAUCUCUGAGGCCC
+x<<<xxxxx.xxxx.xxxxxxxxxxx<<<<.<xxxxxxxxxxxx>.>>>>xxxxxxxxxxxxxx>>>xx
+>U72855.1/1-69
+UGCCAAUGACGAGAUCAAUCACAGACCUGUUCUGAAAGCAAUGAGGACAGCUUACUAUCUCUGAGGCCC
+x<<<xxxxx.xxxx.xxxxxxxxxxx<<<<.<xxxxxxxxxxxx>.>>>>xxxxxxxxxxxxxx>>>xx
+>U72854.1/1-69
+UGCCAAUGAUGAGAUCAAUCACAGACCUGUUCUGAAAGCAAUGAGGACAGCUUACUAUCUCUGAGGCCC
+x<<<xxxxx.xxxx.xxxxxxxxxxx<<<<.<xxxxxxxxxxxx>.>>>>xxxxxxxxxxxxxx>>>xx

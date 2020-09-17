@@ -1,0 +1,6 @@
+>Z80218.1/3076-3234
+CAGUUCUCCAAGACGGACGGAGCUUUCGAGUUUCGUGCUACGGCACGUCUCUCGGAGAGCCAAGACAAAUCCAAGUCAAAAACCAACAAACCAAAUAAAUGACUUAACAAAAUGCUCCCCGUCUUUAAAUUUUGGAAAAGGGUCCCAAUAGGGACCCGG
+xxxxxx.<<..<.<<<xx<<.<<...<<.<xxx<<.<<xxxx>>.>>xxx>.>>....................<.<.xxxxxxxxxxxxxxxxxxxxx.>.>..........>>.>>>>>.>.xxxxxxxx.>>.xxx<<<.<<<xxxx>>>.>>>xx
+>AY948611.1/1-159
+CAGUUCUCCAAGACGGACGGAGCUUUCGAGUUUCGUGCUACGGCACGUCUCUCGGAGAGCCAAGACAAAUCCAAGUCAAAAACCAACAAACCAAAUAAAUGACUUAACAAAAUGCUCCCCGUCUUUAAAUUUUGGAAAAGGGUCCCAAUAGGGACCCGG
+xxxxxx.<<..<.<<<xx<<.<<...<<.<xxx<<.<<xxxx>>.>>xxx>.>>....................<.<.xxxxxxxxxxxxxxxxxxxxx.>.>..........>>.>>>>>.>.xxxxxxxx.>>.xxx<<<.<<<xxxx>>>.>>>xx

@@ -92,12 +92,15 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
             plt.fill_between(colored_chunk[0], 0.75, y2=1, facecolor=colored_chunk[2], alpha=1)
         plt.axhline(0.75, color='k')
 
-        ax.set_title('{}'.format(RF))
-        ax.set_ylabel('{} RIG - entropy RIG'.format(encoding))
-        ax.set_xlabel('position in RF alignment')
+        ax.set_title('{}'.format(RF), fontsize=28)
+        ax.set_ylabel('{} RIG - entropy RIG'.format(encoding), fontsize=28)
+        ax.set_xlabel('position in RF alignment', fontsize=28)
 
         plt.xticks(rotation=45)
         # ax.set_ylim([-1, 1])
+
+        plt.xticks(fontsize=22)
+        plt.yticks(fontsize=22)
 
         # Add the legend
         legend_elements = [Patch(facecolor='r', label='Stem'),
@@ -106,12 +109,12 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
                            Patch(facecolor='b', label='Others'),
                            Patch(facecolor='m', label='Pseudoknot')]
 
-        legend = ax.legend(handles=legend_elements, frameon=1)
+        legend = ax.legend(handles=legend_elements, frameon=1, fontsize=22)
         frame = legend.get_frame()
         frame.set_facecolor('w')
 
         plt.tight_layout()
-        plt.savefig(filename + f"_{encoding}.pdf")
+        # plt.savefig(filename + f"_{encoding}.pdf")
         plt.savefig(filename + f"_{encoding}.png", ppi=600)
 
         plt.close()
@@ -125,6 +128,6 @@ for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
         RIG_dict=RIG_dict,
         ENT_dict=ENT_dict,
         WUSS_color_dict=WUSS_color_dict,
-        encodings=['qbear90', 'zbear90'],
+        encodings=['bear90', 'qbear90', 'zbear90'],
         filename=f"{RIG_vs_ENT_output_dir}{RF_}_90"
     )

@@ -1,0 +1,85 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00783
+#=GF ID   mir-484
+#=GF DE   microRNA mir-484
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A, Daub J
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   57.00
+#=GF TC   59.60
+#=GF NC   38.60
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 25.85 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000219;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17604727
+#=GF RT   A mammalian microRNA expression atlas based on small RNA library
+#=GF RT   sequencing.
+#=GF RA   Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, Pfeffer S,
+#=GF RA   Rice A, Kamphorst AO, Landthaler M, Lin C, Socci ND, Hermida L, Fulci V,
+#=GF RA   Chiaretti S, Foa R, Schliwka J, Fuchs U, Novosel A, Muller RU, Schermer B,
+#=GF RA   Bissels U, Inman J, Phan Q, Chien M, Weir DB, Choksi R, De Vita G,
+#=GF RA   Frezzetti D, Trompeter HI, Hornung V, Teng G, Hartmann G, Palkovits M, Di
+#=GF RA   Lauro R, Wernet P, Macino G, Rogler CE, Nagle JW, Ju J, Papavasiliou FN,
+#=GF RA   Benzing T, Lichter P, Tam W, Brownstein MJ, Bosio A, Borkhardt A, Russo
+#=GF RA   JJ, Sander C, Zavolan M, Tuschl T
+#=GF RL   Cell. 2007;129:1401-1414.
+#=GF RN   [2]
+#=GF RM   20215419
+#=GF RT   MicroRNA transcriptome in the newborn mouse ovaries determined by massive
+#=GF RT   parallel sequencing.
+#=GF RA   Ahn HW, Morin RD, Zhao H, Harris RA, Coarfa C, Chen ZJ, Milosavljevic A,
+#=GF RA   Marra MA, Rajkovic A
+#=GF RL   Mol Hum Reprod. 2010;16:463-471.
+#=GF RN   [3]
+#=GF RM   17105755
+#=GF RT   Discovery and profiling of bovine microRNAs from immune-related and
+#=GF RT   embryonic tissues.
+#=GF RA   Coutinho LL, Matukumalli LK, Sonstegard TS, Van Tassell CP, Gasbarre LC,
+#=GF RA   Capuco AV, Smith TP
+#=GF RL   Physiol Genomics. 2007;29:35-43.
+#=GF RN   [4]
+#=GF RM   15978578
+#=GF RT   Identification of human fetal liver miRNAs by a novel method.
+#=GF RA   Fu H, Tie Y, Xu C, Zhang Z, Zhu J, Shi Y, Jiang H, Sun Z, Zheng X
+#=GF RL   FEBS Lett. 2005;579:3849-3854.
+#=GF RN   [5]
+#=GF RM   17616659
+#=GF RT   Patterns of known and novel small RNAs in human cervical cancer.
+#=GF RA   Lui WO, Pourmand N, Patterson BK, Fire A
+#=GF RL   Cancer Res. 2007;67:6031-6043.
+#=GF RN   [6]
+#=GF RM   20433717
+#=GF RT   Deciphering the porcine intestinal microRNA transcriptome.
+#=GF RA   Sharbati S, Friedlander MR, Sharbati J, Hoeke L, Chen W, Keller A, Stahler
+#=GF RA   PF, Rajewsky N, Einspanier R
+#=GF RL   BMC Genomics. 2010;11:275.
+#=GF WK   Mir-484_microRNA_precursor_family
+#=GF SQ   15
+
+
+AAHX01062820.1/36411-36347   CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCUCAAAAUAGGGGGUUAUCUGGGGGAU--CGGUGGCA
+AAPY01325197.1/1143-1078     CUCGUCAGGCUCAGUCCCCUCCCGAUAAAGCCCUAAAUAGGAUCCU-CCUGGGGGGCGACCCUAGUU
+AALT01092469.1/602-536       CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCCCUAAAUAGGGACCUUCCCCCGGGGGCGCCCCGGCU
+AANN01741400.1/199-264       CUCGUCAGGCUCAGUCCCCUCCCGAUAAAUCC-UAAAUCCGGACCUUCUGGGGGGCUGACCCCAGCU
+AAFC03020163.1/150857-150791 CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCUCUAAAUAGGGACCUUCCCGGGGGGCUACCUCGGCU
+AAYZ01087935.1/68-134        CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCUGGAAAAAAGCACCUUCCCGGGAGGAGACUCAGACU
+AACN011076480.1/157-91       CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCCCUAAAUAGGGACCUUCCCAGGGGGAGACCCCGGCU
+AAWR02036416.1/5025-4959     CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCCCUAAAUAGGGACCUUCCCGGGGCGCGAUCCCGGCU
+AAKN02007627.1/182653-182587 CUCGUCAGGCUCAGUCCCCUCCUGAUAAAUUCCUAAAUAGGUUCCUUUGCGGGGGAAUUCCCUUUUU
+AC164291.2/38618-38684       CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCUCAAAAUAGGGUCUUACCUAGGGGGCUGGCGGCGUA
+BC033900.1/36-102            CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCCCUAAAUAGGGACUUUCCCGGGGGGUGACCCUGGCU
+AAGU03087402.1/51180-51114   CUCGUCAGGCUCAGUCCCCUCCCGAUAAAACCCUAAAUAGGGACCUUCCAUGGGGGUGACCGUGGCU
+AAPE02043441.1/20653-20719   CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCCUUAAAUAGGGACCUUCCCGGGGGGCGGCCCCGGCU
+AAQR03077636.1/5966-5900     CUCGUCAGGCUCAGUCCCCUCCCGAUAAACCCUUAAAUAGGGACUUUCCCGGGGGGUGAUUCUGGCU
+ABVD01026394.1/3000-2934     CUCGUCAGGCUCAGUCCCCUCCCGGUAAAUCCCUAAAUAGGGACCUUCCUGGGGGGCGACCCUGGCU
+#=GC SS_cons                 :::<<<<<<----<<<-<<<<<<<--<<<-<<<<____>>>>-->>>-->>>>>>>->>>>>>>>>:
+#=GC RF                      CUCGucaGGCUCAGucCCCUCCcgAUaAaccCcuAAAUagGgaCcUuCCcgGGGGGugaCCCuggCU
+
+//

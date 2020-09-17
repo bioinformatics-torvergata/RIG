@@ -1,0 +1,38 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01020
+#=GF ID   mir-572
+#=GF DE   microRNA mir-572
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   50.00
+#=GF TC   53.40
+#=GF NC   46.80
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 28 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000537;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   16505370
+#=GF RT   The colorectal microRNAome.
+#=GF RA   Cummins JM, He Y, Leary RJ, Pagliarini R, Diaz LA Jr, Sjoblom T, Barad O,
+#=GF RA   Bentwich Z, Szafranska AE, Labourier E, Raymond CK, Roberts BS, Juhl H,
+#=GF RA   Kinzler KW, Vogelstein B, Velculescu VE
+#=GF RL   Proc Natl Acad Sci U S A. 2006;103:3687-3692.
+#=GF WK   Mir-572_microRNA_precursor_family
+#=GF SQ   4
+
+
+AANU01106553.1/9481-9426 UCGGGGCCGCCGCGGACGGAAGGGCGCCUCUGCUUCGUCCGCUC---GGCGGUGGCCCA
+AC006230.11/71210-71265  UCGGGGCCGCUGCGGGCGGAAGGGCGCCUGUGCUUCGUCCGCUC---GGCGGUGGCCCA
+AC009065.8/9556-9611     UCGGGGCCGCUGCGGACGGAAGGGCGCCUGUGCUUCGUCCGCUC---GGCGGUGGCCCA
+AAQR03078035.1/3483-3425 UAGGGGCCGCAGCGGACGGAAGGGCGCCCCCGCUUCGUCCGCUCUGUGGCUACGGCCUA
+#=GC SS_cons             :::<<<<<<<<<<<<<<<<<-<<<<<____>>>>>-->>>>>>>...->>>>>>>>>>:
+#=GC RF                  UcGGGGCCgCcGCGGgCGGAAGGGCgCCUccGCUUCGUCCGcUC...GGCgGcGGCCCA
+
+//

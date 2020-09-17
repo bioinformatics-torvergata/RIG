@@ -1,0 +1,57 @@
+# R-scape :: RNA Structural Covariation Above Phylogenetic Expectation
+# R-scape 1.5.16 elenarivas@fas.harvard.edu (August 2020)
+# Copyright (C) 2016-2019 Howard Hughes Medical Institute.
+# Freely distributed under the GNU General Public License (GPLv3).
+#-------------------------------------------------------------------------------------------------------
+# MSA RF00933_mir-875 nseq 9 (9) alen 77 (78) avgid 90.11 (90.11) nbpairs 25 (25)
+# Two-set statistical test (one test for annotated basepairs, another for all other pairs)
+#
+#
+# Method Target_E-val [cov_min,cov_max] [FP | TP True Found | Sen PPV F] 
+# GTp    0.05         [-3.12,8.94]     [1 | 0 25 1 | 0.00 0.00 0.00] 
+#
+#       left_pos       right_pos        score          E-value       substitutions      power
+#-------------------------------------------------------------------------------------------------------
+~	      11	      22	8.93518	0.00761764	4		0.00
+
+# The given structure
+# SS_cons <<<<<<--<<---<<<<<<<<-<<-<<<<<<<____________>>>>>>>->>->>>>>
+#
+# SS_cons >>>--->>-->>>>>>::
+#
+
+# Power analysis of given structure 
+#
+# covary  left_pos      right_pos    substitutions      power
+#----------------------------------------------------------------
+          1		76		0		0.00
+          2		75		1		0.00
+          3		74		2		0.00
+          4		73		0		0.00
+          5		72		0		0.00
+          6		71		0		0.00
+          9		68		0		0.00
+          10		67		0		0.00
+          14		63		1		0.00
+          15		62		0		0.00
+          16		61		0		0.00
+          17		60		0		0.00
+          18		59		0		0.00
+          19		58		0		0.00
+          20		57		0		0.00
+          21		56		2		0.00
+          23		54		0		0.00
+          24		53		0		0.00
+          26		51		1		0.00
+          27		50		0		0.00
+          28		49		0		0.00
+          29		48		0		0.00
+          30		47		0		0.00
+          31		46		0		0.00
+          32		45		0		0.00
+#
+# BPAIRS 25
+# avg substitutions per BP  0.3
+# BPAIRS expected to covary 0.0 +/- 0.0
+# BPAIRS observed to covary 0
+#

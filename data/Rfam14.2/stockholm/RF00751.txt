@@ -1,0 +1,70 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00751
+#=GF ID   mir-12
+#=GF DE   microRNA mir-12
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   58.00
+#=GF TC   59.30
+#=GF NC   55.20
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 23.51 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000181;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   20075255
+#=GF RT   Functional and evolutionary insights from the genomes of three parasitoid
+#=GF RT   Nasonia species.
+#=GF RA   Werren JH, Richards S, Desjardins CA, Niehuis O, Gadau J, Colbourne JK,
+#=GF RA   Werren JH, Richards S, Desjardins CA, Niehuis O, Gadau J, Colbourne JK,
+#=GF RA   Beukeboom LW, Desplan C, Elsik CG, Grimmelikhuijzen CJ, Kitts P, Lynch JA,
+#=GF RA   Murphy T, Oliveira DC, Smith CD, van de Zande L, Worley KC, Zdobnov EM,
+#=GF RA   Aerts M, Albert S, Anaya VH, Anzola JM, Barchuk AR, Behura SK, Bera AN,
+#=GF RA   Berenbaum MR, Bertossa RC, Bitondi MM, Bordenstein SR, Bork P,
+#=GF RA   Bornberg-Bauer E, Brunain M, Cazzamali G, Chaboub L, Chacko J, Chavez D,
+#=GF RA   Childers CP, Choi JH, Clark ME, Claudianos C, Clinton RA, Cree AG,
+#=GF RA   Cristino AS, Dang PM, Darby AC, de Graaf DC, Devreese B, Dinh HH, Edwards
+#=GF RA   R, Elango N, Elhaik E, Ermolaeva O, Evans JD, Foret S, Fowler GR, Gerlach
+#=GF RA   D, Gibson JD, Gilbert DG, Graur D, Grunder S, Hagen DE, Han Y, Hauser F,
+#=GF RA   Hultmark D, Hunter HC 4th, Hurst GD, Jhangian SN, Jiang H, Johnson RM,
+#=GF RA   Jones AK, Junier T, Kadowaki T, Kamping A, Kapustin Y, Kechavarzi B, Kim
+#=GF RA   J, Kim J, Kiryutin B, Koevoets T, Kovar CL, Kriventseva EV, Kucharski R,
+#=GF RA   Lee H, Lee SL, Lees K, Lewis LR, Loehlin DW, Logsdon JM Jr, Lopez JA,
+#=GF RA   Lozado RJ, Maglott D, Maleszka R, Mayampurath A, Mazur DJ, McClure MA,
+#=GF RA   Moore AD, Morgan MB, Muller J, Munoz-Torres MC, Muzny DM, Nazareth LV,
+#=GF RA   Neupert S, Nguyen NB, Nunes FM, Oakeshott JG, Okwuonu GO, Pannebakker BA,
+#=GF RA   Pejaver VR, Peng Z, Pratt SC, Predel R, Pu LL, Ranson H, Raychoudhury R,
+#=GF RA   Rechtsteiner A, Reese JT, Reid JG, Riddle M, Robertson HM, Romero-Severson
+#=GF RA   J, Rosenberg M, Sackton TB, Sattelle DB, Schluns H, Schmitt T, Schneider
+#=GF RA   M, Schuler A, Schurko AM, Shuker DM, Simoes ZL, Sinha S, Smith Z, Solovyev
+#=GF RA   V, Souvorov A, Springauf A, Stafflinger E, Stage DE, Stanke M, Tanaka Y,
+#=GF RA   Telschow A, Trent C, Vattathil S, Verhulst EC, Viljakainen L, Wanner KW,
+#=GF RA   Waterhouse RM, Whitfield JB, Wilkes TE, Williamson M, Willis JH, Wolschin
+#=GF RA   F, Wyder S, Yamada T, Yi SV, Zecher CN, Zhang L, Gibbs RA
+#=GF RL   Science. 2010;327:343-348.
+#=GF RN   [2]
+#=GF RM   20817720
+#=GF RT   Functional shifts in insect microRNA evolution.
+#=GF RA   Marco A, Hui JH, Ronshaugen M, Griffiths-Jones S
+#=GF RL   Genome Biol Evol. 2010;2:686-696.
+#=GF WK   MicroRNA
+#=GF SQ   7
+
+
+AASS01036731.1/488-415     UACGGUUGAGUAUUACAUCAGGUACUGGUGUGCCUGAAAUCCAACAACCAGUACUUGUGUCAUACUACGCCGUG
+AAZX01000006.1/25515-25586 AGGGUGUGAGUAUUACAUCAGGUACUGGUGU--CUUUUUUUCAGCGACCAGUACUUGUGUUAUACUUGCGUUCG
+AAJJ01005828.1/1033-1102   AGGGUUUGAGUAUUACAUCAGGUACUGGUUCGGU----UUUGAAAAACCGGUCCCUGAGUAACACUUACAUUCU
+AADE01000788.1/13719-13792 UACGGCUGAGUAUUACAUCAGGUACUGGUGUGCUUUAAAUCCAACAACCAGUACUUAUGUUAUACUACGCCGUG
+AAPT01019076.1/28140-28067 UACGGUUGAGUAUUACAUCAGGUACUGGUGUGCCAUUUAACCAACAACCAGUACUUAUGUCAUACUACGCCGUG
+AAKO01004048.1/21405-21478 UACGGUUGAGUAUUACAUCAGGUACUGGUGUGCCUGAAAUCCAACAACCAGUACUUGUGUCAUACUACGCCGUG
+AELG01001534.1/18803-18733 UGGGUGUGAGUAUUACAUCAGGUACUGGUGUGAU---AUUCAGACAACCAGUACUUGUGUUAUACUUACGCUCA
+#=GC SS_cons               <<<<<<--<<<<<-<<<<-<<<<<<<<<<<<____________>>->>>>>>>>>>>>>>->>>>>-->>>>>>
+#=GC RF                    cgcGggUGAGUaUUACauCAgGuACuGGUGuGcuuuaaaUccAaCAACCaGUaCuUguGUuAuACUaaccCgcg
+
+//

@@ -1,0 +1,51 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00870
+#=GF ID   mir-423
+#=GF DE   microRNA mir-423
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   55.00
+#=GF TC   59.40
+#=GF NC   54.50
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000329;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17105755
+#=GF RT   Discovery and profiling of bovine microRNAs from immune-related and
+#=GF RT   embryonic tissues.
+#=GF RA   Coutinho LL, Matukumalli LK, Sonstegard TS, Van Tassell CP, Gasbarre LC,
+#=GF RA   Capuco AV, Smith TP
+#=GF RL   Physiol Genomics. 2007;29:35-43.
+#=GF RN   [2]
+#=GF RM   19170227
+#=GF RT   Identification and expression profiling of microRNAs during bovine oocyte
+#=GF RT   maturation using heterologous approach.
+#=GF RA   Tesfaye D, Worku D, Rings F, Phatsara C, Tholen E, Schellander K, Hoelker
+#=GF RA   M
+#=GF RL   Mol Reprod Dev. 2009;76:665-677.
+#=GF RN   [3]
+#=GF RM   19633723
+#=GF RT   Repertoire of bovine miRNA and miRNA-like small regulatory RNAs expressed
+#=GF RT   upon viral infection.
+#=GF RA   Glazov EA, Kongsuwan K, Assavalapsakul W, Horwood PF, Mitter N, Mahony TJ
+#=GF RL   PLoS One. 2009;4:e6349.
+#=GF WK   Mir-423_microRNA_precursor_family
+#=GF SQ   4
+
+
+AACN010109711.1/39-119    AGGAAGUUAGGCUGAGGGGCAGAGAGCGAGACUUUU-CUAUUUUCCAAAAGCUCGGUCUGAG-GCCCCUCAGUCUUGCUUCCU
+AALT01504263.1/495-419    AGGAAGUUAGGCUGAGGGGCAGAGAGCGAGACUUUU-CUAUUUUCCAAAAGCUCGGUCUGAGAGCCCCUUCGUGUG-----CU
+AAPY01128697.1/4155-4231  AGGAAGGUGGGCUGAGGGAC--AGAGUGAAGCUCUUCUUUUUUUCCAAAAGCUUGGUCUAA--GGCCCU--GUCUUGCUUCCU
+AC104984.14/146492-146412 AGGAAGUUAGGCUGAGGGGCAGAGAGCGAGACUUUU-CUAUUUUCCAAAAGCUCGGUCUGAG-GCCCCUCAGUCUUGCUUCCU
+#=GC SS_cons              <<<<<<<-<<<<<<<<<<<<--<<<-<<<<-<<<<<._________>>>>>>>>>->>>---.>>>>>>>>>>>>->>>>>>>
+#=GC RF                   aGGaaGcUaggCugaGGGgCAGaGaGcGaGaCuuuu.cUaUUUUCCaaaaGCuCgGuCugAG.GcCCCucaGucuugCuuCCu
+
+//

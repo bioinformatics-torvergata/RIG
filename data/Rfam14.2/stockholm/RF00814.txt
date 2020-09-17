@@ -1,0 +1,49 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00814
+#=GF ID   mir-316
+#=GF DE   microRNA mir-316
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   80.00
+#=GF TC   98.30
+#=GF NC   60.40
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000254;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   12919683
+#=GF RT   The small RNA profile during Drosophila melanogaster development.
+#=GF RA   Aravin AA, Lagos-Quintana M, Yalcin A, Zavolan M, Marks D, Snyder B,
+#=GF RA   Gaasterland T, Meyer J, Tuschl T
+#=GF RL   Dev Cell. 2003;5:337-350.
+#=GF RN   [2]
+#=GF RM   17989254
+#=GF RT   Evolution, biogenesis, expression, and target predictions of a
+#=GF RT   substantially expanded set of Drosophila microRNAs.
+#=GF RA   Ruby JG, Stark A, Johnston WK, Kellis M, Bartel DP, Lai EC
+#=GF RL   Genome Res. 2007;17:1850-1864.
+#=GF RN   [3]
+#=GF RM   17989255
+#=GF RT   Systematic discovery and characterization of fly microRNAs using 12
+#=GF RT   Drosophila genomes.
+#=GF RA   Stark A, Kheradpour P, Parts L, Brennecke J, Hodges E, Hannon GJ, Kellis M
+#=GF RL   Genome Res. 2007;17:1865-1879.
+#=GF WK   MicroRNA
+#=GF SQ   4
+
+
+AAPP01019276.1/25939-25851   AAAUUCUAGUCGAUUUGUCUUUUUCCGCUUACUGGCGUUUAAUUCAAACAACGACAGGAAAGGGAAAAAGGCGUAUUUACUAUGAGUUU
+AAPU01011629.1/100796-100883 AAGUUCUAGUCGAUUUGUCUUUUUCCGCUUACUGACGUUUUA-UUGAACAACGGCAGGGAAGGGAAAAAGGCGUAUUUACUAUGAAUUA
+AC010571.8/20592-20504       AAAUUCUAGUCGAUUUGUCUUUUUCCGCUUACUGGCGUUUCAAUUCCACAACGACAGGAAAGGGAAAAAGGCGUAUUUACUAUGAGUUU
+AANI01017487.1/102971-103058 AAGUUCUAGUCGAUUUGUCUUUUUCCGCUUACUGGCGUUUUA-UUGAGCAACGACAGGAAAGGGAAAAAGGCGUAUUUACUAUGAAUUU
+#=GC SS_cons                 <<<<<<<<<<-<<<-<<<<<<<<<<<-<<<-<<<<<<<<__________>>>>>>>>-->>>>>>>>>>>>>>->>>->>>>->>>>>>
+#=GC RF                      aaauuCuaGuCgauUuGuCuuuuuCCGCuuACuGcCGuuUuAaUuaaaCaaCGgCaGGaaaGGGaaaaaGgCgUauuUaCuaUGaauuu
+
+//

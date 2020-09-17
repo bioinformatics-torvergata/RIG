@@ -1,0 +1,33 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01571
+#=GF ID   DdR35
+#=GF DE   D. discoideum class II sRNA
+#=GF AU   Osuch I
+#=GF SE   INFERNAL
+#=GF SS   Published; PMID:15333696
+#=GF GA   60.00
+#=GF TC   91.10
+#=GF NC   38.90
+#=GF TP   Gene; sRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0001263; ncRNA_gene;
+#=GF RN   [1]
+#=GF RM   15333696
+#=GF RT   Novel non-coding RNAs in Dictyostelium discoideum and their expression
+#=GF RT   during development.
+#=GF RA   Aspegren A, Hinas A, Larsson P, Larsson A, Soderbom F
+#=GF RL   Nucleic Acids Res. 2004;32:4646-4656.
+#=GF WK   Dictyostelium_class_II_RNA
+#=GF SQ   3
+
+
+AJ699396.1/1-59              AAGCUCGCCUUACAGCAAUUACUCUGA-UUUUUCUCCAAAAAAAAAACCUUCGCGAGUUG
+AF482392.1/336-394           AAGCUCGCCUUACAGCAAUUACUCUGA-UUUUUCUCCAAAAAAAAAACCUUCGCGAGUUG
+AAFI02000031.1/281317-281258 AAGCUCGCCUUACAGCAAUUACUCUGAAUUUUUCUCCAAAAAAAAACCCUUCGCGAGUUG
+#=GC SS_cons                 :(((((((,,,,<<<________>>>,.<<<<<________>>>>>,,,,,,))))))):
+#=GC RF                      AAgCUCGCCUUACAGCAAUUACUCUGA.UUUUUCUCCAAAAAAAAAaCCUUCGCGAGuUG
+
+//

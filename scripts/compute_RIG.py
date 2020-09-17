@@ -6,6 +6,8 @@ from scipy.stats import entropy
 
 import pickle
 
+import gzip
+
 dir_output_RIGs = 'outputs/RIGs'
 
 
@@ -69,19 +71,19 @@ def computeAllIC(PSSMs, **kwargs):
     return np.array(ICarrays)
 
 
-xxx_pssm_path = sys.argv[1]
+xxx_pssm_path_gz = sys.argv[1]
 
 alphaexts=[]
-path_pssm_list = [xxx_pssm_path]
+path_pssm_gz_list = [xxx_pssm_path_gz]
 
-for ps in path_pssm_list:
+for ps in path_pssm_gz_list:
     filename = ps.split("/")[-1].split(".")[0]
     alphaexts.append("_".join(filename.split("_")[-2:]))
 
 PSSMs = []
 rflists = []
-for path_pssm in path_pssm_list:
-    with open(path_pssm, 'rb') as f1:
+for path_pssm_gz in path_pssm_gz_list:
+    with gzip.open(path_pssm_gz, 'rb') as f1:
         tmp = pickle.load(f1)
 
     if isinstance(tmp, dict):
@@ -108,7 +110,7 @@ if not os.path.exists(dir_output_RIGs):
 ## make a DF for each file
 # the table shall be written
 
-for fileno in range(len(path_pssm_list)):
+for fileno in range(len(path_pssm_gz)):
     myenc = alphaexts[fileno]
     filename = f"{myenc}_RIGs.tsv"
     with open(os.path.join(dir_output_RIGs, filename), 'w') as fw:

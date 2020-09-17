@@ -1,0 +1,76 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00762
+#=GF ID   mir-412
+#=GF DE   microRNA mir-412
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   80.00
+#=GF TC   88.00
+#=GF NC   51.00
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 28.80 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000192;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   15310658
+#=GF RT   A large imprinted microRNA gene cluster at the mouse Dlk1-Gtl2 domain.
+#=GF RA   Seitz H, Royo H, Bortolin ML, Lin SP, Ferguson-Smith AC, Cavaille J
+#=GF RL   Genome Res. 2004;14:1741-1748.
+#=GF RN   [2]
+#=GF RM   16274478
+#=GF RT   Identification of clustered microRNAs using an ab initio prediction
+#=GF RT   method.
+#=GF RA   Sewer A, Paul N, Landgraf P, Aravin A, Pfeffer S, Brownstein MJ, Tuschl T,
+#=GF RA   van Nimwegen E, Zavolan M
+#=GF RL   BMC Bioinformatics. 2005;6:267.
+#=GF RN   [3]
+#=GF RM   17604727
+#=GF RT   A mammalian microRNA expression atlas based on small RNA library
+#=GF RT   sequencing.
+#=GF RA   Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, Pfeffer S,
+#=GF RA   Rice A, Kamphorst AO, Landthaler M, Lin C, Socci ND, Hermida L, Fulci V,
+#=GF RA   Chiaretti S, Foa R, Schliwka J, Fuchs U, Novosel A, Muller RU, Schermer B,
+#=GF RA   Bissels U, Inman J, Phan Q, Chien M, Weir DB, Choksi R, De Vita G,
+#=GF RA   Frezzetti D, Trompeter HI, Hornung V, Teng G, Hartmann G, Palkovits M, Di
+#=GF RA   Lauro R, Wernet P, Macino G, Rogler CE, Nagle JW, Ju J, Papavasiliou FN,
+#=GF RA   Benzing T, Lichter P, Tam W, Brownstein MJ, Bosio A, Borkhardt A, Russo
+#=GF RA   JJ, Sander C, Zavolan M, Tuschl T
+#=GF RL   Cell. 2007;129:1401-1414.
+#=GF RN   [4]
+#=GF RM   20215419
+#=GF RT   MicroRNA transcriptome in the newborn mouse ovaries determined by massive
+#=GF RT   parallel sequencing.
+#=GF RA   Ahn HW, Morin RD, Zhao H, Harris RA, Coarfa C, Chen ZJ, Milosavljevic A,
+#=GF RA   Marra MA, Rajkovic A
+#=GF RL   Mol Hum Reprod. 2010;16:463-471.
+#=GF RN   [5]
+#=GF RM   20413612
+#=GF RT   Mammalian microRNAs: experimental evaluation of novel and previously
+#=GF RT   annotated genes.
+#=GF RA   Chiang HR, Schoenfeld LW, Ruby JG, Auyeung VC, Spies N, Baek D, Johnston
+#=GF RA   WK, Russ C, Luo S, Babiarz JE, Blelloch R, Schroth GP, Nusbaum C, Bartel
+#=GF RA   DP
+#=GF RL   Genes Dev. 2010;24:992-1009.
+#=GF WK   MicroRNA
+#=GF SQ   9
+
+
+AAIY01437686.1/1059-969    CUGGGGUACGGGGAUGGCUGGUCGACCAGUUGGAAAGUAAUUUUUUAUAAUGUAUUUCACCUGGUCCACUAGCCAUCAGUGCCCACUGCAG
+ABDC01257675.1/5683-5773   CUGGGGUAUGGGGACGGAUGGUCGACCAGUUGGAAAGUAAUUGUCCCCAAUGUACUUCACCUGGUCCACUAGCCGUCCGUACCCACUGCCG
+AAFC03087121.1/23475-23564 CUGGGGUACA-GGACGGAUGGUCGACCAGUUGGAAAGUAAUUGUUUCUAAUGUACUUCACCUGGUCCACUAGCUGUCCGUACCCACUGCAG
+AAPY01359978.1/1472-1562   CUGGGGUACAGGGACGGGUGGUCGACCAGUUGGAAAGUAAUUGUCUCUAAUGUACUUCACCUGGUCCACUCGCCGUCCGUACCCGCUGCAG
+AALT01091711.1/638-727     CUGGGGUACA-GGAUGGAUGGUCGACCAGUUGGAAAGUAAUUGUGUCGAAUGUACUUCACCUGGUCCACUAGCCGUCCGCACCCACGGCGG
+AL132709.5/56152-56062     CUGGGGUACGGGGAUGGAUGGUCGACCAGUUGGAAAGUAAUUGUUUCUAAUGUACUUCACCUGGUCCACUAGCCGUCCGUAUCCGCUGCAG
+AC121784.2/138820-138909   CUGGGGUAUG-GGACGGAUGGUCGACCAGCUGGAAAGUAAUUGUUUCUAAUGUACUUCACCUGGUCCACUAGCCGUCGGUGCCCGCUGCAG
+AAGU03025975.1/14212-14122 CUGGGGCGCGGGGAUGGAUGGUCGACCAGUUGGAAAGUAAUUGUUUAUAAUGUACUUCACCUGGUCCACUAGCCGUCGGUGCCCACUGCAG
+AAPE02047294.1/8472-8383   CUGGGGUACA-GGAUGGGUGGUCGACCAGUUGGAAAGUAAUUGUUUCUAAUGUACUUCACCUGGUCCACUAGCCGUCCGUAUCCACUGCCG
+#=GC SS_cons               :::<<<<<<---<<<<<<<<<<<<<<<<<-<<<--<<<<<<<<____>>>>->>>>>>>->>>>>>>>>>>>>>>>>->>>>>>:::::::
+#=GC RF                    CUGGGGuacagGGacGGcugGucGaCCaGUuGgAAaGuaauugUuUccaauGuaCuuCaCCuGGuCgaCuagCCguCcguaCCCaCuGCaG
+
+//

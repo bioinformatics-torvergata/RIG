@@ -1,0 +1,68 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF01920
+#=GF ID   mir-764
+#=GF DE   microRNA mir-764
+#=GF AU   Boursnell C; 0000-0002-3494-4451
+#=GF SE   Predicted; ClustalW2
+#=GF SS   Predicted; RNAalifold
+#=GF GA   80.00
+#=GF TC   92.10
+#=GF NC   51.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0000276; microRNA;
+#=GF DR   MIPF; MIPF0000707;
+#=GF DR   URL; http://www.mirbase.org;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   19406225
+#=GF RT   In silico detection and characteristics of novel microRNA genes in the
+#=GF RT   Equus caballus genome using an integrated ab initio and comparative
+#=GF RT   genomic approach
+#=GF RA   Zhou M, Wang Q, Sun J, Li X, Xu L, Yang H, Shi H, Ning S, Chen L, Li Y, He
+#=GF RA   T, Zheng Y
+#=GF RL   Genomics. 2009;94:125-131.
+#=GF RN   [2]
+#=GF RM   20413612
+#=GF RT   Mammalian microRNAs: experimental evaluation of novel and previously
+#=GF RT   annotated genes
+#=GF RA   Chiang HR, Schoenfeld LW, Ruby JG, Auyeung VC, Spies N, Baek D, Johnston
+#=GF RA   WK, Russ C, Luo S, Babiarz JE, Blelloch R, Schroth GP, Nusbaum C, Bartel
+#=GF RA   DP
+#=GF RL   Genes Dev. 2010;24:992-1009.
+#=GF RN   [3]
+#=GF RM   20403161
+#=GF RT   Small RNA expression and strain specificity in the rat
+#=GF RA   Linsen SE, de Wit E, de Bruijn E, Cuppen E
+#=GF RL   BMC Genomics. 2010;11:249.
+#=GF RN   [4]
+#=GF RM   18215311
+#=GF RT   miRNAminer: a tool for homologous microRNA gene search
+#=GF RA   Artzi S, Kiezun A, Shomron N
+#=GF RL   BMC Bioinformatics. 2008;9:39.
+#=GF RN   [5]
+#=GF RM   16954537
+#=GF RT   Many novel mammalian microRNA candidates identified by extensive cloning
+#=GF RT   and RAKE analysis
+#=GF RA   Berezikov E, van Tetering G, Verheul M, van de Belt J, van Laake L, Vos J,
+#=GF RA   Verloop R, van de Wetering M, Guryev V, Takada S, van Zonneveld AJ, Mano
+#=GF RA   H, Plasterk R, Cuppen E
+#=GF RL   Genome Res. 2006;16:1289-1298.
+#=GF WK   Mir-764_microRNA_precursor_family
+#=GF SQ   6
+
+
+AACN010276644.1/993-884      UAUUUUCAAUCUAAAAUCUAGGAGGCAGGUGCUCACUUGUCCUCCUCCGUGCUUGGAAAAUACAGGGAGGAGGCCAUAGUGGCAACUGUCACCAUGAUUGAUUUCGUUGG
+BX005219.12/49495-49602      UCAACACAAUCU-GAAUCUUGGAGGCAGGUGCUCACAUGUCCUCCUCCAUGCUUA-UAAAUACAUGGAGGAGGCCAUAGUGGCAACUGUCACCAUGAUUGAUUUCGUUGG
+AANU01095684.1/3694-3803     UAUUUUCAAUCUAAAAUCUAGGAGGCAGGUGCUCACUUGUCCUCCUCCAUGGUUGGAAAAUACAGGGGGGAGGCCAUAGUGGCAACUGUCACCAUGAUUAAUUUCGUUGG
+AADA01065421.1/1907-2016     UAUUUUCAAUCUGAAAUCUAGGAGGCAGGUGCUCACUUGUCCUCCUCCAUGCUUGGAAAAUACAGGGAGGAGGCCAUAGUGGCAACUGUUACCAUGAUUAAUUUCGUUGG
+AAWR02039288.1/134902-135011 UAUUUUCGAUCUAAAAUCUAGGAGGCAGGUGCUCACUUGUCCUCCUCCAUGCUUGGGAAAUACAGGGAGGAGGCCAUAGUGGCAACUGUCACCAUGAUUGAUUUCCUUGG
+AABR05183474.1/6980-7087     UCAACACAAUCA-AAAUCUCGGAGGCAGGUGCUCACAUGUCCUCCUCCAUGCCUA-CACAUACAUGGAGGAGGCCAUAGUGGCAACUGUCACCAUGAUUGAUUUCGUUGG
+#=GC SS_cons                 ::::::::::::::<<<<--<<-<<<<<-<<<-<<<<<<-<<<<<<<<-<<___________>>->>>>>>>>->>->>>>>>>->>>>>->>-->>>>:::::::::::
+#=GC RF                      UauuuuCAAUCuaAaauCUaGGAGgCaGGuGCUCaCuuGUCCuCCuCCAuGcuUgGaAaAUACagGGaGGaGGCCaUaGuGGCaACuGuCACCAUGauugAUUUCgUUGG
+
+//

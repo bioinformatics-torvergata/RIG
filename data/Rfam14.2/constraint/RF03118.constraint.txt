@@ -1,0 +1,9 @@
+>NC_001451.1/1-200
+ACUUAAGAUAGAUAUUAAUAUAUAUCUAUUACACUAGCCUUGCGCUAGAUUUUUAACUUAACAAAACGGACUUAAAUACCUACAGCUGGUCCUCAUAGGUGUUCCAUUGCAGUGCACUUUAGUGCCCUGGAUGGCACCUGGCCACCUGUCAGGUUUUUGUUAUUAAAAUCUUAUUGUUGCUGGUAUCACUGCUUGUUUUG
+x.xx..<<...<<<<..xxxx>>>>...>>x.......................xx.xxxx..xxxx.........x.<..<<........xxxxx..<....x....x.....<<<xxx.>>>.x..........>..........>>x..>.................................xxxxxxxxxxxxxx
+>NC_010800.1/1-200
+ACUUAAGAUAGAUAUUAAUAUAUAUCUAUCAUACUAGCCUUGUGCUAGAUUUCCAACUUAACAAAACGGACUUAAAUACCUACAGCUGGUCCUCAUAGGUGUUCCAUUGCAGUGCACUUUAGUGCCCUGGAUGGCACCUGGCCACCUGUCAGGUUUUUGUUAGUAAAAUAACAUUGUUGCUGGUAUCACUGCUUGUUUUG
+x.xx..<<...<<<<..xxxx>>>>...>>x.......................xx.xxxx..xxxx.........x.<..<<........xxxxx..<....x....x.....<<<xxx.>>>.x..........>..........>>x..>.................................xxxxxxxxxxxxxx
+>NC_010646.1/1-200
+CUAUUUGUGAAUAAUAUAUAUAUAUAUAUAUAUCAUUCAUUCGUUUACCCUUGUGGCAAACAACCCAAAUUAAACAAAACGGACUUGGGUGUGUUUCCUGACCGCACGCGAGUGGGGGGUGGCAGCUGAGAGGCACUUUUGUGUCGGCUUCUGGGCCACCUCUUGUGGGUGUGUGGGGACCUGUCAGAGUUCAGGCGACC
+..x.xx..<<...<<<<........xxxx>>>>...>>x...........................xx.xxxx..x.xxx..................x...<..<<..........<....x....x.....<<<xxx.>>>.x..............>..........>>..>........................x

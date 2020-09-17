@@ -1,0 +1,41 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00949
+#=GF ID   mir-983
+#=GF DE   microRNA mir-983
+#=GF AU   Wilkinson A; 0000-0001-7406-0151
+#=GF SE   miRBase; Wilkinson A
+#=GF SS   Predicted; WAR; Wilkinson A
+#=GF GA   80.00
+#=GF TC   99.60
+#=GF NC   50.90
+#=GF TP   Gene; miRNA;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -T 28 -Z 549862.597050 CM SEQDB
+#=GF DR   MIPF; MIPF0000450;
+#=GF DR   SO; 0001244; pre_miRNA;
+#=GF DR   GO; 0035068; micro-ribonucleoprotein complex;
+#=GF DR   GO; 0035195; gene silencing by miRNA;
+#=GF RN   [1]
+#=GF RM   17989254
+#=GF RT   Evolution, biogenesis, expression, and target predictions of a
+#=GF RT   substantially expanded set of Drosophila microRNAs.
+#=GF RA   Ruby JG, Stark A, Johnston WK, Kellis M, Bartel DP, Lai EC
+#=GF RL   Genome Res. 2007;17:1850-1864.
+#=GF RN   [2]
+#=GF RM   20037610
+#=GF RT   Evolutionary flux of canonical microRNAs and mirtrons in Drosophila.
+#=GF RA   Berezikov E, Liu N, Flynt AS, Hodges E, Rooks M, Hannon GJ, Lai EC
+#=GF RL   Nat Genet. 2010; [Epub ahead of print]
+#=GF WK   MicroRNA
+#=GF SQ   3
+
+
+AABU01002762.1/6384496-6384594 UAUUAUAUUGCAAUAAUUAAAUAAUACGUUUCGAACUAAUGAUUUUCAGUUCAUUCAUUAGGUAGUUACGCAUUAUCUAGUUGUUGUAAACAUUCAACU
+AAST01038470.1/3387-3484       UAAUAUCUUGCAGUAAUUUAGUAAUACCUUUCGAACACAUGAUUUUCAG-UCAUUCAUGAGUUCGUCAGGUAUUAUCUAGUUAUUGUAAACAUUCAACU
+AAPQ01005960.1/9641-9544       UAUUAUGUUACAGUGAUUUAAUAAUUCGAUUCGAAGUUAUGUGCUUUA-AUCAUUCAUAAAUGCGAAACGGAUUAUUAAGUUAUUGUUAACAUUCAACU
+#=GC SS_cons                   :::::::<<<<<<<<<<<<<<<<<<-<<<--<---<<<<<<<____________>>>>>>>--->-->>>->>>>>>>>>>>>>>>>>>::::::::::
+#=GC RF                        UAuUAUauuaCaauaauucgauaauaCguUUCGAAcucauGauuUUcAGaUCAUuCaugaguucGuuacGuauuaucgaguuauuGuaaACAUUCAACU
+
+//

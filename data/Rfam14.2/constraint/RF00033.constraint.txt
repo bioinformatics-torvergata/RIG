@@ -1,0 +1,12 @@
+>Y15844.1/543-450
+CGCUAUCAUCAUUAACUUUAUUUAUUACCGUCAUUCACUUCUGAAUGUCUGUUUACCCCUAUUUCAACCGAAUGCUUCGCAUUCGUUUUUUUUA
+xxxxxxxxxxxxxx..xx.xxxxxxxxxx.xx<<<........>>>.xxxx..xxxxxxxxxxx..<.<<....<xxx>....>>.>.xxxx..
+>Z33506.1/97-4
+CGCUAUCAUCAUUAACUUUAUUUAUUACCGUCAUUCAGUUCUGAAUGUCUGUUUACCCCUAUUUCGACCGGAUGCUUCGCAUCCGGUUUUUUUU
+xxxxxxxxxxxxxx..xx.xxxxxxxxxx.xx<<<........>>>.xxxx..xxxxxxxxxxx..<.<<....<xxx>....>>.>.xxxx..
+>L24960.1/158-73
+CGCUAUCAUCAUUAUUUUCAUUAUUACCUUCAUUAUCCGAAGAUAAUUUCUGCAUACCUUUAACCGGCUUCUGGCCGGUUUUUUAU
+xxxxxxxxxxxxxx..xx.xxxxxxxxx.xx<<<..........>>>.xxxx..xxxxxx..<.<<.........>>.>.xxxx..
+>AF039309.1/94-1
+CGCUAUCAUCAUUAACUUUAUUUAUUACCGUCAUUCACUUCUGAAUGUCUGUUUACCCCUAUUUCAACCGGAUGCUUCGCAUUCGGUUUUUUUU
+xxxxxxxxxxxxxx..xx.xxxxxxxxxx.xx<<<........>>>.xxxx..xxxxxxxxxxx..<.<<....<xxx>....>>.>.xxxx..

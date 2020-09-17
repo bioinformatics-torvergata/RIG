@@ -1,0 +1,40 @@
+# STOCKHOLM 1.0
+
+#=GF AC   RF00496
+#=GF ID   Corona_SL-III
+#=GF DE   Coronavirus SL-III cis-acting replication element (CRE)
+#=GF AU   Moxon SJ; 0000-0003-4644-1816
+#=GF SE   PMID:12767992
+#=GF SS   Published; PMID:12767992
+#=GF GA   65.00
+#=GF TC   67.60
+#=GF NC   34.20
+#=GF TP   Cis-reg;
+#=GF BM   cmbuild -F CM SEED
+#=GF CB   cmcalibrate --mpi CM
+#=GF SM   cmsearch --cpu 4 --verbose --nohmmonly -E 1000 -Z 549862.597050 CM SEQDB
+#=GF DR   SO; 0000233; mature_transcript;
+#=GF DR   GO; 0039703; RNA replication;
+#=GF RN   [1]
+#=GF RM   12767992
+#=GF RT   Stem-loop III in the 5' untranslated region is a cis-acting element in
+#=GF RT   bovine coronavirus defective interfering RNA replication.
+#=GF RA   Raman S, Bouma P, Williams GD, Brian DA
+#=GF RL   J Virol 2003;77:6720-6730.
+#=GF CC   This family represents a coronavirus cis-acting replication element (CRE).
+#=GF CC   Members of this family are related to Bovine coronavirus stem-loop III and
+#=GF CC   function as cis-acting elements for defective interfering (DI) RNA
+#=GF CC   replication [1].
+#=GF WK   Coronavirus_SL-III_cis-acting_replication_element
+#=GF SQ   5
+
+
+AF523846.1/84-125 CACUCCCUGUAAUCUAUGCUUGCGAGCUUAGACUUUUCAUAG
+AF220295.1/85-126 CACUCCCUGUAUUCUAUGCUUGUGGGCGUAGAUUUUUCAUAG
+AF391542.1/85-126 CACUCCCUGUAGUCUAUGCCUGUGGGCGUAGAUUUUUCAUAG
+AY585228.1/84-125 CACUCCCUGUAAUCUAUGCUUGUGGGCGUAGAUUUUUCAUAG
+AF523845.1/85-126 CACUCCCUGUAGUCUAUGCUUGUGGGCGUAGAUUUUUCAUAG
+#=GC SS_cons      ::::::::::::<<<<<<<<____>>>>>>>>::::::::::
+#=GC RF           CACUCCCUGUAaUCUAuGCuUGUGgGCgUAGAUUUUUCAUAG
+
+//
