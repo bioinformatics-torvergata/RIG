@@ -11,16 +11,16 @@ Computed RIG scores presented in this work can be found in the [RIG](outputs/RIG
 
 ## Installation
 
-### 1. Prepare your system
-
-``` pip install -r requirements.txt```
-
-### 2. Clone and enter the repository
+### 1. Clone and enter the repository
 
 ```
 git clone https://github.com/citterich-lab/RIG.git
 cd RIG
 ```
+
+### 2. Prepare your system
+
+``` pip install -r requirements.txt```
 
 ## Usage
 
