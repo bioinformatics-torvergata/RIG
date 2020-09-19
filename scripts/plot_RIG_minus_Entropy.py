@@ -24,7 +24,7 @@ qbear50_path = os.path.join(RIG_dir, "qbear_50_RIGs.tsv")
 zbear90_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
 zbear50_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
 
-RIG_vs_ENT_output_dir = 'plots/RIG_Entropy/'
+RIG_vs_ENT_output_dir = 'outputs/plots/RIG_Entropy/'
 
 if not os.path.exists(RIG_vs_ENT_output_dir):
     os.makedirs(RIG_vs_ENT_output_dir)

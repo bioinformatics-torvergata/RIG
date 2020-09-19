@@ -16,7 +16,7 @@ sns.set_context(rc={"font.size": 0, "axes.titlesize": 34, "axes.labelsize": 25, 
 WUSS_path = sys.argv[1]
 dir_input_rscape = sys.argv[2]
 
-dir_output_RIG_RscapePower_plots = 'plots/RIG_RscapePower/'
+dir_output_RIG_RscapePower_plots = 'outputs/plots/RIG_RscapePower/'
 RIG_and_RscapePower_tsv_path = os.path.join(dir_output_RIG_RscapePower_plots, 'RIG_and_Rscape.tsv')
 
 if not os.path.exists(dir_output_RIG_RscapePower_plots):

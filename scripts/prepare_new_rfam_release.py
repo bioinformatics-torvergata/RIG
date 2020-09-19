@@ -20,8 +20,9 @@ dir_rfam_folded = os.path.join(dir_base, 'folded')
 dir_rfam_bear = os.path.join(dir_base, 'bear')
 dir_rfam_sequences = os.path.join(dir_base, 'sequences')
 
-for dir_xxx in [dir_SS_cons, dir_gapped_fam, dir_rfam_stockholm, dir_rfam_constraint, dir_rfam_folded, dir_rfam_folded,
-                dir_rfam_bear, dir_rfam_sequences]:
+for dir_xxx in [
+    dir_SS_cons, dir_gapped_fam, dir_rfam_stockholm, dir_rfam_constraint, dir_rfam_folded, dir_rfam_bear, dir_rfam_sequences
+]:
     if not os.path.exists(dir_xxx):
         os.makedirs(dir_xxx)
 

@@ -7,7 +7,7 @@ Introducing a re-interpretation of the Shannon Information applied on RNA alignm
 the **Relative Information Gain** (RIG). The RIG score is available for any position in an alignment, showing how different 
 levels of detail encoded in the RNA representation can contribute differently to convey structural information.
 
-Computed RIG scores presented in this work can be found in the [RIG](outputs/RIGs) folder.
+Computed RIG scores can be found in the [RIG](outputs/RIGs) folder.
 
 ## Installation
 
@@ -20,24 +20,39 @@ cd RIG
 
 ### 2. Prepare your system
 
-``` pip install -r requirements.txt```
+``` pip3 install -r requirements.txt```
 
 ## Usage
 
 ### Short guide
 
-To calculate all RIG scores for all the `alphabet` as in the [alphabets](data/alphabets) folder, removing redundant
-primary sequences up to a 50%, 62%, and 90% of identity, execute 
+With the following instruction the RIG scores are calculated by applying the zBEAR alphabet and removing redundant
+primary sequences up to 90% of identity. The computation are executed using a precalculated structural Position Specific 
+Scoring Matrix (sPSSM) [available](outputs/sPSSMs/zbear_90/rfam_PSSM_dic_zbear_90.pickle.gz) in the repository.
 
- ```
-bash scripts/calculate_rig_scores.sh
+**Note**: for a complete guide on how to calculate the RIG scores from scratch by applying all the encodings in the
+[alphabets](data/alphabets) folder and removing redundant primary sequences up to 50%, 62%, and 90% of identity, refer
+to the next paragraph [Complete guide](#complete-guide).
+
+To calculate the RIG scores, you just need to specify the `sPSSM` file (it can be one of the generated matrices in the
+[sPSSM](outputs/sPSSM) folder).
+
+```
+python3 scripts/compute_RIG.py outputs/sPSSMs/zbear_90/rfam_PSSM_dic_zbear_90.pickle.gz
 ```
 
-### Step by step guide
+The RIG scores will be written in the [zbear_90_RIGs.tsv](outputs/RIGs/zbear_90_RIGs.tsv) file.
+
+
+### [Complete guide](#complete-guide])
+
+In the following there are instructions to calculate the RIG scores from scratch by applying all the encodings in the
+[alphabets](data/alphabets) folder and removing redundant primary sequences up to 50%, 62%, and 90% of identity.
+
 
 #### Preparation to a new Rfam release
 
-To create the data for a new Rfam release you need to specify:
+If needed, to create the data for a new Rfam release you need to specify:
 
 * the new gzipped Rfam seed (the last one was [Rfam.seed.gz](ftp://ftp.ebi.ac.uk/pub/databases/Rfam/14.2/Rfam.seed.gz));
 * the output directory;
@@ -45,7 +60,7 @@ To create the data for a new Rfam release you need to specify:
 * the path of the BearEncoder program (you can find the jar in the [tools](tools) folder).
 
 ```
-python3 scripts/prepare_new_rfam_release.py directory/new/gzipped/rfam-seed/Rfam.seed.gz /data/Rfam14.2/ tools/RNAfold tools/BearEncoder.jar
+python3 scripts/prepare_new_rfam_release.py directory/new/gzipped/rfam-seed/Rfam.seed.gz data/Rfam14.2/ tools/RNAfold tools/BearEncoder.jar
 ```
 
 #### Structural alignment from Rfam families alignment
@@ -173,7 +188,7 @@ The sPSSM will be built in the [sPSSM](outputs/sPSSMs) folder.
 #### Calculate RIG scores
 To calculate the RIG scores, you need to specify:
 
-* the `sPSSM` file (it can be one of the generated MBRs in the [sPSSM](outputs/sPSSM) folder).
+* the `sPSSM` file (it can be one of the generated matrices in the [sPSSM](outputs/sPSSM) folder).
 
 ##### Examples:
 ```
@@ -212,7 +227,7 @@ Execute
 python3 scripts/plot_RIG_with_WUSS_notation.py data/Rfam14.2/SS_cons/SS_cons_WUSS.tsv
 ```
 
-The plots will be generated in the [RIG_WUSS](plots/RIG_WUSS) folder.
+The plots will be generated in the [RIG_WUSS](outputs/plots/RIG_WUSS) folder.
 
 
 ##### RIG scores minus the (rescaled) sequence entropy
@@ -222,7 +237,7 @@ Execute
 python3 scripts/plot_RIG_minus_Entropy.py data/Rfam14.2/SS_cons/SS_cons_WUSS.tsv
 ```
 
-The plots will be generated in the [RIG_Entropy](plots/RIG_Entropy) folder.
+The plots will be generated in the [RIG_Entropy](outputs/plots/RIG_Entropy) folder.
 
 
 ##### RIG scores together with R-scape power values
@@ -244,7 +259,7 @@ Execute
 python3 scripts/plot_RIG_and_RscapePower.py data/Rfam14.2/SS_cons/SS_cons_WUSS.tsv data/Rfam14.2/Rscape
 ```
 
-The plots will be generated in the [RIG_RscapePower](plots/RIG_RscapePower) folder.
+The plots will be generated in the [RIG_RscapePower](outputs/plots/RIG_RscapePower) folder.
 
 
 
