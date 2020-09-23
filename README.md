@@ -87,7 +87,6 @@ To create the BEAR alignments, you need to specify:
 * the `alphabet` as in the [alphabets](data/alphabets) folder;
 * the path of the `blastclust` program.
 
-##### Examples:
 ```
 python3 scripts/BlustClust_filter_alignment.py data/Rfam14.2/sequences/ data/Rfam14.2/bear/ data/Rfam14.2/gapped_fam/gapped_fam_dict.pickle.gz 90 5 data/alphabets/bear.tsv ~/blast-2.2.26/bin/blastclust
 python3 scripts/BlustClust_filter_alignment.py data/Rfam14.2/sequences/ data/Rfam14.2/bear/ data/Rfam14.2/gapped_fam/gapped_fam_dict.pickle.gz 90 5 data/alphabets/qbear.tsv ~/blast-2.2.26/bin/blastclust
@@ -113,7 +112,6 @@ To build RNA Blocks from structural alignments you need to specify:
 * the identity threshold;
 * the `alphabet` as in the [alphabets](data/alphabets) folder.
 
-##### Examples:
 ```
 python3 scripts/make_RNA_Blocks.py outputs/alignments/bear_new_alignment_bear_90 90 alphabets/bear.tsv
 python3 scripts/make_RNA_Blocks.py outputs/alignments/bear_new_alignment_qbear_90 90 alphabets/qbear.tsv
@@ -140,7 +138,6 @@ To build a MBR you need to specify:
 * the `alphabet` as in the [alphabets](data/alphabets) folder;
 * the name of the `info_file` that will collect all the information of the built blocks.
 
-##### Examples:
 ```
 python3 scripts/make_MBR.py outputs/RNA_Blocks/blocks_new_bear_bear_90 90 data/alphabets/bear.tsv bear_90
 python3 scripts/make_MBR.py outputs/RNA_Blocks/blocks_new_bear_qbear_90 90 data/alphabets/qbear.tsv qbear_90
@@ -167,7 +164,6 @@ To build a sPSSM you need to specify:
 * the `alphabet` as in the [alphabets](data/alphabets) folder;
 * the [gapped_fam_dict.pickle.gz](data/Rfam14.2/gapped_fam/gapped_fam_dict.pickle.gz) file.
 
-##### Examples:
 ```
 python3 scripts/make_PSSM.py bear_90 outputs/MBRs/bear_90/MBR_bear_90.tsv data/alphabets/bear.tsv data/Rfam14.2/gapped_fam/gapped_fam_dict.pickle.gz
 python3 scripts/make_PSSM.py qbear_90 outputs/MBRs/qbear_90/MBR_qbear_90.tsv data/alphabets/qbear.tsv data/Rfam14.2/gapped_fam/gapped_fam_dict.pickle.gz
@@ -190,7 +186,6 @@ To calculate the RIG scores, you need to specify:
 
 * the `sPSSM` file (it can be one of the generated matrices in the [sPSSM](outputs/sPSSM) folder).
 
-##### Examples:
 ```
 python3 scripts/compute_RIG.py outputs/sPSSMs/bear_90/rfam_PSSM_dic_bear_90.pickle.gz
 python3 scripts/compute_RIG.py outputs/sPSSMs/qbear_90/rfam_PSSM_dic_qbear_90.pickle.gz
@@ -218,9 +213,9 @@ python3 scripts/compute_entropy.py data/Rfam14.2/SS_cons/SS_cons_WUSS.tsv data/R
 The output will be written in the [entropy](outputs/entropy) folder.
 
 
-#### Plots generation
+### Plots generation
  
-##### RIG scores with WUSS notation from secondary structure consensus
+#### RIG scores with WUSS notation from secondary structure consensus
 Execute
 
 ```
@@ -230,21 +225,31 @@ python3 scripts/plot_RIG_with_WUSS_notation.py data/Rfam14.2/SS_cons/SS_cons_WUS
 The plots will be generated in the [RIG_WUSS](outputs/plots/RIG_WUSS) folder.
 
 
-##### RIG scores minus the (rescaled) sequence entropy
+#### RIG scores minus the (rescaled) sequence entropy
 Execute
 
 ```
-python3 scripts/plot_RIG_minus_Entropy.py data/Rfam14.2/SS_cons/SS_cons_WUSS.tsv
+python3 scripts/plot_RIG_minus_EntropyOrRIG.py data/Rfam14.2/SS_cons/SS_cons_WUSS.tsv entropy
 ```
 
 The plots will be generated in the [RIG_Entropy](outputs/plots/RIG_Entropy) folder.
 
 
-##### RIG scores together with R-scape power values
+#### RIG scores minus RIG scores
+Execute
 
-###### Calculate R-scape power
+```
+python3 scripts/plot_RIG_minus_EntropyOrRIG.py data/Rfam14.2/SS_cons/SS_cons_WUSS.tsv RIG
+```
 
-####### Dependencies: R-scape
+The plots will be generated in the [RIG_Entropy](outputs/plots/RIG_Entropy) folder.
+
+
+#### RIG scores together with R-scape power values
+
+##### Calculate R-scape power
+
+###### Dependencies: R-scape
 
 **Note**: download [here](http://eddylab.org/software/rscape/) the source code distribution of R-scape, and follow the
 installation instructions.
@@ -262,8 +267,7 @@ python3 scripts/plot_RIG_and_RscapePower.py data/Rfam14.2/SS_cons/SS_cons_WUSS.t
 The plots will be generated in the [RIG_RscapePower](outputs/plots/RIG_RscapePower) folder.
 
 
-
-#### Other
+### Other
 
 ##### Convert bear files to other alphabets
 To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 

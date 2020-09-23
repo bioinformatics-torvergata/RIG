@@ -14,27 +14,16 @@ sns.set(context='paper', style='whitegrid', palette='deep', font='serif', font_s
 
 # Paths and directories
 WUSS_path = sys.argv[1]
+
 RIG_dir = "outputs/RIGs/"
-path_entropy = 'outputs/entropy/entropy.tsv'
 
 bear90_path = os.path.join(RIG_dir, "bear_90_RIGs.tsv")
 bear50_path = os.path.join(RIG_dir, "bear_50_RIGs.tsv")
 qbear90_path = os.path.join(RIG_dir, "qbear_90_RIGs.tsv")
 qbear50_path = os.path.join(RIG_dir, "qbear_50_RIGs.tsv")
 zbear90_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
-zbear50_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
+zbear50_path = os.path.join(RIG_dir, "zbear_50_RIGs.tsv")
 
-RIG_vs_ENT_output_dir = 'outputs/plots/RIG_Entropy/'
-
-if not os.path.exists(RIG_vs_ENT_output_dir):
-    os.makedirs(RIG_vs_ENT_output_dir)
-
-ENT_dict = {}
-with open(path_entropy) as f:
-    for line in f:
-        # RF\tENT
-        dat = line.split()
-        ENT_dict[dat[0]] = [x for x in map(float, dat[1:])]
 
 # Colors WUSS dictionary
 WUSS_color_dict = function_mbr.load_and_color_WUSS_dictionary(WUSS_path)
@@ -66,18 +55,16 @@ bearRIG-- conservazione generale in struttura, anche solo in senso di evoluzione
 zbearRIG-- conservazione stretta della tipologia di elemento
 """
 
-
-def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, filename='test'):
+def plot_RF_delta_RIG_ENT(RF, RIG_dict, XXX_dict, WUSS_color_dict, encodings, XXX, filename='test'):
     for encoding in encodings:
         plt.clf()
 
-        if len(ENT_dict[RF]) != len(RIG_dict[encoding][RF]):
+        if len(XXX_dict[RF]) != len(RIG_dict[encoding][RF]):
             print('None')
-            # ENT_dict[RF] = ENT_dict[RF] + (len(ENT_dict[RF]) - len(RIG_dict[encoding][RF])) * [0.0]
             return None
 
         fig, ax = plt.subplots(1, figsize=(20, 10), sharex='all')
-        s = np.array([x - y for x, y in zip(RIG_dict[encoding][RF], ENT_dict[RF])])
+        s = np.array([x - y for x, y in zip(RIG_dict[encoding][RF], XXX_dict[RF])])
 
         sns.heatmap([s], ax=ax,
                     xticklabels=len(s) // 10 if len(s) > 20 else len(s),
@@ -93,7 +80,7 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
         plt.axhline(0.75, color='k')
 
         ax.set_title('{}'.format(RF), fontsize=28)
-        ax.set_ylabel('{} RIG - entropy RIG'.format(encoding), fontsize=28)
+        ax.set_ylabel('{} RIG - {} RIG'.format(encoding, XXX), fontsize=28)
         ax.set_xlabel('position in RF alignment', fontsize=28)
 
         plt.xticks(rotation=45)
@@ -115,19 +102,54 @@ def plot_RF_delta_RIG_ENT(RF, RIG_dict, ENT_dict, WUSS_color_dict, encodings, fi
 
         plt.tight_layout()
         # plt.savefig(filename + f"_{encoding}.pdf")
-        plt.savefig(filename + f"_{encoding}.png", ppi=600)
+        plt.savefig(filename + f"_{encoding}_{XXX}.png", ppi=600)
 
         plt.close()
 
 
-for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
-    print(RF_)
+if sys.argv[2] == 'entropy':
+    path_entropy = 'outputs/entropy/entropy.tsv'
 
-    plot_RF_delta_RIG_ENT(
-        RF_,
-        RIG_dict=RIG_dict,
-        ENT_dict=ENT_dict,
-        WUSS_color_dict=WUSS_color_dict,
-        encodings=['bear90', 'qbear90', 'zbear90'],
-        filename=f"{RIG_vs_ENT_output_dir}{RF_}_90"
-    )
+    ENT_dict = {}
+    with open(path_entropy) as f:
+        for line in f:
+            # RF\tENT
+            dat = line.split()
+            ENT_dict[dat[0]] = [x for x in map(float, dat[1:])]
+
+
+    RIG_vs_ENT_output_dir = 'outputs/plots/RIG_Entropy/'
+    if not os.path.exists(RIG_vs_ENT_output_dir):
+        os.makedirs(RIG_vs_ENT_output_dir)
+
+
+    for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
+        print(RF_)
+
+        plot_RF_delta_RIG_ENT(
+            RF_,
+            RIG_dict=RIG_dict,
+            XXX_dict=ENT_dict,
+            WUSS_color_dict=WUSS_color_dict,
+            encodings=['bear90', 'qbear90', 'zbear90'],
+            XXX='entropy',
+            filename=f"{RIG_vs_ENT_output_dir}{RF_}_90"
+        )
+
+else:
+    RIG_vs_RIG_output_dir = 'outputs/plots/RIG_RIG/'
+    if not os.path.exists(RIG_vs_RIG_output_dir):
+        os.makedirs(RIG_vs_RIG_output_dir)
+
+    for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
+        print(RF_)
+
+        plot_RF_delta_RIG_ENT(
+            RF_,
+            RIG_dict=RIG_dict,
+            XXX_dict=RIG_dict['zbear90'],
+            WUSS_color_dict=WUSS_color_dict,
+            encodings=['bear90'],
+            XXX='zbear90',
+            filename=f"{RIG_vs_RIG_output_dir}{RF_}_90"
+        )

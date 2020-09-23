@@ -20,7 +20,7 @@ bear50_path = os.path.join(RIG_dir, "bear_50_RIGs.tsv")
 qbear90_path = os.path.join(RIG_dir, "qbear_90_RIGs.tsv")
 qbear50_path = os.path.join(RIG_dir, "qbear_50_RIGs.tsv")
 zbear90_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
-zbear50_path = os.path.join(RIG_dir, "zbear_90_RIGs.tsv")
+zbear50_path = os.path.join(RIG_dir, "zbear_50_RIGs.tsv")
 
 RIG_with_WUSS_output_dir = 'outputs/plots/RIG_WUSS/'
 
