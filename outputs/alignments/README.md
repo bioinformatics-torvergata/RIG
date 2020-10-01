@@ -1,7 +1,7 @@
 ## BEAR alignment
 
-The folder contains the structural alignments for each Rfam family. The structural alignment are expressed with different
-[encodings](../alphabets), and obtained by removing redundant primary sequences up to 50% and up to 90% of similarity for each
+The folder contains the structural alignments for each Rfam family. The structural alignments are expressed with different
+[encodings](../alphabets), and obtained by removing redundant primary sequences up to 50%, 62% or 90% of similarity for each
 Rfam seed alignment.
 
 In particular, the folder:
