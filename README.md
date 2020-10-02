@@ -270,9 +270,9 @@ The plots will be generated in the [RIG_RscapePower](outputs/plots/RIG_RscapePow
 ### Other
 
 ##### Convert bear files to other alphabets
-To convert a file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 
+To convert a bear file from `fastB` format ([Mattei et al., 2015](https://academic.oup.com/nar/article/43/W1/W493/2467934)) 
 to other structural alphabets, execute
 
 ```
-python3 scripts/mapping.py zbear.tsv file_bear.fastB > out_file.fastB
+python3 scripts/mapping.py data/alphabets/zbear.tsv data/Rfam14.2/bear/RF00001.folded.fastb > RF00001.folded.zbear.fastb
 ```
