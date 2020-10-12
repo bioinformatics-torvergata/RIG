@@ -110,7 +110,7 @@ if not os.path.exists(dir_output_RIGs):
 ## make a DF for each file
 # the table shall be written
 
-for fileno in range(len(path_pssm_gz)):
+for fileno in range(len(alphaexts)):
     myenc = alphaexts[fileno]
     filename = f"{myenc}_RIGs.tsv"
     with open(os.path.join(dir_output_RIGs, filename), 'w') as fw:
