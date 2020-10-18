@@ -144,5 +144,7 @@ def printEntropy(family_dict, fname="test"):
             line = rf_ + "\t" + "\t".join([str(x) for x in family_dict[rf_]['entropy']]) + "\n"
             fw.write(line)
 
+    print("File '{}' created.".format(fname))
+
 
 printEntropy(families, os.path.join(dir_output_entropy, "entropy.tsv"))

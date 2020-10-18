@@ -233,7 +233,7 @@ def make_blocks(folder, name, identity):
             for seq in new:
                 o.write(''.join(seq))
 
-    print('Created the {} folder.'.format(dir_output))
+    print('Folder {} created.'.format(dir_output))
 
 
 # Compute expected frequencies
@@ -370,8 +370,11 @@ def make_matrix(dir_output_MBRs_name_id, freq_observed, fr_expect, name, identit
 
     # Score Matrix
     mbr_new = odds_ratio_matrix.applymap(np.log2)
-    mbr_new.to_csv(os.path.join(dir_output_MBRs_name_id, 'MBR_' + name + '_' + identity + '.tsv'), sep="\t")
+    mbrpath = os.path.join(dir_output_MBRs_name_id, 'MBR_' + name + '_' + identity + '.tsv')
+    mbr_new.to_csv(mbrpath, sep="\t")
     print('MBRs DONE!')
+
+    print('File {} created.'.format(mbrpath))
     return mbr_new
 
 

@@ -100,12 +100,16 @@ dir_output_sPSSMs_name_id = os.path.join(dir_output_sPSSMs, mbrVersion)
 if not os.path.exists(dir_output_sPSSMs_name_id):
     os.makedirs(dir_output_sPSSMs_name_id)
 
-with gzip.open(os.path.join(dir_output_sPSSMs_name_id, 'rfam_PSSM_{}.pickle.gz'.format(mbrVersion)), 'wb') as handle:
+pickle_path = os.path.join(dir_output_sPSSMs_name_id, 'rfam_PSSM_{}.pickle.gz'.format(mbrVersion))
+with gzip.open(pickle_path, 'wb') as handle:
     pickle.dump(PSSMs_alpha, handle)
+print('File {} created.'.format(pickle_path))
 
 dic_PSSM = {}
 for i in range(0, len(rfam_list)):
     dic_PSSM[rfam_list[i]] = PSSMs_alpha[i]
 
-with gzip.open(os.path.join(dir_output_sPSSMs_name_id, 'rfam_PSSM_dic_{}.pickle.gz'.format(mbrVersion)), 'wb') as handle:
+dic_pickle_path = os.path.join(dir_output_sPSSMs_name_id, 'rfam_PSSM_dic_{}.pickle.gz'.format(mbrVersion))
+with gzip.open(dic_pickle_path, 'wb') as handle:
     pickle.dump(dic_PSSM, handle)
+print('File {} created.'.format(dic_pickle_path))

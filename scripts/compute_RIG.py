@@ -97,24 +97,26 @@ for path_pssm_gz in path_pssm_gz_list:
 
 ICarrays = []
 rescale = 'delogit2'
-for PSSMset in PSSMs: #diversi file da testare
-    #must transpose to cycle over columns
+for PSSMset in PSSMs:
+    # must transpose to cycle over columns
     PSSMsetT = [profile.T for profile in PSSMset]
-    ICarrays.append(computeAllIC(PSSMsetT, rescale=rescale)) #this will have shape (#RF, )
+    ICarrays.append(computeAllIC(PSSMsetT, rescale=rescale)) # this will have shape (#RF, )
 
 
 if not os.path.exists(dir_output_RIGs):
     os.makedirs(dir_output_RIGs)
 
-###write file with RIG,
-## make a DF for each file
+# write file with RIG,
+# make a DF for each file
 # the table shall be written
 
 for fileno in range(len(alphaexts)):
     myenc = alphaexts[fileno]
-    filename = f"{myenc}_RIGs.tsv"
-    with open(os.path.join(dir_output_RIGs, filename), 'w') as fw:
+    filepath = os.path.join(dir_output_RIGs, f"{myenc}_RIGs.tsv")
+    with open(filepath, 'w') as fw:
         for rf, rigs in zip(rflists[fileno], ICarrays[fileno]):
             rigrow = "\t".join([str(el[0]) for el in rigs])
             row = f"{rf}\t{rigrow}\n"
             fw.write(row)
+
+    print("File '{}' created.".format(filepath))
