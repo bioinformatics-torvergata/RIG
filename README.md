@@ -1,11 +1,12 @@
-# Exploring RNA secondary structure representations
+# Relative Information Gain: Shannon entropy-based measure of the relative structural conservation in RNA alignments
 
 ## Introduction
-Structural characterization of RNAs is a dynamic field, offering many modelling possibilities. Every model is usually 
-characterized by an encoding that depicts structural information of the molecule through string representations or graphs. 
-Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose a new scoring metric, 
-the **Relative Information Gain** (RIG). The RIG score is available for any position in an alignment, showing how different 
-levels of detail encoded in the RNA representation can contribute differently to convey structural information.
+Structural characterization of RNAs is a dynamic field, offering many modelling possibilities. RNA secondary structure
+models are usually characterized by an encoding that depicts structural information of the molecule through string
+representations or graphs. Introducing a re-interpretation of the Shannon Information applied on RNA alignments, we propose
+a new scoring metric, the **Relative Information Gain** (RIG). The RIG score is available for any position in an alignment,
+showing how different levels of detail encoded in the RNA representation can contribute differently to convey structural
+information.
 
 Computed RIG scores can be found in the [RIG](outputs/RIGs) folder.
 
