@@ -119,7 +119,7 @@ if not os.path.exists(RIG_and_RscapePower_tsv_path):
 
         to_append = ''
         for xxx_xx, dataframe in RIGS_dfs.items():
-            if xxx_xx != 'rscace':
+            if xxx_xx != 'rscape':
                 c = 0
                 for RFXXX in dataframe.index:
                     if RFXXX in RIG_dict['rscape']:
@@ -191,6 +191,6 @@ for RFXXX in rig_and_rscape_df['family_code'].unique():
                     # ax.axvspan(xmin=position-2, xmax=position-1, ymin=-1, ymax=1, facecolor='b', alpha=0.5)
                     ax.axvspan(xmin=position - 1.5, xmax=position - 0.5, ymin=-1, ymax=1, facecolor='g', alpha=0.5)
             fig.savefig(path_image)
-            fig.clf();
+            fig.clf()
         except:
             print('Problem with ' + RFXXX)
