@@ -162,7 +162,7 @@ for RFXXX in rig_and_rscape_df['family_code'].unique():
 
             ax.set_title(RFXXX)
 
-            ax.set_xlim(-0.5, rig_and_rscape_df[(rig_and_rscape_df['family_code'] == RFXXX)]['position'].max() - 0.5)
+            ax.set_xlim(-0.5, rig_and_rscape_df[(rig_and_rscape_df['family_code'] == RFXXX)]['position'].max() + 0.5)
             ax.set_ylim(y_min, y_max)
 
             ax.set_xticklabels(ax.get_xticklabels(), rotation=90, size=20)
