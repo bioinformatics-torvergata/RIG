@@ -81,7 +81,7 @@ def plot_RIG_WUSS(RF, RIG_dict, WUSS_color_dict, encodings, filename='test'):
 
     # For each color block, color under the corresponding area
     for count, colored_chunk in enumerate(colored_chunks):
-        plt.fill_between(colored_chunk[0], 1, facecolor=colored_chunk[2], alpha=0.5)
+        plt.fill_between(colored_chunk[0] - 0.5, 1, facecolor=colored_chunk[2], alpha=0.5)
     # plt.fill_between(range(len(RIG_dict[enc][RF])), RIG_dict[enc][RF],
     #               where=list(WUSS_color_dict[RF])=='r',interpolate=True,
     #               facecolor='r', alpha=0.2 )
@@ -117,4 +117,3 @@ for RF_ in RIG_dict[list(RIG_dict.keys())[0]]:
         encodings=['bear90', 'qbear90', 'zbear90'],
         filename=f"{RIG_with_WUSS_output_dir}{RF_}_90"
     )
-

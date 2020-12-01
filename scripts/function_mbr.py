@@ -471,18 +471,15 @@ def get_colored_chunks(color_string, base1=False):
         while (i < len(color_string)) and (color_string[i] == my_color):
             i += 1
 
-        end_idx = i
+        end_idx = i + 1
 
-        # rangeX = np.arange(start_idx, end_idx, 1)
-        rangeX = np.arange(start_idx - 0.1, end_idx + 0.1)
-
-        # rangeY = RIG_values[start_idx:end_idx]
+        rangeX = np.arange(start_idx, end_idx, 1)
         rangeY = 1 * np.arange(start_idx, end_idx, 1)
 
         # If it is a single point then draw a narrow band at point height
-        if end_idx - start_idx == 1:
-            # rangeX = [start_idx-0.2, start_idx+0.2]
-            rangeY = [1, 1]
+        #if end_idx - start_idx == 1:
+        #    rangeX = [start_idx-0.2, start_idx+0.2]
+        #    rangeY = [1, 1]
 
         if base1:
             rangeX = rangeX + 1
