@@ -16,4 +16,4 @@ In the [Rfam14.2](Rfam14.2/) folder you will find:
 - the [folded](Rfam14.2/folded) folder, which contains the dot-bracket representation for each sequence for all Rfam families;
 - the [gapped_fam](Rfam14.2/gapped_fam) folder, which contains the sequence and structural alignments for all Rfam families;
 - the [sequences](Rfam14.2/sequences) folder, which contains all sequences for all Rfam families;
-- the [stockholm](Rfam14.2/stockholm) folder, which contains the stocholm file for all Rfam families;
+- the [stockholm](Rfam14.2/stockholm) folder, which contains the stockholm file for all Rfam families;
