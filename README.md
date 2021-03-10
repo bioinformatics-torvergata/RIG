@@ -10,6 +10,11 @@ information.
 
 Computed RIG scores can be found in the [RIG](outputs/RIGs) folder.
 
+## Citation
+
+**Marco Pietrosanto\*, Marta Adinolfi\*, Andrea Guarracino\*, Fabrizio Ferrè, Gabriele Ausiello, Ilio Vitale, Manuela Helmer-Citterich**. [Relative Information Gain: Shannon Entropy-Based Measure of the Relative Structural Conservation in RNA Alignments](https://doi.org/10.1093/nargab/lqab007), NAR Genomics and Bioinformatics, 2021
+**\*Shared first authorship**
+
 ## Installation
 
 ### 1. Clone and enter the repository
